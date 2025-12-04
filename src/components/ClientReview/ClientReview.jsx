@@ -39,7 +39,7 @@ const ClientReview = () => {
       </div>
 
       {/* ---------- Image Grid Section ---------- */}
-      <div className="container py-5">
+      <div className="container-fluid px-5 py-5">
         <div className="row g-4">
 
           {allImages.slice(0, visibleImages).map((img, index) => (

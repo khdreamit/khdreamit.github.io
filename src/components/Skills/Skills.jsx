@@ -86,7 +86,7 @@ const Skills = () => {
       </div>
 
     <section className="py-5 skills-section">
-      <div className="container">
+      <div className="container-fluid px-5">
         <div className="text-center mb-4">
           <h2 className="fw-bold mb-2">Services & Skills</h2>
           <p className="text-muted mx-auto" style={{ maxWidth: 780 }}>

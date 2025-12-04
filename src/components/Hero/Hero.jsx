@@ -1,12 +1,13 @@
 import React from 'react';
 import '../../App.css';
 import HeroImg from '../../assets/HeroImg.jpg';
+import { NavLink } from 'react-router';
 
 
-const Hero = (props) => {
+const Hero = () => {
   return (
     <section className="py-5 hero-bg">
-      <div className="container">
+      <div className="container-fluid px-5">
         <div className="row align-items-center">
 
           {/* Text Content */}
@@ -17,9 +18,13 @@ const Hero = (props) => {
                 A dedicated Digital Marketing Expert specializing in SEO, YouTube Channel Optimization, Social Media Marketing, and Content Strategy. Focused on crafting smart, data-driven marketing solutions that boost visibility, attract the right audience, and convert traffic into real business growth. Every strategy is designed with one goal in mind: delivering measurable results and helping your brand stand out in the digital world.
             </p>
 
+
             <div className="mt-4 d-flex gap-3">
-              <a href = "https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-dark px-4 py-2">Hire Me</a>
+            <NavLink to="/about" className="btn btn-dark px-4 py-2">
+              Gets More
+            </NavLink>
             </div>
+
           </div>
 
           {/* Image */}

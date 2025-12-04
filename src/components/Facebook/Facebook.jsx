@@ -125,6 +125,16 @@ const services = [
     setOpenIndex(openIndex === i ? null : i);
   };
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start'
+            });
+        }
+    };
+
 
 
     return (
@@ -146,9 +156,15 @@ const services = [
       <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow">
         Get a Free Channel Audit
       </a>
-      <a href="#seePrice" className="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow">
-        See Packages
-      </a>
+
+      <a href="#" onClick={(e) => {
+       e.preventDefault();
+        scrollToSection('seePrice');
+        }} 
+        className="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow"
+      >
+        See Packages
+      </a>
     </div>
   </div>
 </div>
@@ -157,7 +173,7 @@ const services = [
 {/* Facebooker intro  */}
 
 <div className="py-5 yourIntro">
-  <div className="container">
+  <div className="container-fluid px-5">
     <div className="row align-items-center">
 
       {/* Left Image */}
@@ -193,7 +209,7 @@ const services = [
  {/* facebook intro  */}
 
 <div className="herobg py-5">
-  <div className="container">
+  <div className="container-fluid px-5">
     <div className="row align-items-center youtube-bg">
 
       {/* Text Content */}
@@ -223,7 +239,7 @@ const services = [
 {/* why Facebook ads need */}
 
 <div className="py-5 feature-section">
-  <div className="container">
+  <div className="container-fluid px-5">
     <div className="row align-items-center">
 
       <div className="col-lg-5 text-center mb-4 mb-lg-0">
@@ -259,7 +275,7 @@ const services = [
 {/* service  */}
 
 <section className="py-5 service">
-  <div className="container">
+  <div className="container-fluid px-5">
 
     {/* Service Container */}
     <div className="serviceCont mb-5">
@@ -308,7 +324,7 @@ const services = [
 {/* Deliverables  */}
 
    <section className="py-5 deliverable-wow">
-      <div className="container">
+      <div className="container-fluid px-5">
 
         {/* Title */}
         <div className="text-center mb-5">
@@ -355,7 +371,7 @@ const services = [
 {/* FAQ  */}
 
    <section className="py-5 faq-section">
-      <div className="container">
+      <div className="container-fluid px-5">
 
         <h1 className="text-center mb-5 faq-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
 
@@ -393,7 +409,7 @@ const services = [
 
     {/* pricing plan  */}
     <div className='bacgkround' id='seePrice'>
-    <div className="container py-5">
+    <div className="container-fluid px-5 py-5">
       <div>
         <h2 className="text-center fw-bold mb-2">YouTube SEO Pricing Plans</h2>
        <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>

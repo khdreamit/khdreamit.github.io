@@ -2,15 +2,32 @@ import React from 'react';
 import { FaFacebook, FaInstagramSquare, FaLinkedin, } from "react-icons/fa";
 import { FaPhoneAlt, FaEnvelope, FaWhatsappSquare, FaTelegram  } from "react-icons/fa";
 import FooterLogo from '../../assets/FooterLogo.jpg';
+import { NavLink } from 'react-router';
 
 
 const Footer = () => {
 
-const menus = ["Home", "Service", "Portfolio", "Client", "My Skills", "About & Team", "Contact"]
+// const menus = ["Home", "Service", "Portfolio", "Client", "My Skills", "About & Team", "Contact"]
+const menus = [
+        { path: "/", label: "Home" },
+        { path: "/portfolio", label: "Portfolio" },
+        { path: "/skills", label: "My Skills" },
+        { path: "/about", label: "About" },
+        { path: "/contact", label: "Contact" },
+]
+
+const submenu = [
+     { path: "/youtube", label: "YouTube SEO" },
+     { path: "/facebook", label: "Facebook Ads" },
+     { path: "/google", label: "Google Ads" },
+     { path: "/website", label: "Website SEO" },
+     { path: "/amazon", label: "Amazon Book Promotion" },
+     { path: "/socialMediaManage", label: "Social Media Management" },
+]
 
     return (
         <footer className="footer pt-5 pb-3">
-            <div className="container">
+            <div className="container-fluid px-5">
                 <div className="row gy-4">
 
                     {/* Content / Logo Section */}
@@ -39,7 +56,9 @@ const menus = ["Home", "Service", "Portfolio", "Client", "My Skills", "About & T
                         <ul className="list-unstyled">
                             { menus.map((item, i) => (
                                 <li key={i} className="mb-2">
-                                    <a href="#" className="footer-link text-dark">{item}</a>
+                                    <NavLink className="footer-link text-dark" to={item.path}>
+                                        {item.label}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>
@@ -49,9 +68,11 @@ const menus = ["Home", "Service", "Portfolio", "Client", "My Skills", "About & T
                     <div className="col-md-3">
                         <h5 className="fw-bold mb-3 border-bottom pb-2">Services</h5>
                         <ul className="list-unstyled">
-                            {["YouTube SEO", "Website SEO", "Facebook Ads", "Google Ads", "Shopify Ads", "Social Media Management"].map((item, i) => (
+                            { submenu.map((item, i) => (
                                 <li key={i} className="mb-2">
-                                    <a href="#" className="footer-link text-dark">{item}</a>
+                                    <NavLink className="footer-link text-dark" to={item.path}>
+                                        {item.label}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>

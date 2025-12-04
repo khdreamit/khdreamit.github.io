@@ -33,7 +33,7 @@ const About = () => {
 
             {/* About me part 1  */}
             <section className="py-5 hero-bg">
-                  <div className="container">
+                  <div className="container-fluid px-5">
                     <div className="row align-items-center">
             
                       {/* Text Content */}
@@ -64,7 +64,7 @@ const About = () => {
 
             {/* About me part 2  */}
             <div className="py-5 yourIntro">
-              <div className="container">
+              <div className="container-fluid px-5">
                 <div className="row align-items-center">
             
                   {/* Left Image */}
@@ -96,7 +96,7 @@ const About = () => {
 
             {/* Expertise  */}
             <div className='py-5' style={{background: "#fffaf1"}}>
-            <div className="container py-4">
+            <div className="container-fluid px-5 py-4">
             <div className="d-flex justify-content-between gap-4 flex-wrap">
 
                 {/* Box 1 */}

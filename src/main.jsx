@@ -4,14 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import App from './App.jsx'
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { HashRouter, Route, Routes } from 'react-router';
 import About from '../src/components/About/About.jsx'
 import Portfolio from './components/Portfolio/Portfolio.jsx';
 import Youtube from './components/Youtube/Youtube.jsx';
 import Website from './components/Website/Website.jsx';
 import Facebook from './components/Facebook/Facebook.jsx';
 import Google from './components/Google/Google.jsx';
-import Shopify from './components/Shopify/Shopify.jsx';
+import Amazon from './components/Amazon/Amazon.jsx';
 import SocialMediaManage from './components/SocialMediaManage/SocialMediaManage.jsx';
 import Skills from './components/Skills/Skills.jsx';
 import ClientMeeting from './components/ClientMeeting/ClientMeeting.jsx';
@@ -20,7 +20,7 @@ import Contact from './components/Contact/Contact.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route path='/' element= {<App />} />
       <Route path='/portfolio' element= {<Portfolio />} />
@@ -29,7 +29,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/about' element= {<About />} />      
       <Route path='/facebook' element= {<Facebook />} />
       <Route path='/google' element= {<Google />} />
-      <Route path='/shopify' element= {<Shopify />} />
+      <Route path='/amazon' element= {<Amazon />} />      
       <Route path='/socialMediaManage' element= {<SocialMediaManage />} />
       <Route path='/skills' element= {<Skills />} />
       <Route path='/meeting' element= {<ClientMeeting />} />
@@ -38,7 +38,7 @@ createRoot(document.getElementById('root')).render(
       
            
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
     
   </StrictMode>,
 )
