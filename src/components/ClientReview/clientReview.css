@@ -1,0 +1,100 @@
+/* ---------------- Top Header Section ---------------- */
+.review-header {
+  height: 200px;
+  background: url("../../assets/youBG.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; 
+}
+
+/* Dark overlay over header */
+.review-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); 
+  z-index: 1;
+}
+
+
+.review-header > * {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* ---------------- Image Boxes ---------------- */
+.review-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #f6f6f6; 
+  align-items: center;
+  justify-content: center;
+  height: 260px; 
+}
+
+/* Default Image — no crop (shows whole image) */
+.review-box img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;      
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+/* যদি তুমি চাও 'cover' ব্যবহার করে কম কাটা দেখাতে (অল্টারনেটিভ) */
+/* ব্যবহার করতে হলে উপরের .review-box img অংশের object-fit: contain; কমেন্ট করে নিচেরটি আনকমেন্ট করো */
+/*
+.review-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        <-- cover হলে কিছু অংশ কাটা যাবে কিন্তু পুরো বাক্স ভরবে
+  object-position: center;  <-- ছবির কেন্দ্র ধরে রাখবে (চেহারা বা বিষয় রাখার চেষ্টা করবে)
+}
+*/
+
+/* Dark Layer on Hover */
+.review-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0); 
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* Hover Effect */
+.review-box:hover::after {
+  background: rgba(0, 0, 0, 0.28); 
+}
+
+.review-box:hover img {
+  transform: scale(1.04);
+  z-index: 0; 
+}
+
+/* ---------------- Modal Close Button Right-Top ---------------- */
+.modal-close-btn {
+  position: absolute;
+  right: -50px;        
+  z-index: 3000;
+  font-size: 22px;
+  border-radius: 50%;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ls{
+  letter-spacing: 5px;
+}

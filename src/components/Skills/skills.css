@@ -1,0 +1,104 @@
+.skills{
+    background-color: #e6cfa3;
+}
+
+
+.skills-section {
+  /* background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%); */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: rgb(210, 197, 181);
+}
+
+.skill-card {
+  background: linear-gradient(180deg, rgba(225, 223, 223, 0.9), rgba(250,250,255,0.85));
+  border-radius: 14px;
+  border: 1px solid rgba(18, 38, 63, 0.06);
+  box-shadow: 0 12px 30px rgba(11, 22, 43, 0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(11, 22, 43, 0.12);
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #fff;
+  background: linear-gradient(135deg, #5b8cff 0%, #7dd3fc 100%);
+  box-shadow: 0 8px 18px rgba(91,140,255,0.18);
+}
+
+
+.skill-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #12233f;
+}
+
+/* Link button small style */
+.btn-outline-primary {
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-weight: 600;
+  border-width: 1.5px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .skill-card { padding: 18px; }
+  .icon-box { width: 48px; height: 48px; font-size: 1.05rem; }
+}
+
+
+
+/* BRAND COLORS */
+.bg-facebook {
+  background: #1877f2;
+  box-shadow: 0 10px 25px rgba(24, 119, 242, 0.35);
+}
+
+.bg-youtube {
+  background: #ff0000;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
+}
+
+.bg-google {
+  background: #ffeeec;
+  box-shadow: 0 10px 25px rgba(244, 134, 66, 0.35);
+}
+
+.bg-shopify {
+  background: #95bf47;
+  box-shadow: 0 10px 25px rgba(149, 191, 71, 0.35);
+}
+
+.bg-amazon {
+  background: #000000;
+  color: rgb(240, 166, 20);
+  box-shadow: 0 10px 25px rgba(255, 153, 0, 0.35);
+}
+
+.bg-task {
+  background: #6b7280; 
+  box-shadow: 0 10px 25px rgba(107, 114, 128, 0.35);
+}
+
+.bg-manage {
+  background: #6366f1; 
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+.bg-website {
+  background: #8a8cfb; 
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}

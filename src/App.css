@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+
+/* footer  */
+
+.footer-link {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+  padding-left: 5px;
+}
+
+
+.footer{
+  background-color: rgb(199, 178, 136);
+}
+
+
+/* social */
+.social{
+  background-color: #f8eacd;
+}
+
+.facebook{
+  background-color: #1877F2;
+}
+.facebook:hover {
+  opacity: 0.8;
+  transition: .3s;
+}
+
+.instagram{
+  background-color: #CA05DE;
+}
+.instagram:hover {
+  opacity: 0.8;
+  transition: .3s;
+}
+
+
+.linkedin{
+  background-color: #0A66C2;
+}
+.linkedin:hover {
+  opacity: 0.8;
+  transition: .3s;
+}
+
+
+.youtube{
+  background-color: #FF0000;
+}
+.youtube:hover {
+  opacity: 0.8;
+  transition: .3s;
+}
+
+
+.whatsapp{
+  background-color: #25d366;
+}
+
+.whatsapp:hover {
+  opacity: 0.8;
+  transition: .3s;
+}
+
+/* portfolio */
+
+.port-bg{
+  background-color: dimgrey;
+}
+
+
+/* portfolio button  */
+
+.filter-btn {
+  background: #d2ddf4;    
+  border: none;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a2a45;
+  padding: 8px 25px;
+  border-radius: 3px;
+  transition: 0.25s ease-in-out;
+}
+
+/* Hover */
+.filter-btn:hover {
+  background: #296fb6;
+  color: #fff;
+}
+
+/* Active / Clicked */
+.filter-btn.active {
+  background: #0a66c2;
+  color: #fff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+}
+
+
+.portfolio-item img {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+
+
+.portfolio-item:hover img {
+  filter: brightness(50%);
+  transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+
+.portfolio-box img { height: 180px; object-fit: cover; transition: .3s; }
+.portfolio-box:hover img { filter: brightness(50%); }
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .3s;
+}
+.portfolio-box:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.custom-scroll {
+  max-height: 700px;
+  overflow-y: scroll;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 20px;
+}
+
+.fade-anim { animation: fadeIn .4s ease-in-out; }
+@keyframes fadeIn {
+  from { transform: scale(.95); opacity:.3; }
+  to { transform: scale(1); opacity:1; }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 85%;
+}
+.modal-img {
+  width: 100%;
+  height: 90vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 1px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  padding: 5px 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+.prev-btn { left: -40px; }
+.next-btn { right: -40px; }
+
+.ls{
+  letter-spacing: 5px;
+}
+
+
+/* import "aos/dist/aos.css";
+
+data-aos="zoom-in"
+data-aos="flip-up"
+data-aos="fade-right"
+data-aos="fade-left" */

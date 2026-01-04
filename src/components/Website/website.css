@@ -1,0 +1,15 @@
+.icon{
+    color: #f5b535;
+}
+
+
+.button {
+  border-color: #f5b535;    
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #f5b535; 
+  color: #fff;               
+  border-color: #f5b535;     
+}
