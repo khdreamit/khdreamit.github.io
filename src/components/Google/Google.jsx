@@ -445,7 +445,7 @@ const items = [
             <div className="plan-title">Basic</div>
 
             <h2 className="price">
-              <span className="old-price">$249</span> $99 <span>/Project</span>
+              <span className="old-price">$249</span> $99 <span>/Month</span>
             </h2>
 
             <ul className="features list-unstyled text-start mt-3">
@@ -469,7 +469,7 @@ const items = [
             <div className="plan-title featured-title">Standard</div>
 
             <h2 className="price">
-              <span className="old-price">$349</span> $199 <span>/Project</span>
+              <span className="old-price">$349</span> $199 <span>/Month</span>
             </h2>
 
             <ul className="features list-unstyled text-start mt-3">
@@ -492,7 +492,7 @@ const items = [
             <div className="plan-title">Premium</div>
 
             <h2 className="price">
-              <span className="old-price">$499</span> $299 <span>/Project</span>
+              <span className="old-price">$499</span> $299 <span>/Month</span>
             </h2>
 
             <ul className="features list-unstyled text-start mt-3">

@@ -58,17 +58,45 @@ const services = [
 
 
 
-  const items = [
-    "Channel Audit Report – SEO issues, optimization gaps & growth roadmap",
-    "Video SEO Optimization – Titles, descriptions, tags & metadata",
-    "Keyword Research File – Long-tail, short-tail, and low-competition keywords",
-    "CTR Optimization Guide – Thumbnail suggestions & A/B testing plan",
-    "Competitor Analysis Report – Insights to outrank winning channels",
-    "Algorithm Behavior Analysis – Retention, suggested video & timing strategy",
-    "Ranking Strategy Plan – 30-day SEO action plan",
-    "SEO Score Improvement Report – Before/after performance summary",
-    "Bonus Resources – Content ideas + thumbnail scripts"
-  ];
+   const items = [
+  {
+    title: "Channel Audit Report",
+    desc: "A complete SEO audit identifying channel-level issues, optimization gaps, and a clear growth roadmap."
+  },
+  {
+    title: "Video SEO Optimization",
+    desc: "Optimized titles, descriptions, tags, and metadata to improve discoverability and rankings."
+  },
+  {
+    title: "Keyword Research File",
+    desc: "In-depth research covering long-tail, short-tail, and low-competition keywords for targeted growth."
+  },
+  {
+    title: "CTR Optimization Guide",
+    desc: "Actionable thumbnail suggestions and a structured A/B testing plan to improve click-through rates."
+  },
+  {
+    title: "Competitor Analysis Report",
+    desc: "Insights into top-performing competitors with strategies to outrank winning channels."
+  },
+  {
+    title: "Algorithm Behavior Analysis",
+    desc: "Analysis of retention, suggested videos, and optimal publishing timing aligned with YouTube’s algorithm."
+  },
+  {
+    title: "30-Day Ranking Strategy Plan",
+    desc: "A step-by-step SEO action plan designed to improve rankings within the first 30 days."
+  },
+  {
+    title: "SEO Score Improvement Report",
+    desc: "Before-and-after performance comparison highlighting SEO score and visibility improvements."
+  },
+  {
+    title: "Bonus Resources",
+    desc: "Extra content ideas and proven thumbnail scripts to accelerate channel growth."
+  }
+];
+
 
   const splitText = (text) => {
     const [title, desc] = text.split("–");
@@ -293,51 +321,54 @@ const services = [
 
 
 
-{/* Deliverables  */}
+{/* Deliverables  */}
 
-   <section className="py-5 deliverable-wow">
-      <div className="container-fluid px-5">
+   <section className="py-5 deliverable-wow">
+      <div className="container-fluid px-5">
 
-        {/* Title */}
-        <div className="text-center mb-5">
-          <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
-          <div className="underline mx-auto"></div>
+        {/* Title */}
+        <div className="text-center mb-5">
+          <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
+          <div className="underline mx-auto"></div>
 
-          <p className="wow-subtitle text-muted mt-3 fs-5">
-            You will receive a complete YouTube SEO package designed to boost visibility,
-            rankings, and audience engagement.
-          </p>
-        </div>
+          <p className="wow-subtitle text-muted mt-3 fs-5">
+            You will receive a complete YouTube SEO package designed to boost visibility,
+            rankings, and audience engagement.
+          </p>
+        </div>
 
-        {/* Box */}
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="wow-box p-4 p-md-5">
+        {/* Box */}
+         <div className="row justify-content-center">
+      <div className="col-12">
+        <div className="wow-box p-4 p-md-5">
 
-              <h4 className='fw-bold pb-4'>My deliverables include:</h4>
+          <h4 className='fw-bold pb-4'>My deliverables include:</h4>
 
-              {items.map((item, i) => {
-                const { title, desc } = splitText(item);
-                return (
-                  <div key={i} className="wow-item d-flex mb-4">
-                    <div className="icon-wrap me-3">
-                      <FaCheckCircle className="wow-icon" />
-                    </div>
-
-                    <div>
-                      <h5 className="fw-bold mb-1 item-title">{title}</h5>
-                      <p className="text-muted mb-0 item-desc">{desc}</p>
-                    </div>
+          <div className="row">
+            {items.map((item, i) => (
+              <div key={i} className="col-md-6 mb-4">
+                <div className="wow-item d-flex">
+                  <div className="icon-wrap me-3">
+                    <FaCheckCircle className="wow-icon" />
                   </div>
-                );
-              })}
 
-            </div>
+                  <div>
+                    <h5 className="fw-bold mb-1 item-title">{item.title}</h5>
+                    <p className="text-muted mb-0 item-desc">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
+        </div>
       </div>
-    </section>     
+    </div>
+
+      </div>
+    </section>     
+            
+ 
             
 
 {/* FAQ  */}
