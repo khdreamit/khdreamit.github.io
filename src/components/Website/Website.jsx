@@ -3,8 +3,8 @@ import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
 import { FaCheck, FaTimes } from "react-icons/fa";
-import YoutubeHero from '../../assets/youtubeHero.jpg'
-import YouSeo from '../../assets/youSeo.png'
+import YoutubeHero from '../../assets/11.jpg'
+import YouSeo from '../../assets/ww.jpeg'
 import '../Youtube/youtube.css'
 import './website.css'
 import "aos/dist/aos.css";
@@ -51,7 +51,7 @@ const services = [
     icon: <FaFileAlt size={40} className="mb-3 icon"/>,
     title: 'Content Optimization',
     description: 'Enhance existing content or create new SEO-friendly content to attract more visitors.',
-    path: 'content'
+    
   },
 
 ];
@@ -149,7 +149,7 @@ const services = [
 
         {/* Website hero  */}
 
-<div className="youtube-hero d-flex align-items-center text-center">
+<div className="website-hero d-flex align-items-center text-center">
   <div className="container">
     <h1 className="fw-bold text-white mb-3">
       Your website deserves to be seen — let’s grow together
@@ -223,7 +223,8 @@ const services = [
       <div className="col-lg-6 mb-4 mb-lg-0" >
         <h1 className="fw-bold">What is Website SEO?</h1>
         <div >
-          Website SEO (Search Engine Optimization) is the practice of optimizing your website to make it easily discoverable on search engines like Google. A well-optimized site ranks higher in search results, attracts more visitors, builds trust with your audience, and creates greater growth opportunities for your business.
+          Website SEO is the process of optimizing your site to rank higher on search engines like Google, attract more visitors, build trust, and boost business growth.
+
           <br /> <br />
           <h6 className="fw-bold">SEO focuses on three key areas: </h6>
           <ul>
@@ -273,10 +274,10 @@ const services = [
           <ul className="list-unstyled">
             <h6 className='fw-bold'>Good SEO can:</h6>
             <li><span className="check-icon p-2">✔</span> <strong>Increase Visibility: </strong> People find your business faster.</li>
-            <li><span className="check-icon p-2">✔</span> <strong>Build Trust:: </strong> Websites that rank higher feel more reliable to visitors.</li>
+            <li><span className="check-icon p-2">✔</span> <strong>Build Trust: </strong> Websites that rank higher feel more reliable to visitors.</li>
             <li><span className="check-icon p-2">✔</span> <strong>Bring Free Traffic: </strong> You attract visitors naturally without paying for ads.</li>
             <li><span className="check-icon p-2">✔</span> <strong>Improve User Experience: </strong>  A well-optimized site loads faster and feels smoother.</li>
-            <li><span className="check-icon p-2">✔</span> <strong>Boost Sales & Growth: </strong> More visitors = more potential customers.</li>
+            <li><span className="check-icon p-2">✔</span> <strong>Boost Sales & Growth: </strong> More visitors more potential customers.</li>
           </ul>
         </div>
       </div>

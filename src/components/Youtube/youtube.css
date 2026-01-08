@@ -1,7 +1,7 @@
 /* Hero aria  */
 .youtube-hero {
-  background: url('../../assets/youBG.jpg') no-repeat center center/cover;
-  min-height: 50vh;
+  background: url('../../assets/youtube seo hero.jpg') no-repeat center center/cover;
+  min-height: 90vh;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
   z-index: 2;
 }
 .text-white-80 {
-  color: rgba(255,255,255,0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .youImg img {
@@ -440,14 +440,14 @@
 
 .shopify-hero{
 background: url('../../assets/shopify.jpg') no-repeat center center/cover;
-min-height:50vh;
+min-height:90vh;
 position: relative;
 }
 /* google hero background */
 
 .google-hero{
 background: url('../../assets/google ads hero.jpg') no-repeat center center/cover;
-min-height:50vh;
+min-height:90vh;
 position: relative;
 }
 
@@ -455,7 +455,21 @@ position: relative;
 
 .facebook-hero{
 background: url('../../assets/facebook ads hero.jpg') no-repeat center center/cover;
-min-height:50vh;
+min-height:90vh;
+position: relative;
+}
+/* website hero background */
+
+.website-hero{
+background: url('../../assets/website\ seo\ hero.jpg') no-repeat center center/cover;
+min-height:90vh;
+position: relative;
+}
+/* amazon hero background */
+
+.amazon-hero{
+background: url('../../assets/amazon\ hero.avif') no-repeat center center/cover;
+min-height:90vh;
 position: relative;
 }
 
