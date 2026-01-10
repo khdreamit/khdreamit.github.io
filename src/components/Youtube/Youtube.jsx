@@ -9,6 +9,7 @@ import './youtube.css'
 import "aos/dist/aos.css";
 import YouMan from '../../assets/youMan2.png'
 import ServiceImg from '../../assets/main.webp'
+import { Link } from "react-router-dom";
 import { FaSearch, FaHockeyPuck, FaTags, FaImage , FaChartBar , FaPeopleArrows , FaPuzzlePiece, FaCheckCircle, FaChevronDown} from "react-icons/fa";;
 
 
@@ -201,9 +202,14 @@ const services = [
     </p>
 
     <div className="mt-4 d-flex justify-content-center gap-3">
-      <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow">
-        Get a Free Channel Audit
-      </a>
+      <Link
+        to="/portfolio"
+        state={{ category: "YouTube SEO & Promotion" }}
+        className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow"
+      >
+        View My Portfolio
+      </Link>
+
      
       <a 
         href="#" 

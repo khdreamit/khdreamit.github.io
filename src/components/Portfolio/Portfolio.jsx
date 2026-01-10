@@ -262,7 +262,7 @@ const Portfolio = () => {
     { id: 32, title: "Social Media Management", category: "Social Media Management", image: SMM21, icon: "bi bi-people" },
 
 
-    // YouTube SEO & Promotion picture
+    // YouTube SEO & Promotion
     { id: 33, title: "YouTube SEO & Promotion", category: "YouTube SEO & Promotion", image: Y1, icon: "bi bi-youtube" },
     { id: 34, title: "YouTube SEO & Promotion", category: "YouTube SEO & Promotion", image: Y2, icon: "bi bi-upload" },
     { id: 35, title: "YouTube SEO & Promotion", category: "YouTube SEO & Promotion", image: Y3, icon: "bi bi-search" },
