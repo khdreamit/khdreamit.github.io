@@ -10,14 +10,14 @@
   background-color: #fde3b0;
 }
 .hero-section {
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 .hero-img-style {
-  max-height: 600px;
+  max-height: 550px;
 }
 .hero-text {
-  margin-top: -100px; /* প্রয়োজন অনুযায়ী adjust করো */
+  margin-top: -30px; /* প্রয়োজন অনুযায়ী adjust করো */
 }
 
 /* Dropdown hover show */

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import YouSeo from '../../assets/youSeo.png'
+import YouSeo from '../../assets/website audit plan.webp'
 
 
 const errors = [
@@ -58,12 +58,12 @@ const AuditPlan = () => {
         <div>
             <Navbar />
              <div className="portfolio-header">
-        <h1 className="text-white fw-bold ls">PORTFOLIO</h1>
+        <h1 className="text-white fw-bold ls">Website Audit Plan</h1>
 
         <div className="breadcrumb">
           <a href="/" className="breadcrumb-link">Home</a>
            <span className="breadcrumb-separator"> &lt; </span>
-          <span className="breadcrumb-current">Portfolio</span>
+          <span className="breadcrumb-current">Audit Plan</span>
         </div>
       </div>
 

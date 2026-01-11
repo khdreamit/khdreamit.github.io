@@ -89,6 +89,17 @@ body {
   position: relative;
   overflow: hidden;
 }
+.onpage-header {
+  height: 200px;
+  background: url("./assets/facebook\ ads\ hero\ \(2\).jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
 .breadcrumb {
   margin-top: 6px;
   font-size: 14px;
