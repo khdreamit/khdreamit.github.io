@@ -8,5 +8,6 @@ export default defineConfig({
     alias: {
       'react-transition-group/Transition': 'react-transition-group/esm/Transition.js'
     }
-  }, 
+  },
+  base: '/', // 👈 GitHub User Page / clean URL
 })
