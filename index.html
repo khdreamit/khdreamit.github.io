@@ -11,5 +11,17 @@
   <body>
     <div id="root"></div>
 
+
+
+    <script>
+  (function () {
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect !== location.pathname) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+
   </body>
 </html>
