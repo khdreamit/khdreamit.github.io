@@ -7,7 +7,7 @@ import { NavLink } from 'react-router';
 const Hero = () => {
   return (
     <section className="hero-bg hero-section">
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-3 px-sm-5">
         <div className="row align-items-center">
 
           {/* Text Content */}

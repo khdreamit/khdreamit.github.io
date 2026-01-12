@@ -127,7 +127,7 @@ const OnPageSeo = () => {
         </div>
                         {/* on page intro  */}                                                   
                         <div className="herobg py-5">
-                          <div className="container-fluid px-5">
+                          <div className="container-fluid px-3 px-sm-5">
                             <div className="row align-items-center youtube-bg">
                         
                               {/* Text Content */}
@@ -157,7 +157,7 @@ const OnPageSeo = () => {
 
                     {/* Organic SEO vs Paid SEO */}                    
                     <div className="py-5 feature-section">
-                      <div className="container-fluid px-5">
+                      <div className="container-fluid px-3 px-sm-5">
                         <div className="row align-items-center">
                     
                           <div className="col-lg-5 text-center mb-4 mb-lg-0">

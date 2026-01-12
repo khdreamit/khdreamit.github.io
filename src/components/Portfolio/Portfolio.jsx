@@ -502,7 +502,7 @@ const Portfolio = () => {
       </div>
 
 
-      <div className="container-fluid px-5 py-5">
+      <div className="container-fluid px-3 px-sm-5 py-5">
 
         <div className="text-center">
           <h4>Portfolio</h4>

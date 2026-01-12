@@ -28,7 +28,7 @@ const submenu = [
 
     return (
         <footer className="footer pt-5 pb-3">
-            <div className="container-fluid px-5">
+            <div className="container-fluid px-3 px-sm-5">
                 <div className="row gy-4">
 
                     {/* Content / Logo Section */}

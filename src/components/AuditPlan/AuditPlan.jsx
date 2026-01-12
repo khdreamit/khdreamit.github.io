@@ -58,7 +58,8 @@ const AuditPlan = () => {
         <div>
             <Navbar />
              <div className="portfolio-header">
-        <h1 className="text-white fw-bold ls">Website Audit Plan</h1>
+              <h1 className="text-white fw-bold ls">Website Audit Plan</h1>
+        
 
         <div className="breadcrumb">
           <a href="/" className="breadcrumb-link">Home</a>
@@ -69,7 +70,7 @@ const AuditPlan = () => {
 
                     {/* why Audit is need */}                    
                     <div className="py-5 feature-section">
-                      <div className="container-fluid px-5">
+                      <div className="container-fluid px-3 px-sm-5">
                         <div className="row align-items-center">
                     
                           <div className="col-lg-5 text-center mb-4 mb-lg-0">
@@ -90,7 +91,7 @@ const AuditPlan = () => {
 
 
                     {/* Common Errors  */}
-                    <div className="container-fluid py-5"  style={{ background: "antiquewhite" }}>
+                    <div className="container-fluid px-3 px-sm-5 py-5"  style={{ background: "antiquewhite" }}>
                         <div className="text-center mb-5">                           
                                 <h1 className="fw-bold">Issues that can stop your website from ranking on Google</h1>
                         </div>

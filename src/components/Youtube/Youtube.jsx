@@ -205,7 +205,7 @@ const services = [
       <Link
         to="/portfolio"
         state={{ category: "YouTube SEO & Promotion" }}
-        className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow"
+        className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
       >
         View My Portfolio
       </Link>
@@ -217,7 +217,7 @@ const services = [
           e.preventDefault();
           scrollToSection('seePrice');
         }} 
-        className="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow"
+        className="btn btn-outline-light fw-semibold px-2 px-sm-4py-2 rounded-pill shadow"
       >
         See Packages
       </a>
@@ -265,7 +265,7 @@ const services = [
    {/* youtube intro  */}
 
 <div className="herobg py-5">
-  <div className="container-fluid px-5">
+  <div className="container-fluid px-3 px-sm-5">
     <div className="row align-items-center youtube-bg">
 
       {/* Text Content */}
@@ -295,7 +295,7 @@ const services = [
 {/* why youtube seo need */}
 
 <div className="py-5 feature-section">
-  <div className="container-fluid px-5">
+  <div className="container-fluid px-3 px-sm-5">
     <div className="row align-items-center">
 
       <div className="col-lg-5 text-center mb-4 mb-lg-0">
@@ -333,7 +333,7 @@ const services = [
 {/* service  */}
 
 <section className="py-5 service">
-  <div className="container-fluid px-5">
+  <div className="container-fluid px-3 px-sm-5">
 
     {/* Service Container */}
     <div className="serviceCont mb-5">
@@ -420,7 +420,7 @@ const services = [
 {/* Deliverables  */}
 
    <section className="py-5 deliverable-wow">
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-3 px-sm-5">
 
         {/* Title */}
         <div className="text-center mb-5">
@@ -436,7 +436,7 @@ const services = [
         {/* Box */}
          <div className="row justify-content-center">
       <div className="col-12">
-        <div className="wow-box p-4 p-md-5">
+        <div className="wow-box p-2 p-md-5">
 
           <h4 className='fw-bold pb-4'>My deliverables include:</h4>
 
@@ -444,7 +444,7 @@ const services = [
             {items.map((item, i) => (
               <div key={i} className="col-md-6 mb-4">
                 <div className="wow-item d-flex">
-                  <div className="icon-wrap me-3">
+                  <div className="icon-wrap me-3 p-1 p-sm-2">
                     <FaCheckCircle className="wow-icon" />
                   </div>
 
@@ -470,7 +470,7 @@ const services = [
 
     {/* pricing plan  */}
     <div className='bacgkround' id="seePrice">
-    <div className="container-fluid px-5 py-5">
+    <div className="container-fluid px-3 px-sm-5 py-5">
       <div>
         <h2 className="text-center fw-bold mb-2">YouTube SEO Pricing Plans</h2>
        <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>
@@ -550,7 +550,7 @@ const services = [
 {/* FAQ  */}
 
    <section className="py-5 faq-section">
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-3 px-sm-5">
 
         <h1 className="text-center mb-5 faq-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
 

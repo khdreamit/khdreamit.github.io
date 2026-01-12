@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin, FaYoutube, FaWhatsappSquare 
 const SocialIcon = () => {
     return (
         <div className='social'>
-        <div className="container-fluid px-5">
+        <div className="container-fluid px-3 px-sm-5">
             <h4 className='fw-bold text-center pt-5'>Click the link below to join us!</h4>
 
             <div className="row py-5 g-3 text-center">
