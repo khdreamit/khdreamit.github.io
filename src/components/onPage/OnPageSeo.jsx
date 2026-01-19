@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import YouSeo from '../../assets/youSeo.png'
-import YoutubeHero from '../../assets/youtubeHero.jpg'
+import YouSeo from '../../assets/on page 11.jpg'
+import YoutubeHero from '../../assets/on page 11.jpeg'
 
 
 const services = [
@@ -111,6 +111,18 @@ const services = [
 
 
 
+ const tools = [
+    { name: "Yoast SEO", type: "Plugin", color: "#8e44ad" },
+    { name: "Rank Math", type: "Plugin", color: "#1abc9c" },
+    { name: "SEMRush", type: "SEO Tools", color: "#f5b535" },
+    { name: "Ahrefs", type: "SEO Tools", color: "#0d6efd" },
+    { name: "Google Search Console", type: "Google Tool", color: "#198754" },
+    { name: "Google Keyword Planner", type: "Google Tool", color: "#20c997" },
+    { name: "SEO Press, Quake, Site Checkup", type: "SEO Utilities", color: "#fd7e14" },
+    { name: "All in One Schema Rich Snippets", type: "Schema Plugin", color: "#dc3545" },
+    { name: "Broken Links Checker & More", type: "Maintenance Tools", color: "#6f42c1" }
+  ];
+
 const OnPageSeo = () => {
     return (
       
@@ -153,7 +165,7 @@ const OnPageSeo = () => {
                             </div>
                           </div>
                         </div>
-
+                    
 
                     {/* Organic SEO vs Paid SEO */}                    
                     <div className="py-5 feature-section">
@@ -198,6 +210,32 @@ const OnPageSeo = () => {
                         </div>
                     </div>
 
+                      {/* Tools  */}
+                    <div style={{background: "#faf9f6"}}>                  
+                       <div className="container py-5">
+                        <div className="text-center mb-5">
+                            <h2 className="fw-bold">What tools do I use?</h2>
+                            <p className="text-muted">
+                            Tools professionals use to analyze and improve search performance
+                            </p>
+                        </div>
+
+                        <div className="row g-4">
+                            {tools.map((tool, index) => (
+                            <div className="col-lg-4 col-md-6" key={index}>
+                                <div className="p-4 bg-white shadow-sm rounded-2 h-100"
+                                 style={{borderLeft: '6px solid #f5b535'}} 
+                                >
+                                <div className="d-flex justify-content-between align-items-start">
+                                    <h5 className="fw-semibold mb-2">{tool.name}</h5>               
+                                </div>      
+                                
+                                </div>
+                            </div>
+                            ))}
+                        </div>
+                        </div>
+                    </div>
 
 
             <Footer />

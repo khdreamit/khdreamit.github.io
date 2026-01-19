@@ -99,6 +99,16 @@ body {
   position: relative;
   overflow: hidden;
 }
+.Tecnical-header {
+  height: 200px;
+  background: url("./assets/tecnical\ seo.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
 
 .breadcrumb {
   margin-top: 6px;
