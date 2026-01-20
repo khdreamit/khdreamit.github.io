@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import YoutubeHero from '../../assets/youtubeHero.jpg'
+import YoutubeHero from '../../assets/1.webp'
 
 
 const services = [
