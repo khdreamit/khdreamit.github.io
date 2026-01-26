@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import YoutubeHero from '../../assets/youtubeHero.jpg'
+import YoutubeHero from '../../assets/local.webp'
 
 
 const services = [
@@ -140,6 +140,15 @@ const LocalSeo = () => {
     return (
         <div>
             <Navbar />
+            <div className="offpage-header">
+                  <h1 className="text-white fw-bold ls">On-page SEO</h1>
+
+              <div className="breadcrumb">
+                 <a href="/" className="breadcrumb-link">Home</a>
+                 <span className="breadcrumb-separator"> &lt; </span>
+                <span className="breadcrumb-current">local seo</span>
+              </div>
+            </div>
                    
                         {/* local page intro  */}                                                   
                         <div className="herobg py-5">

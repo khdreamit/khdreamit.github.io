@@ -23,25 +23,30 @@ const Navbar = () => {
         { path: "/skills", label: "My Skills" },
 
         {
-            label: "Service",
-            submenu: [
-                { path: "/facebook", label: "Facebook Ads" },
-                { path: "/google", label: "Google Ads" },
-                { path: "/shopify", label: "Shopify Ads" },
-                { path: "/youtube", label: "YouTube SEO" },
-                { path: "/website", label: "Website SEO" },
-                { path: "/amazon", label: "Amazon Book Promotion" },
-                { path: "/socialMediaManage", label: "Social Media Management" },
-            ]
-        },
+  label: "Service",
+  submenu: [
+    { path: "/facebook", label: "Facebook Ads" },
+    { path: "/google", label: "Google Ads" },
+    { path: "/shopify", label: "Shopify Ads" },
+    { path: "/youtube", label: "YouTube SEO" },
 
-        {
-            label: "Client",
-            submenu: [
-                { path: "/meeting", label: "Client Meeting" },
-                { path: "/review", label: "Client Review" }
-            ]
-        },
+    {
+      label: "Website SEO",
+      submenu: [
+        { path: "/auditplan", label: "Audit Plan" },
+        { path: "/onpage", label: "On-Page SEO" },
+        { path: "/technical", label: "Technical SEO" },
+        { path: "/offpage", label: "Off-Page SEO" },
+        { path: "/local", label: "Local SEO" },
+      ]
+    },
+
+    { path: "/amazon", label: "Amazon Book Promotion" },
+    { path: "/socialMediaManage", label: "Social Media Management" },
+  ]
+},
+
+
 
 
         { path: "/about", label: "About" },
@@ -51,6 +56,7 @@ const Navbar = () => {
     const baseStyle = "px-3 py-2 rounded";
     const activeStyle = "activeColor text-white";
     const hoverStyle = "hover-activeColor";
+    
 
     return (
         <nav className="navbar navbar-expand-lg shadow-sm py-3 sticky-top background custom-navbar-padding">
@@ -87,13 +93,37 @@ const Navbar = () => {
                                         {link.label}
                                     </span>
                                     <ul className="dropdown-menu hero-bg">
-                                        {link.submenu.map((sub, i) => (
-                                            <li key={i}>
-                                                <NavLink className="dropdown-item" to={sub.path}>
-                                                    {sub.label}
-                                                </NavLink>
-                                            </li>
-                                        ))}
+                                        {link.submenu.map((sub, i) =>
+  sub.submenu ? (
+    <li key={i} className="dropdown-submenu">
+    <NavLink
+  to="/website"  // যেই page তুমি দিতে চাও
+  className="dropdown-item fw-bold d-flex justify-content-between align-items-center"
+>
+  Website SEO
+  <span>▸</span>
+</NavLink>
+
+
+      <ul className="dropdown-menu sub-menu">
+        {sub.submenu.map((child, j) => (
+          <li key={j}>
+            <NavLink className="dropdown-item" to={child.path}>
+              {child.label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </li>
+  ) : (
+    <li key={i}>
+      <NavLink className="dropdown-item" to={sub.path}>
+        {sub.label}
+      </NavLink>
+    </li>
+  )
+)}
+
                                     </ul>
                                 </li>
                             ) : (
@@ -194,6 +224,7 @@ const Navbar = () => {
 
             </div>
         </nav>
+        
     );
 };
 

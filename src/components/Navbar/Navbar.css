@@ -20,10 +20,7 @@
   margin-top: -30px; /* প্রয়োজন অনুযায়ী adjust করো */
 }
 
-/* Dropdown hover show */
-.hover-dropdown:hover .dropdown-menu {
-  display: block;
-}
+
 
 .dropdown-menu .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.08);  
@@ -101,9 +98,7 @@
     .dropdown-menu {
         display: none; 
     }
-    .hover-dropdown:hover .dropdown-menu {
-        display: block; 
-    }
+    
 }
 
 
@@ -111,4 +106,107 @@
     #navbarNavLg {
         display: none !important; 
     }
+}
+/* ====== 2nd Level Dropdown (Website SEO submenu) ====== */
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-item {
+  cursor: pointer;
+}
+
+/* Submenu hidden by default */
+.dropdown-submenu .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 220px;
+  background-color: #fde3b0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  z-index: 9999;
+}
+
+/* Hover করলে submenu দেখাবে */
+.dropdown-submenu:hover .sub-menu {
+  display: block;
+}
+
+/* Submenu item hover effect */
+.sub-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+/* ========================= */
+/* SERVICE MAIN DROPDOWN */
+/* ========================= */
+
+.navbar-nav > .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* ========================= */
+/* WEBSITE SEO SUBMENU ONLY */
+/* ========================= */
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 220px;
+  background-color: #fde3b0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  z-index: 9999;
+}
+
+.dropdown-submenu:hover > .sub-menu {
+  display: block;
+}
+
+/* ========================= */
+/* MAKE ALL DROPDOWN TEXT BOLD */
+/* ========================= */
+
+/* Service / main dropdown button */
+.navbar .nav-link {
+  font-weight: 700;
+}
+
+/* First level dropdown items (Facebook Ads, Google Ads etc) */
+.dropdown-menu .dropdown-item {
+  font-weight: 600;
+}
+
+/* Website SEO button */
+.dropdown-submenu > .dropdown-item {
+  font-weight: 700;
+}
+
+/* Website SEO submenu items (Audit Plan etc) */
+.sub-menu .dropdown-item {
+  font-weight: 600;
+}
+/* পুরো navbar বা body থেকে horizontal scroll বন্ধ করতে */
+body, html {
+    overflow-x: hidden;  /* horizontal scroll disable */
+}
+
+/* Dropdown submenu overflow fix */
+.dropdown-submenu .sub-menu {
+    left: auto;      /* left 100% না দিয়ে auto */
+    right: -165px;     /* একটু adjust করে parent এর পাশে রাখবে */
+    white-space: nowrap; /* text wrap না হোক */
+    max-width: 220px;    /* submenu এর max width নির্ধারণ */
 }
