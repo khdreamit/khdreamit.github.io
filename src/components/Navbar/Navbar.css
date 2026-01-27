@@ -181,22 +181,22 @@
 
 /* Service / main dropdown button */
 .navbar .nav-link {
-  font-weight: 700;
+  font-weight: 550;
 }
 
 /* First level dropdown items (Facebook Ads, Google Ads etc) */
 .dropdown-menu .dropdown-item {
-  font-weight: 600;
+  font-weight: 550;
 }
 
 /* Website SEO button */
 .dropdown-submenu > .dropdown-item {
-  font-weight: 700;
+  font-weight: 550;
 }
 
 /* Website SEO submenu items (Audit Plan etc) */
 .sub-menu .dropdown-item {
-  font-weight: 600;
+  font-weight: 550;
 }
 /* পুরো navbar বা body থেকে horizontal scroll বন্ধ করতে */
 body, html {
