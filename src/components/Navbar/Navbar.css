@@ -164,7 +164,7 @@
   left: 100%;
   display: none;
   min-width: 220px;
-  background-color: #fde3b0;
+  background-color: #dcd1ba;
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   padding: 8px 0;
@@ -206,7 +206,74 @@ body, html {
 /* Dropdown submenu overflow fix */
 .dropdown-submenu .sub-menu {
     left: auto;      /* left 100% না দিয়ে auto */
-    right: -165px;     /* একটু adjust করে parent এর পাশে রাখবে */
+    right: -195px;     /* একটু adjust করে parent এর পাশে রাখবে */
     white-space: nowrap; /* text wrap না হোক */
     max-width: 220px;    /* submenu এর max width নির্ধারণ */
+}
+/* ========================= */
+/* TOP NAV HOVER ANIMATION */
+/* ========================= */
+
+.navbar-nav > .nav-item > .nav-link {
+  position: relative;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* hover করলে লেখা একটু উপরে উঠবে */
+.navbar-nav > .nav-item > .nav-link:hover {
+  transform: translateY(-4px);
+}
+.navbar-nav > .nav-item > .nav-link:hover {
+  transform: translateY(-4px);
+  text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/* ========================= */
+/* ICON FLOAT ON HOVER */
+/* ========================= */
+
+.navbar-nav > .nav-item > .nav-link {
+  position: relative;
+  overflow: visible;
+}
+
+/* icon default hidden */
+.navbar-nav > .nav-item > .nav-link::before {
+  content: "★"; /* default icon */
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  opacity: 0;
+  font-size: 14px;
+  color: #000000;
+  transition: all 0.25s ease;
+}
+
+/* hover করলে icon ভেসে উঠবে */
+.navbar-nav > .nav-item > .nav-link:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+.navbar-nav > .nav-item:nth-child(1) > .nav-link::before {
+  content: "🏠"; /* Home */
+}
+
+.navbar-nav > .nav-item:nth-child(2) > .nav-link::before {
+  content: "💼"; /* Portfolio */
+}
+
+.navbar-nav > .nav-item:nth-child(3) > .nav-link::before {
+  content: "🛠"; /* My Skills */
+}
+
+.navbar-nav > .nav-item:nth-child(4) > .nav-link::before {
+  content: "⚙️"; /* Service */
+}
+
+.navbar-nav > .nav-item:nth-child(5) > .nav-link::before {
+  content: "👤"; /* About */
+}
+
+.navbar-nav > .nav-item:nth-child(6) > .nav-link::before {
+  content: "📞"; /* Contact */
 }
