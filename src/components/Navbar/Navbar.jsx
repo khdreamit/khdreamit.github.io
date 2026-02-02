@@ -3,6 +3,24 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
 import Logo from '../../assets/Logo.jpg'
+import {
+  FaFacebookF,
+  FaGoogle,
+  FaShopify,
+  FaYoutube,
+  FaGlobe,
+  FaAmazon,
+  FaShareAlt
+} from "react-icons/fa";
+import {
+  FaClipboardCheck,
+  FaFileCode,
+  FaCogs,
+  FaLink,
+  FaMapMarkerAlt
+} from "react-icons/fa";
+
+
 
 const Navbar = () => {
     
@@ -94,32 +112,53 @@ const Navbar = () => {
                                     </span>
                                     <ul className="dropdown-menu hero-bg">
                                         {link.submenu.map((sub, i) =>
-  sub.submenu ? (
-    <li key={i} className="dropdown-submenu">
-    <NavLink
-  to="/website"  // যেই page তুমি দিতে চাও
-  className="dropdown-item fw-bold d-flex justify-content-between align-items-center"
->
-  Website SEO
-  <span>▸</span>
-</NavLink>
+                sub.submenu ? (
+                    <li key={i} className="dropdown-submenu">
+                    <NavLink
+                to="/website"  // যেই page তুমি দিতে চাও
+                className="dropdown-item fw-bold d-flex justify-content-between align-items-center"
+                >
+                Website SEO
+                <span>▸</span>
+                </NavLink>
 
 
       <ul className="dropdown-menu sub-menu">
         {sub.submenu.map((child, j) => (
-          <li key={j}>
-            <NavLink className="dropdown-item" to={child.path}>
-              {child.label}
-            </NavLink>
-          </li>
-        ))}
+  <li key={j}>
+    <NavLink className="dropdown-item dropdown-animate" to={child.path}>
+      <span className="dropdown-text">{child.label}</span>
+
+      <span className="dropdown-icon-right">
+        {child.label === "Audit Plan" && <FaClipboardCheck />}
+        {child.label === "On-Page SEO" && <FaFileCode />}
+        {child.label === "Technical SEO" && <FaCogs />}
+        {child.label === "Off-Page SEO" && <FaLink />}
+        {child.label === "Local SEO" && <FaMapMarkerAlt />}
+      </span>
+
+    </NavLink>
+  </li>
+))}
+
       </ul>
     </li>
   ) : (
     <li key={i}>
-      <NavLink className="dropdown-item" to={sub.path}>
-        {sub.label}
-      </NavLink>
+      <NavLink className="dropdown-item dropdown-animate" to={sub.path}>
+            <span className="dropdown-text">{sub.label}</span>
+
+            <span className="dropdown-icon-right">
+                {sub.label === "Facebook Ads" && <FaFacebookF />}
+                {sub.label === "Google Ads" && <FaGoogle />}
+                {sub.label === "Shopify Ads" && <FaShopify />}
+                {sub.label === "YouTube SEO" && <FaYoutube />}
+                {sub.label === "Amazon Book Promotion" && <FaAmazon />}
+                {sub.label === "Social Media Management" && <FaShareAlt />}
+            </span>
+        </NavLink>
+
+
     </li>
   )
 )}
