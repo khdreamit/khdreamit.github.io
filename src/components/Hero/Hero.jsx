@@ -20,9 +20,10 @@ const Hero = () => {
 
 
             <div className="mt-4 d-flex gap-3">
-            <NavLink to="/about" className="btn btn-dark px-4 py-2">
-              Gets More
+            <NavLink to="/about" className="btn btn-dark px-4 py-2 btn-3d">
+              Get More
             </NavLink>
+
             </div>
 
           </div>

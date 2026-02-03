@@ -278,6 +278,66 @@ body {
 }
 
 
+/*এটা Home এর "get more" CSS*/
+/* eta Home er get more er CSS*/
+
+
+.btn-3d {
+  position: relative;
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 8px 0 #000000,
+    0 8px 15px rgb(0, 0, 0);
+}
+
+.btn-3d:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 0 #ff8c00,
+    0 12px 20px rgb(0, 0, 0);
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 4px 0 #000000,
+    0 4px 8px rgb(0, 0, 0);
+}
+/*...........*************/
+
+
+/* =============================== */
+/* এটা portfolio এর all বাটন এর CSS 3D colour er css */
+/* =============================== */
+
+.portfolio-btn {
+  position: relative;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 6px 0 rgb(255, 255, 255),
+    0 10px 20px rgb(255, 255, 255);
+}
+
+
+.portfolio-btn:hover {
+  transform: translateY(-6px) translateZ(12px);
+  box-shadow:
+    0 12px 0 rgba(0, 0, 0, 0.3),
+    0 18px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.portfolio-btn:active {
+  transform: translateY(2px) translateZ(0);
+  box-shadow:
+    0 4px 0 rgb(0, 0, 0),
+    0 6px 10px rgb(0, 0, 0);
+}
+
 /* import "aos/dist/aos.css";
 
 data-aos="zoom-in"

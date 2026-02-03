@@ -513,13 +513,16 @@ const Portfolio = () => {
 
         <div className="d-flex justify-content-center gap-3 my-4 flex-wrap">
           {portfolioBTN.map((btn) => (
-            <button
-              key={btn.id}
-              onClick={() => handleFilter(btn.title)}
-              className={`btn px-4 py-2 ${activeBtn === btn.title ? "btn-primary" : "btn-outline-primary"}`}
-            >
-              {btn.title}
-            </button>
+           <button
+                  key={btn.id}
+                  onClick={() => handleFilter(btn.title)}
+                  className={`btn px-4 py-2 portfolio-btn ${
+                    activeBtn === btn.title ? "btn-primary" : "btn-outline-primary"
+                  }`}
+                >
+                  {btn.title}
+          </button>
+
           ))}
         </div>
 
