@@ -3,12 +3,12 @@ import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
 import { FaCheck, FaTimes } from "react-icons/fa";
-import YoutubeHero from '../../assets/youtubeHero.jpg'
+import YoutubeHero from '../../assets/w.jpg'
 import YouSeo from '../../assets/youSeo.png'
 import '../Youtube/youtube.css'
 import "aos/dist/aos.css";
 import YouMan from '../../assets/youMan2.png'
-import ServiceImg from '../../assets/Youtube.jpg'
+import { Link } from "react-router-dom";
 import { FaSearch, FaHockeyPuck, FaTags, FaImage , FaChartBar , FaPeopleArrows , FaPuzzlePiece, FaCheckCircle, FaChevronDown} from "react-icons/fa";;
 
 
@@ -18,89 +18,105 @@ const Amazon = () => {
 
 const services = [
   {
-    title: "Complete YouTube Channel Audit",
+    title: "Amazon PPC Advertising",
     icon: <FaSearch />,
     items: [
-      "Full review of channel settings, branding, and structure",
-      "SEO score analysis for each video",
-      "Identification of issues harming visibility or ranking",
-      "Audience retention and watch-time audit",
-      "Competitor gap analysis",
-      "Actionable recommendations for improvement",
+      "Keyword-targeted Amazon ads",
+      "Sponsored Product campaigns",
+      "Budget-friendly ad setup",
+      "Daily performance monitoring",
+      "Sales-focused optimization",
     ],
   },
   {
-    title: "Keyword Research (Niche + Video-Level)",
+    title: "Book Listing Optimization",
     icon: <FaHockeyPuck />,
     items: [
-      "In-depth niche keyword analysis",
-      "Long-tail keyword discovery",
-      "High-intent keyword selection",
-      "Competitor keyword comparison",
-      "Click-boost title keyword suggestions",
-      "Full keyword list delivery (Excel/Google Sheet)",
+      "SEO-friendly book description",
+      "Keyword research & placement",
+      "Improved title & subtitle structure",
+      "Category optimization",
+      "Better discoverability on Amazon",
     ],
   },
   {
-    title: "Title, Description & Tags Optimization",
+    title: "Reader Targeting",
     icon: <FaTags  />,
     items: [
-      "SEO-friendly title writing",
-      "High-ranking keyword placement",
-      "Engaging description with proper structure",
-      "Hashtag optimization",
-      "Tag creation for maximum discoverability",
-      "Compliance with YouTube SEO best practices",
+      "Reach the right readers by genre",
+      "Interest-based audience targeting",
+      "Reader-friendly marketing approach",
+      "No spam or fake traffic",
+      "Real reader engagement",
     ],
   },
   {
-    title: "Thumbnail & CTR Improvement",
+    title: "Book Launch Promotion",
     icon: <FaImage />,
     items: [
-      "CTR analysis (click-through rate review)",
-      "Thumbnail problem detection",
-      "Color, design & clarity suggestions",
-      "A/B thumbnail guidance",
-      "Title–thumbnail alignment strategy",
-      "Actionable recommendations for improvement",
+      "New book launch strategy",
+      "Early visibility boost",
+      "Launch-day traffic support",
+      "Ranking-focused promotion",
+      "Smooth & stress-free launch",
     ],
   },
   {
-    title: "Video Ranking Strategy",
+    title: "Review Growth Support",
     icon: <FaChartBar />,
     items: [
-      "Search ranking strategy",
-      "Suggested video strategy",
-      "Browse feature strategy",
-      "Upload timing & frequency optimization",
-      "Algorithm-friendly metadata setup",
-      "First 30 minutes engagement plan",
+      "Ethical review growth methods",
+      "Reader engagement campaigns",
+      "Review visibility improvement",
+      "Trust-building strategies",
+      "Long-term credibility support",
     ],
   },
   {
-    title: "Competitor Research",
+    title: "Social Media Promotion",
     icon: <FaPeopleArrows  />,
     items: [
-      "Competitor performance breakdown",
-      "Their ranking keywords",
-      "Their CTR, retention & metadata analysis",
-      "Strategy to outperform competitors",
-      "Market gap exploitation",
-      "Actionable recommendations for improvement",
+      "Facebook book promotion",
+      "Instagram reader targeting",
+      "Genre-based audience reach",
+      "Soft & natural promotion",
+      "Increased book awareness",
     ],
   },
   {
-    title: "YouTube Algorithm Optimization",
+    title: "Kindle & eBook Promotion",
     icon: <FaPuzzlePiece  />,
     items: [
-      "Search + Suggested algorithm alignment",
-      "Session time improvement strategy",
-      "Audience retention optimization",
-      "Watch-time growth plan",
-      "Algorithm-friendly content structure",
-      "Actionable recommendations for improvement",
+      "Kindle-focused marketing",
+      "eBook visibility boost",
+      "Price-based promotion strategy",
+      "Kindle reader targeting",
+      "Increased downloads & reads",
     ],
   },
+  {
+  title: "Discount & Deal Promotion",
+  icon: <FaChartBar />,
+  items: [
+    "Limited-time discount campaigns",
+    "Deal-based traffic boost",
+    "Reader attraction strategy",
+    "Sales spike support",
+    "Smart pricing promotion",
+  ],
+},
+{
+  title: "Author Brand Building",
+  icon: <FaCheckCircle />,
+  items: [
+    "Author visibility growth",
+    "Brand trust development",
+    "Consistent promotion strategy",
+    "Long-term audience building",
+    "Professional author presence",
+  ],
+},
+
 ]; 
 
 
@@ -163,37 +179,43 @@ const services = [
     };
 
 
-    return (
+             return (
     <div>
-        <Navbar />
+          <Navbar />
 
-        {/* youtube hero  */}
+{/* youtube hero  */}
 
-<div className="amazon-hero d-flex align-items-center text-center">
-  <div className="container">
-    <h1 className="fw-bold text-white mb-3">
-      YouTube SEO Services – Grow Your Channel Faster
-    </h1>
-    <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
-      Data-driven optimization for channels and videos: full audits, keyword strategy,
-      metadata fixes, thumbnail & retention improvements.
-    </p>
+      <div className="youtube-hero d-flex align-items-center text-center">
+        <div className="container">
+          <h1 className="fw-bold text-white mb-3">
+              We Help the Right Readers Discover Your Book
+           </h1>
+                <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
+                   Gentle, Honest Amazon Book Promotion — No Pressure, Just Results
+                </p>
+      <div className="mt-4 d-flex justify-content-center gap-3">
+                  <Link
+                    to="/portfolio"
+                    state={{ category: "Amazon Book Promotion" }}
+                    className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
+                    >
+                    View My Portfolio
+                  </Link>
 
-    <div className="mt-4 d-flex justify-content-center gap-3">
-      <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow">
-        Get a Free Channel Audit
-      </a>
-      <a href="#" onClick={(e) => {
-       e.preventDefault();
-          scrollToSection('seePrice');
-        }} 
-        className="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow"
-      >
-        See Packages
-      </a>
-    </div>
-  </div>
-</div>
+          
+                      <a 
+                          href="#" 
+                          onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection('seePrice');
+                          }} 
+                          className="btn btn-outline-light fw-semibold px-2 px-sm-4py-2 rounded-pill shadow"
+                      >
+                        See Packages
+                      </a>
+            </div>
+         </div>
+      </div>
 
 
 {/* Youtuber intro  */}
@@ -240,12 +262,12 @@ const services = [
 
       {/* Text Content */}
       <div className="col-lg-6 mb-4 mb-lg-0" >
-        <h1 className="fw-bold">What is YouTube SEO?</h1>
+        <h1 className="fw-bold">What is Amazon Book Promotion?</h1>
         <p className="lead">
-          YouTube SEO is the process of optimizing your videos, channel, and content so that they rank higher in YouTube search results and related videos. Since YouTube is the second largest search engine in the world (after Google), proper SEO ensures more visibility, views, and subscribers organically — without paying for ads.
+          Amazon Book Promotion helps your book reach the readers who will truly enjoy it. With millions of books on Amazon, even the best stories can get lost—but with the right promotion, your book can gain visibility, attract honest reviews, and connect with readers naturally, without pushy ads or hype.
         </p>
         <a
-          href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22"
+          href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hello%2C%20how%20to%20are%20you?%20%22"
           className="btn mt-3 hero-btn"
         >
           Contact On WhatsApp
@@ -273,22 +295,23 @@ const services = [
       </div>
 
       <div className="col-lg-7">
-        <h2 className="fw-bold mb-3">Why YouTube SEO is Important?</h2>
+        <h2 className="fw-bold mb-3">Why Amazon Book Promotion is Important?</h2>
         <p className="text-muted">
-          YouTube SEO helps your content rank higher in search & suggested results,
-          increasing organic views, engagement, and long-term channel growth without relying on paid promotions.
+          Promoting your book on Amazon is the key to reaching the right readers, gaining visibility, and growing your audience. With the right promotion, your story gets noticed, readers find it easily, and your book can truly shine.
         </p>
 
         <div className="benefit-box p-4 rounded shadow-sm">
           <ul className="list-unstyled">
-            <li><span className="check-icon">✔</span> Higher search rankings on YouTube & Google</li>
-            <li><span className="check-icon">✔</span> More organic views without paid ads</li>
-            <li><span className="check-icon">✔</span> Better audience retention & watch-time</li>
-            <li><span className="check-icon">✔</span> Faster subscriber & community growth</li>
-            <li><span className="check-icon">✔</span> Higher click-through rate via optimized metadata</li>
-            <li><span className="check-icon">✔</span> Evergreen long-term ranking & traffic</li>
-            <li><span className="check-icon">✔</span> Better monetization & sponsorship deals</li>
-            <li><span className="check-icon">✔</span> Increased credibility & niche authority</li>
+            <li><span className="check-icon">✔</span> Reach the readers who will love your book.</li>
+            <li><span className="check-icon">✔</span> Get your book noticed in a crowded marketplace.</li>
+            <li><span className="check-icon">✔</span> Increase your book sales naturally.</li>
+            <li><span className="check-icon">✔</span> Build credibility with honest reviews.</li>
+            <li><span className="check-icon">✔</span> Connect with your ideal audience easily.</li>
+            <li><span className="check-icon">✔</span> Make your book visible to people searching for it.</li>
+            <li><span className="check-icon">✔</span> Turn a good book into a bestseller opportunity.</li>
+            <li><span className="check-icon">✔</span> Promote without being pushy or spammy.</li>
+            <li><span className="check-icon">✔</span> Save time and focus on writing, not marketing.</li>
+            <li><span className="check-icon">✔</span> Give your story the attention it deserves.</li>
           </ul>
         </div>
       </div>
@@ -343,43 +366,36 @@ const services = [
     </div>
 
     {/* ---- LAST ROW (1 BOX + IMAGE) ---- */}
-    <div className="row g-5 mt-3">
+   {/* ---- LAST SERVICES (AUTO) ---- */}
+<div className="row g-5 mt-3">
+  {services.slice(6).map((service, idx) => (
+    <div key={idx} className="col-lg-4 col-md-6">
+      <div className="service-card card text-center border-0 pt-5 position-relative h-100">
 
-      {/* Single Box (7th item) */}
-      <div className="col-lg-4 col-md-6">
-        <div className="service-card card text-center border-0 pt-5 position-relative h-100">
+        <div className="icon-circle position-absolute top-0 start-50 translate-middle shadow-sm">
+          {service.icon}
+        </div>
 
-          <div className="icon-circle position-absolute top-0 start-50 translate-middle shadow-sm">
-            {services[6].icon}
-          </div>
+        <div className="card-body">
+          <h4 className="card-title mb-3 fw-bold">{service.title}</h4>
 
-          <div className="card-body">
-            <h4 className="card-title mb-3 fw-bold">{services[6].title}</h4>
-
-            <ul className="list-unstyled text-start">
-              {services[6].items.map((item, i) => (
-                <li key={i} className="mb-2 d-flex align-items-center">
-                  <FaCheck className="text-secondary me-2 fs-5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-          </div>
+          <ul className="list-unstyled text-start">
+            {service.items.map((item, i) => (
+              <li key={i} className="mb-2 d-flex align-items-center">
+                <FaCheck className="text-secondary me-2 fs-5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
 
         </div>
+  
       </div>
-
-      {/* IMAGE → 2 COLUMN SPACE */}
-      <div className="col-lg-8 col-md-6 d-flex align-items-center">
-        <img
-          src={ServiceImg}
-          alt=""
-          className="img-fluid w-100 rounded last-row-img"
-        />
-      </div>
-
     </div>
+  ))}
+</div>
+
+
 
   </div>
 </section>

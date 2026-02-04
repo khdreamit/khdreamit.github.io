@@ -9,6 +9,7 @@ import '../Youtube/youtube.css'
 import "aos/dist/aos.css";
 import YouMan from '../../assets/youMan2.png'
 import ServiceImg from '../../assets/Youtube.jpg'
+import { Link } from "react-router-dom";
 import { FaSearch, FaHockeyPuck, FaTags, FaImage , FaChartBar , FaPeopleArrows , FaPuzzlePiece, FaCheckCircle, FaChevronDown} from "react-icons/fa";;
 
 
@@ -171,33 +172,38 @@ const services = [
 
         {/* youtube hero  */}
 
-<div className="SMM-hero d-flex align-items-center text-center">
-  <div className="container">
-    <h1 className="fw-bold text-white mb-3">
-      YouTube SEO Services – Grow Your Channel Faster
-    </h1>
-    <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
-      Data-driven optimization for channels and videos: full audits, keyword strategy,
-      metadata fixes, thumbnail & retention improvements.
-    </p>
+      <div className="youtube-hero d-flex align-items-center text-center">
+        <div className="container">
+          <h1 className="fw-bold text-white mb-3">
+              YouTube SEO Services – Grow Your Channel Faster
+          </h1>
+                <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
+                   Data-driven optimization for channels and videos: full audits, keyword strategy,
+                   metadata fixes, thumbnail & retention improvements.
+                </p>
+            <div className="mt-4 d-flex justify-content-center gap-3">
+                  <Link
+                    to="/portfolio"
+                    state={{ category: "Amazon Book Promotion" }}
+                    className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
+                    >
+                    View My Portfolio
+                  </Link>
 
-    <div className="mt-4 d-flex justify-content-center gap-3">
-      <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow">
-        Get a Free Channel Audit
-      </a>
-      <a 
-      href="#" 
-       onClick={(e) => {
-       e.preventDefault();
-       scrollToSection('seePrice');
-       }} 
-       className="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill shadow"
-       >
-       See Packages
-      </a>
-    </div>
-  </div>
-</div>
+          
+                      <a 
+                          href="#" 
+                          onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection('seePrice');
+                          }} 
+                          className="btn btn-outline-light fw-semibold px-2 px-sm-4py-2 rounded-pill shadow"
+                      >
+                        See Packages
+                      </a>
+            </div>
+         </div>
+      </div>
 
 
 {/* Youtuber intro  */}
