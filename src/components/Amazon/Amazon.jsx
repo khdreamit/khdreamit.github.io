@@ -121,44 +121,72 @@ const services = [
 
 
 
-  const items = [
-    "Channel Audit Report – SEO issues, optimization gaps & growth roadmap",
-    "Video SEO Optimization – Titles, descriptions, tags & metadata",
-    "Keyword Research File – Long-tail, short-tail, and low-competition keywords",
-    "CTR Optimization Guide – Thumbnail suggestions & A/B testing plan",
-    "Competitor Analysis Report – Insights to outrank winning channels",
-    "Algorithm Behavior Analysis – Retention, suggested video & timing strategy",
-    "Ranking Strategy Plan – 30-day SEO action plan",
-    "SEO Score Improvement Report – Before/after performance summary",
-    "Bonus Resources – Content ideas + thumbnail scripts"
-  ];
+const items = [
+  {
+    title: "Campaign Overview",
+    desc: "Summary of all promotion activities."
+  },
+  {
+    title: "Target Audience",
+    desc: "Readers and demographics targeted."
+  },
+  {
+    title: "Ad Performance",
+    desc: "How your Amazon ads performed."
+  },
+  {
+    title: "Visibility Report",
+    desc: "How often your book appeared in search results."
+  },
+  {
+    title: "Click-Through Rate (CTR)",
+    desc: "Percentage of ad views that resulted in clicks."
+  },
+  {
+    title: "Conversion Rate",
+    desc: "Percentage of clicks that resulted in book purchases."
+  },
+  {
+    title: "Reviews & Feedback",
+    desc: "Summary of new reviews and reader feedback received."
+  },
+  {
+    title: "Keyword Performance",
+    desc: "Performance of the selected keywords for your book promotion."
+  },
+  {
+    title: "Category Ranking",
+    desc: "Your book’s rank in relevant Amazon categories."
+  },
+  {
+    title: "Promotional Activities",
+    desc: "Posts and campaigns run for book visibility."
+  },
 
-  const splitText = (text) => {
-    const [title, desc] = text.split("–");
-    return {
-      title: title.trim(),
-      desc: desc ? desc.trim() : ""
-    };
-  };
+];
 
 
 
   const faqData = [
     {
-      q: "Do you need channel access?",
-      a: "I can deliver full audit and editable files without access. If you want me to implement changes, channel manager access is required (no password, manager role)."
+      q: "How long does it take to see results from Shopify Ads?",
+      a: "Most stores start seeing traffic and initial sales within 7–14 days, while stable and scalable results usually take 30–60 days of optimization."
     },
     {
-      q: "Do you guarantee subscribers or views?",
-      a: "I cannot guarantee specific numbers. I guarantee professional SEO improvements and an actionable plan that increases the chance of improved discovery and growth."
+      q: "Is ad spend included in your pricing?",
+      a: "No. Ad spend is separate and paid directly to Facebook or Google. My fee covers strategy, setup, management, and optimization."
     },
     {
-      q: "Can you help with thumbnails/design?",
-      a: "Yes — I provide thumbnail guidelines and 2–3 mockups. Full design work can be added as an extra."
+      q: "Which platforms do you advertise on?",
+      a: "I run Facebook, Instagram, Tiktok and Google Ads, depending on your product, budget, and business goals."
     },
     {
-      q: "How do you measure success?",
-      a: "Key metrics: search impressions, CTR, average view duration, suggested impressions, and subscriber rate. I provide before/after screenshots for transparency."
+      q: "Do you guarantee sales or ROAS?",
+      a: "I don’t promise fake guarantees, but I focus on data-driven strategies to maximize conversions, ROAS, and long-term growth."
+    },
+    {
+      q: "What do you need from me to get started?",
+      a: "Access to your Shopify store, ad accounts, and basic product information — I handle everything else."
     }
   ];
 
@@ -168,20 +196,20 @@ const services = [
     setOpenIndex(openIndex === i ? null : i);
   };
 
-  const scrollToSection = (id) => {
-     const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start'
-         });
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start'
+            });
         }
-    };
+ 
+      };
 
-
-             return (
+    return (
     <div>
-          <Navbar />
+        <Navbar />
 
 {/* youtube hero  */}
 
@@ -330,9 +358,9 @@ const services = [
 
     {/* Service Container */}
     <div className="serviceCont mb-5">
-      <h1 className="mb-3">Core YouTube SEO Services</h1>
+      <h1 className="mb-3">Amazon book promotion service</h1>
       <p className="text-muted fs-5">
-        Our Core YouTube SEO services are designed to boost organic growth...
+       Your book is promoted to the right audience who will genuinely enjoy reading it.
       </p>
     </div>
 
@@ -405,49 +433,48 @@ const services = [
 
 {/* Deliverables  */}
 
-   <section className="py-5 deliverable-wow">
-      <div className="container-fluid px-5">
+<section className="py-5 deliverable-wow">
+  <div className="container-fluid px-3 px-sm-5">
 
-        {/* Title */}
-        <div className="text-center mb-5">
-          <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
-          <div className="underline mx-auto"></div>
+    {/* Title */}
+    <div className="text-center mb-5">
+      <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
+      <div className="underline mx-auto"></div>
 
-          <p className="wow-subtitle text-muted mt-3 fs-5">
-            You will receive a complete YouTube SEO package designed to boost visibility,
-            rankings, and audience engagement.
-          </p>
-        </div>
+      <p className="wow-subtitle text-muted mt-3 fs-5">
+        Everything You Need to Run Profitable Shopify Ads.      </p>
+    </div>
 
-        {/* Box */}
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="wow-box p-4 p-md-5">
+    {/* Box */}
+    <div className="row justify-content-center">
+      <div className="col-12">
+        <div className="wow-box p-2 p-md-5">
 
-              <h4 className='fw-bold pb-4'>My deliverables include:</h4>
+          <h4 className='fw-bold pb-4'>My deliverables include:</h4>
 
-              {items.map((item, i) => {
-                const { title, desc } = splitText(item);
-                return (
-                  <div key={i} className="wow-item d-flex mb-4">
-                    <div className="icon-wrap me-3">
-                      <FaCheckCircle className="wow-icon" />
-                    </div>
-
-                    <div>
-                      <h5 className="fw-bold mb-1 item-title">{title}</h5>
-                      <p className="text-muted mb-0 item-desc">{desc}</p>
-                    </div>
+          <div className="row">
+            {items.map((item, i) => (
+              <div key={i} className="col-md-6 mb-4">
+                <div className="wow-item d-flex">
+                  <div className="icon-wrap me-3 p-1 p-sm-2">
+                    <FaCheckCircle className="wow-icon" />
                   </div>
-                );
-              })}
 
-            </div>
+                  <div>
+                    <h5 className="fw-bold mb-1 item-title">{item.title}</h5>
+                    <p className="text-muted mb-0 item-desc">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
+        </div>
       </div>
-    </section>     
+    </div>
+
+  </div>
+</section>       
             
 
 {/* FAQ  */}
