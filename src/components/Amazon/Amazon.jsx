@@ -516,7 +516,7 @@ const items = [
         <div className="col-md-4">
           <div className="pricing-box featured text-center p-4 position-relative" data-aos="zoom-in">
             {/* <span className="best-badge">Best Value</span> */}
-            <div className="plan-title featured-title">Month</div>
+            <div className="plan-title featured-title">Standard</div>
 
             <h2 className="price">
               <span className="old-price">$299</span> $199 <span>/Month</span>
