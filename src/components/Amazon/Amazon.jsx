@@ -477,7 +477,92 @@ const items = [
 </section>       
             
 
-{/* FAQ  */}
+
+
+
+    {/* pricing plan  */}
+    <div className='bacgkround' id='seePrice'>
+    <div className="container-fluid px-5 py-5">
+      <div>
+        <h2 className="text-center fw-bold mb-2"> Pricing Plans</h2>
+       <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>
+      </div>
+
+      <div className="row g-4 justify-content-center">
+
+        {/* Basic */}
+        <div className="col-md-4">
+          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-left">
+            <div className="plan-title">Basic</div>
+
+            <h2 className="price">
+              <span className="old-price">$199</span> $99 <span>/Month</span>
+            </h2>
+
+            <ul className="features list-unstyled text-start mt-3">
+              <li><FaCheck /> Free book visibility promotion</li>
+              <li><FaCheck />Basic targeted reader reach</li>
+              <li><FaCheck />Amazon listing check & suggestions</li>
+              <li><FaCheck />Social media free promotion</li>
+              <li><FaCheck />Basic keyword research</li>
+              <li><FaCheck />Simple performance report</li>
+            </ul>
+
+            <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hello%2C%20how%20to%20are%20you?%20%22" className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
+          </div>
+        </div>
+
+        {/* Standard - Featured */}
+        <div className="col-md-4">
+          <div className="pricing-box featured text-center p-4 position-relative" data-aos="zoom-in">
+            {/* <span className="best-badge">Best Value</span> */}
+            <div className="plan-title featured-title">Month</div>
+
+            <h2 className="price">
+              <span className="old-price">$299</span> $199 <span>/Month</span>
+            </h2>
+
+            <ul className="features list-unstyled text-start mt-3">
+              <li><FaCheck /> Everything in Basic Plan</li>
+              <li><FaCheck /> Paid Amazon PPC ad setup</li>
+              <li><FaCheck /> Advanced audience targeting</li>
+              <li><FaCheck /> Keyword-optimized promotion</li>
+              <li><FaCheck /> Sales & traffic tracking report</li>
+              <li><FaCheck /> Weekly performance update</li>
+              
+            </ul>
+
+            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn featured-btn mt-4 btn">Order Now On WhatsApp</a>
+          </div>
+        </div>
+
+        {/* Premium */}
+        <div className="col-md-4">
+          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-right">
+            <div className="plan-title">Premium</div>
+
+            <h2 className="price">
+              <span className="old-price">$399</span> $299 <span>/Month</span>
+            </h2>
+
+            <ul className="features list-unstyled text-start mt-3">
+              <li><FaCheck /> Everything in Standard</li>
+              <li><FaCheck /> High-budget paid ad campaigns</li>
+              <li><FaCheck /> Full Amazon SEO optimization</li>
+              <li><FaCheck /> Review growth & visibility support</li>
+              <li><FaCheck /> Daily campaign optimization</li>
+              <li><FaCheck /> Detailed final performance report</li>
+            </ul>
+
+            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+    {/* FAQ  */}
 
    <section className="py-5 faq-section">
       <div className="container-fluid px-5">
@@ -513,86 +598,11 @@ const items = [
         </div>
 
       </div>
+ 
     </section>
 
 
-    {/* pricing plan  */}
-    <div className='bacgkround' id='seePrice'>
-    <div className="container-fluid px-5 py-5">
-      <div>
-        <h2 className="text-center fw-bold mb-2">YouTube SEO Pricing Plans</h2>
-       <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>
-      </div>
 
-      <div className="row g-4 justify-content-center">
-
-        {/* Basic */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-left">
-            <div className="plan-title">Basic</div>
-
-            <h2 className="price">
-              <span className="old-price">$49</span> $29 <span>/Project</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Title Optimization</li>
-              <li><FaCheck /> Keyword Research</li>
-              <li><FaCheck /> Thumbnail Suggestion</li>
-              <li><FaTimes className="text-danger" /> Competitor Analysis</li>
-              <li><FaTimes className="text-danger" /> SEO Report</li>
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Standard - Featured */}
-        <div className="col-md-4">
-          <div className="pricing-box featured text-center p-4 position-relative" data-aos="zoom-in">
-            {/* <span className="best-badge">Best Value</span> */}
-            <div className="plan-title featured-title">Standard</div>
-
-            <h2 className="price">
-              <span className="old-price">$89</span> $59 <span>/Project</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Title + Tag Optimization</li>
-              <li><FaCheck /> Full Keyword Plan</li>
-              <li><FaCheck /> Competitor Research</li>
-              <li><FaCheck /> SEO Description</li>
-              <li><FaTimes className="text-danger" /> 24/7 Support</li>
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn featured-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Premium */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-right">
-            <div className="plan-title">Premium</div>
-
-            <h2 className="price">
-              <span className="old-price">$149</span> $99 <span>/Project</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Full YouTube SEO</li>
-              <li><FaCheck /> Ranking Strategy & Audit</li>
-              <li><FaCheck /> Performance Monitoring</li>
-              <li><FaCheck /> Thumbnail A/B Testing</li>
-              <li><FaCheck /> 24/7 Priority Support</li>
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    </div>
 
     <SocialIcon />
     <Footer />
