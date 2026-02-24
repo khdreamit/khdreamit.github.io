@@ -184,7 +184,7 @@ const services = [
             <div className="mt-4 d-flex justify-content-center gap-3">
                   <Link
                     to="/portfolio"
-                    state={{ category: "Amazon Book Promotion" }}
+                    state={{ category: "Social Media Management" }}
                     className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
                     >
                     View My Portfolio

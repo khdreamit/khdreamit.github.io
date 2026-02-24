@@ -111,7 +111,7 @@
 /* Hover effect: up + samner dike */
 .service-card:hover {
   transform: translateY(-15px) translateZ(40px);
-  background-color: rgb(210, 181, 181);
+  background-color: rgba(132, 123, 96, 0.199);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 

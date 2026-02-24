@@ -442,7 +442,7 @@ const items = [
       <div className="underline mx-auto"></div>
 
       <p className="wow-subtitle text-muted mt-3 fs-5">
-        Everything You Need to Run Profitable Shopify Ads.      </p>
+        Everything You Need to Run Profitable Amazon book promotion.      </p>
     </div>
 
     {/* Box */}
