@@ -33,7 +33,7 @@ const About = () => {
 
             {/* About me part 1  */}
             <section className="py-5 hero-bg">
-                  <div className="container-fluid px-">
+                  <div className="container-fluid px-5">
                     <div className="row align-items-center">
             
                       {/* Text Content */}
@@ -66,7 +66,7 @@ const About = () => {
                         <img 
                           src={HeroImg} 
                           alt="Hero" 
-                          className="img-fluid rounded-3 hero-img-style h-img" style={{height: "400px"}} 
+                          className="img-fluid rounded-3 hero-img-style h-img" style={{height: "700px"}} 
                         />
                       </div>
                     </div>
