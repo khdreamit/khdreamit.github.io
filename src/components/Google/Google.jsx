@@ -555,6 +555,34 @@ const items = [
       </div>
     </section>
 
+<section className="herobg py-5">
+  <div className="container px-3 px-sm-5 text-center">
+    <h2 className="fw-bold mb-4">Why Choose Me</h2>
+    <p className="mb-5">
+      With extensive experience in Google Ads, I combine precise targeting, AI-assisted bidding strategies, and data-driven optimization to deliver measurable results and maximize ROI for your business.
+    </p>
+    <div className="row g-4 justify-content-center">
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">High ROI Campaigns</h5>
+          <p>Proven track record of running cost-effective Google Ads campaigns with high returns.</p>
+        </div>
+      </div>
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">AI-Powered Bidding</h5>
+          <p>Smart AI bidding strategies that optimize budget and maximize conversions.</p>
+        </div>
+      </div>
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">End-to-End Support</h5>
+          <p>From campaign setup, keyword research, ad creation to reporting – I manage everything.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <SocialIcon />
     <Footer />

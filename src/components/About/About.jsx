@@ -33,7 +33,7 @@ const About = () => {
 
             {/* About me part 1  */}
             <section className="py-5 hero-bg">
-                  <div className="container-fluid px-5">
+                  <div className="container-fluid px-">
                     <div className="row align-items-center">
             
                       {/* Text Content */}
@@ -41,9 +41,21 @@ const About = () => {
                         <h4 className="text-secondary fw-semibold mb-2">Hello, I'm</h4>
                         <h1 className="fw-bold display-4">MD. ABDUL HALIM</h1>
                         <p className="mt-3 text-dark fs-5">
-                          Hi, I’m Abdul Halim, a Digital Marketing Specialist with strong experience in SEO, YouTube Growth, and data-driven marketing campaigns.I help businesses, content creators, and brands grow with optimized strategies that actually deliver results.
-                        </p>
-            
+                        A professional Digital Marketing Expert specializing in Paid Advertising and Performance Marketing.
+                      </p>
+
+                      <p className="text-dark fs-5">
+                        I help businesses scale faster through high-converting advertising campaigns on Facebook & Instagram Ads, Google Ads, TikTok Ads, Shopify Marketing Ads, and YouTube Ads.
+                      </p>
+
+                      <p className="text-dark fs-5">
+                        My expertise also includes YouTube SEO, Website SEO, and Social Media Marketing (SMM), allowing me to build both paid and organic growth strategies that increase visibility, generate quality leads, and drive consistent sales.
+                      </p>
+
+                      <p className="text-dark fs-5">
+                        Using data-driven targeting, advanced audience research, and conversion optimization, I create marketing campaigns that turn traffic into measurable business growth.
+                      </p>
+                                  
                         <div className="mt-4 d-flex gap-3">
                           <a href = "https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" className="btn btn-dark px-4 py-2">Hire Me</a>
                         </div>

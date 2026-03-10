@@ -188,7 +188,7 @@ const items = [
 <div className="facebook-hero d-flex align-items-center text-center">
   <div className="container">
     <h1 className="fw-bold text-white mb-3">
-      Facebook Ads service - Grow Your Business
+      Facebook & Instagram Ads service - Grow Your Business
     </h1>
     <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
       Targeted campaigns, optimized strategies & measurable growth — I help businesses reach the right audience at the right time
@@ -412,7 +412,7 @@ const items = [
               <li><FaCheck /> Weekly Performance Update</li>
               <li><FaCheck /> Friendly Support (WhatsApp / Email)</li>
               <h6 className='tiktok'>
-                 Add TikTok Ads for + $50
+                 Add TikTok Ads for + $99
               </h6>
               
             </ul>
@@ -439,7 +439,7 @@ const items = [
               <li><FaCheck /> Pixel Setup (If Needed)</li>
               <li><FaCheck /> Weekly Optimization</li>
               <h6 className='tiktok'>
-                 Add TikTok Ads for + $99
+                 Add TikTok Ads for + $199
               </h6>
               
             </ul>
@@ -465,7 +465,7 @@ const items = [
               <li><FaCheck /> Priority Support</li>
               <li><FaCheck /> Strategy Consultation & Planning</li>
               <h6 className='tiktok'>
-                 Add TikTok Ads for + $199
+                 Add TikTok Ads for + $299
               </h6>
               
             </ul>
@@ -515,7 +515,34 @@ const items = [
       </div>
     </section>
 
-
+<section className="herobg py-5">
+  <div className="container px-3 px-sm-5 text-center">
+    <h2 className="fw-bold mb-4">Why Choose Me</h2>
+    <p className="mb-5">
+      With years of experience in Facebook & Instagram Ads, I combine creative strategy, AI-powered targeting, and data-driven optimization to deliver measurable growth for your business.
+    </p>
+    <div className="row g-4 justify-content-center">
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">Proven Results</h5>
+          <p>Track record of high-converting campaigns and happy clients.</p>
+        </div>
+      </div>
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">AI-Assisted Ads</h5>
+          <p>Advanced AI tools for smarter targeting and maximum ROI.</p>
+        </div>
+      </div>
+      <div className="col-md-3 d-flex">
+        <div className="benefit-box p-4 flex-fill text-center">
+          <h5 className="fw-bold mb-3">End-to-End Support</h5>
+          <p>From strategy to execution and reporting, I handle everything.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     <SocialIcon />
     <Footer />
     </div>

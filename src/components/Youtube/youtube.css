@@ -460,6 +460,34 @@
     inset 0 -4px 0 rgb(255, 0, 0);
 }
 
+
+.benefit-box {
+  background: #ffffff;
+  border-left: 4px solid #ffb400;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+  border-radius: 12px;
+}
+
+.benefit-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.benefit-box h5 {
+  color: #0c0c0c;
+}
+
+.benefit-box p {
+  color: #555555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* ================= ANIMATION ================= */
 @keyframes fadeUp {
   to {

@@ -63,7 +63,7 @@ const skills = [
 
   {
     id: 6,
-    title: "Shopify Ads",
+    title: "Shopify Marketing",
     desc: "Product ads, retargeting & ROI-focused campaigns.",
     icon: <FaShopify />,
     iconClass: "bg-shopify",

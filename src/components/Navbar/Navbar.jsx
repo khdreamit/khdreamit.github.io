@@ -45,7 +45,7 @@ const Navbar = () => {
   submenu: [
     { path: "/facebook", label: "Facebook Ads" },
     { path: "/google", label: "Google Ads" },
-    { path: "/shopify", label: "Shopify Ads" },
+    { path: "/shopify", label: "Shopify Marketing" },
     { path: "/youtube", label: "YouTube SEO" },
 
     {
@@ -151,7 +151,7 @@ const Navbar = () => {
             <span className="dropdown-icon-right">
                 {sub.label === "Facebook Ads" && <FaFacebookF />}
                 {sub.label === "Google Ads" && <FaGoogle />}
-                {sub.label === "Shopify Ads" && <FaShopify />}
+                {sub.label === "Shopify Marketing" && <FaShopify />}
                 {sub.label === "YouTube SEO" && <FaYoutube />}
                 {sub.label === "Amazon Book Promotion" && <FaAmazon />}
                 {sub.label === "Social Media Management" && <FaShareAlt />}
