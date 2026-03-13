@@ -39,7 +39,7 @@ const Navbar = () => {
         { path: "/", label: "Home" },
         { path: "/portfolio", label: "Portfolio" },
         { path: "/skills", label: "My Skills" },
-
+       
         {
   label: "Service",
   submenu: [
@@ -64,7 +64,13 @@ const Navbar = () => {
   ]
 },
 
-
+ {
+        label: "Client",
+        submenu: [
+            { path: "/meeting", label: "Client Meeting" },
+            { path: "/review", label: "Client Review" }
+        ]
+        },
 
 
         { path: "/about", label: "About" },

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import HeroImg from '../../assets/HeroImg.jpg';
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 
 const Hero = () => {

@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { FaFacebook, FaInstagramSquare, FaLinkedin, } from "react-icons/fa";
 import { FaPhoneAlt, FaEnvelope, FaWhatsappSquare, FaTelegram  } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import FooterLogo from '../../assets/FooterLogo.jpg';
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -104,12 +105,13 @@ const submenu = [
                 <hr className="border-secondary mt-4" />
 
                 {/* Copyright */}
-                <p className="text-center m-0 small">
-                    © {new Date().getFullYear()} Abdul Halim — All Rights Reserved.
-                </p>
+                            <footer className="text-center py-4">
+            © {new Date().toLocaleDateString("en-US")} Abdul Halim — Digital Marketing Expart.
+            </footer>
             </div>
         </footer>
     );
+    
 };
 
 export default Footer;
