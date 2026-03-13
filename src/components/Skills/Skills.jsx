@@ -12,7 +12,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import Navbar from "../Navbar/Navbar";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
 

@@ -8,8 +8,9 @@ import YouSeo from '../../assets/ww.jpeg'
 import '../Youtube/youtube.css'
 import './website.css'
 import "aos/dist/aos.css";
-import {FaAudible, FaSearch, FaTools, FaLink, FaMapMarkerAlt, FaFileAlt,  FaCheckCircle, FaChevronDown} from "react-icons/fa";import { Link } from 'react-router';
-;
+import {FaAudible, FaSearch, FaTools, FaLink, FaMapMarkerAlt, FaFileAlt,  FaCheckCircle, FaChevronDown} from "react-icons/fa";
+import { Link } from 'react-router-dom'; 
+
 
 
 
