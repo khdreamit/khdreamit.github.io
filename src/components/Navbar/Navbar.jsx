@@ -82,6 +82,7 @@ const Navbar = () => {
     const hoverStyle = "hover-activeColor";
     
 
+
     return (
         <nav className="navbar navbar-expand-lg shadow-sm py-3 sticky-top background custom-navbar-padding">
             <div className="container-fluid"> 
