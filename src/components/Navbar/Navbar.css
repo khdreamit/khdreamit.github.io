@@ -238,7 +238,7 @@ body, html {
 
 /* icon default hidden */
 .navbar-nav > .nav-item > .nav-link::before {
-  content: "★"; /* default icon */
+  content: "📞"; /* default icon */
   position: absolute;
   top: -12px;
   left: 50%;
@@ -276,7 +276,7 @@ body, html {
 }
 
 .navbar-nav > .nav-item:nth-child(6) > .nav-link::before {
-  content: "📞"; /* Contact */
+  content: "ℹ️"; /* Contact */
 }
 /* Dropdown item base */
 .dropdown-animate {
