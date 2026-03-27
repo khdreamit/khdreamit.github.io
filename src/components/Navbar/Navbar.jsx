@@ -73,7 +73,13 @@ const Navbar = () => {
         },
 
 
-        { path: "/about", label: "About" },
+        {
+  label: "About",
+  submenu: [
+    { path: "/about", label: "About Me" },
+    { path: "/certificates", label: "Certificates" }
+  ]
+},
         { path: "/contact", label: "Contact" },
     ];
 

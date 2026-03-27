@@ -21,6 +21,7 @@ import TechnicalSeo from "./components/TechnicalSeo/TechnicalSeo";
 import OffPageSeo from "./components/OffPageSeo/OffPageSeo";
 import LocalSeo from "./components/LocalSeo/LocalSeo";
 import Shopify from "./components/Shopify/Shopify";
+import Certificates from "./components/Certificates/Certificates";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/offpage" element={<OffPageSeo />} />
         <Route path="/local" element={<LocalSeo />} />
         <Route path="/shopify" element={<Shopify />} />
+        <Route path="/certificates" element={<Certificates />} />
       </Routes>
 
       

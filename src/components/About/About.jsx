@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 
 
 
+
 const About = () => {
     return (
         <div>

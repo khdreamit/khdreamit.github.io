@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Img1 from '../../assets/face11.png'
-import Img2 from '../../assets/q.jpg'
+import Img2 from '../../assets/client metting/c1.png'
+
 import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
