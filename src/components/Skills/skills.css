@@ -119,7 +119,18 @@
 
 .bg-google {
   background: #ffeeec;
-  box-shadow: 0 10px 25px rgba(244, 134, 66, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.bg-googleanalytics {
+  background: #ffffffcd;      /* circle white */
+  color: #ff0000;        /* icon red */
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .bg-shopify {

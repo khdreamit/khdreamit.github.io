@@ -1,6 +1,5 @@
 import React from "react";
 import './skills.css'
-import { FcGoogle } from "react-icons/fc";
 import {
   FaFacebookF,
   FaYoutube,
@@ -11,13 +10,52 @@ import {
   FaTasks,
   FaTiktok,
 } from "react-icons/fa";
+
+import { SiGoogleanalytics } from "react-icons/si";
+
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
 
+// 👉 Google Ads SVG import (ADD YOUR FILE IN assets FOLDER)
+import GoogleAdsIcon from "../../assets/google-ads.svg";
 
 const skills = [
+
+  {
+    id: 3,
+    title: "Google Ads",
+    desc: "Search + Display ads to capture high-intent buyers.",
+    icon: (
+      <img
+        src={GoogleAdsIcon}
+        alt="Google Ads"
+        style={{ width: "35px", height: "35px" }}
+      />
+    ),
+    iconClass: "bg-google",
+    path: "/google"
+  },
+
+  {
+    id: 10,
+    title: "Google Analytics",
+    desc: "Data-driven insights to track user behavior",
+    icon: <SiGoogleanalytics />,
+    iconClass: "bg-googleanalytics",
+    path: "/google"
+  },
+
+  {
+    id: 9,
+    title: "Tiktok Ads",
+    desc: "Performance-driven TikTok ads built for leads & sales.",
+    icon: <FaTiktok />,
+    iconClass: "bg-tiktok",
+    path: "/facebook"
+  },
+
   {
     id: 1,
     title: "YouTube SEO & Promotion",
@@ -26,6 +64,7 @@ const skills = [
     iconClass: "bg-youtube",
     path: "/youtube"
   },
+
   {
     id: 2,
     title: "Facebook & Instagram Ads",
@@ -33,14 +72,6 @@ const skills = [
     icon: <FaFacebookF />,
     iconClass: "bg-facebook",
     path: "/facebook"
-  },
-  {
-    id: 3,
-    title: "Google Ads",
-    desc: "Search + Display ads to capture high-intent buyers.",
-    icon: <FcGoogle />,
-    iconClass: "bg-google",
-    path: "/google"
   },
 
   {
@@ -51,6 +82,7 @@ const skills = [
     iconClass: "bg-task",
     path: "/socialMediaManage"
   },
+
   {
     id: 5,
     title: "Social Media Management",
@@ -59,7 +91,6 @@ const skills = [
     iconClass: "bg-manage",
     path: "/socialMediaManage"
   },
- 
 
   {
     id: 6,
@@ -69,6 +100,7 @@ const skills = [
     iconClass: "bg-shopify",
     path: "/google"
   },
+
   {
     id: 7,
     title: "Amazon Book Promotion",
@@ -77,6 +109,7 @@ const skills = [
     iconClass: "bg-amazon",
     path: "/amazon"
   },
+
   {
     id: 8,
     title: "Website SEO",
@@ -85,83 +118,76 @@ const skills = [
     iconClass: "bg-website",
     path: "/website"
   },
-  {
-    id: 9,
-    title: "Tiktok Ads",
-    desc: "Performance-driven TikTok ads built for leads & sales.",
-    icon: <FaTiktok />,
-    iconClass: "bg-tiktok",
-    path: "/facebook"
-  },
+
 ];
 
 const Skills = () => {
   return (
-<div>
-    <Navbar />
+    <div>
+      <Navbar />
 
       <div className="skill-header">
-  <h1 className="text-white fw-bold ls">MY SKILLS</h1>
+        <h1 className="text-white fw-bold ls">MY SKILLS</h1>
 
-  <div className="breadcrumb">
-    <a href="/" className="breadcrumb-link">Home</a>
-    <span className="breadcrumb-separator">&lt;</span>
-    <span className="breadcrumb-current">My Skills</span>
-  </div>
-</div>
-
-
-    <section className="py-5 skills-section">
-      <div className="container-fluid px-3 px-sm-5 ">
-        <div className="text-center mb-4">
-          <h2 className="fw-bold mb-2">Services & Skills</h2>
-          <p className="text-muted mx-auto" style={{ maxWidth: 780 }}>
-            I provide end-to-end digital marketing services — from creating
-            profiles to running conversion-focused ad campaigns and YouTube
-            promotions.
-          </p>
-        </div>
-
-        <div className="row g-4">
-          {skills.map((s) => (
-            <div key={s.id} className="col-lg-4 col-md-6">
-              <div className="skill-card p-4 h-100 d-flex flex-column">
-                <div className="d-flex align-items-center mb-3">
-                  <div className="icon-wrapper mb-3">
-                    <span className={`icon-box ${s.iconClass}`}>{s.icon}</span>
-                   </div>
-                  <h5 className="mb-0 skill-title">{s.title}</h5>
-                </div>
-
-                <p className="text-muted flex-grow-1">{s.desc}</p>
-
-                <div className="mt-3">
-                  {/* <a href="#contact" className="btn btn-outline-primary btn-sm">
-                    Get this service
-                  </a> */}
-
-
-                    <div className="mt-3">
-                    <Link 
-                        to={s.path}
-                        className="btn btn-link btn-sm ms-2"
-                    >
-                        Learn more →
-                    </Link>
-                    </div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="breadcrumb">
+          <a href="/" className="breadcrumb-link">Home</a>
+          <span className="breadcrumb-separator">&lt;</span>
+          <span className="breadcrumb-current">My Skills</span>
         </div>
       </div>
-    </section>
 
-    <SocialIcon />
-    <Footer />
+      <section className="py-5 skills-section">
+        <div className="container-fluid px-3 px-sm-5 ">
+          <div className="text-center mb-4">
+            <h2 className="fw-bold mb-2">Services & Skills</h2>
+            <p className="text-muted mx-auto" style={{ maxWidth: 780 }}>
+              I provide end-to-end digital marketing services — from creating
+              profiles to running conversion-focused ad campaigns and YouTube
+              promotions.
+            </p>
+          </div>
+
+          <div className="row g-4">
+            {skills.map((s) => (
+              <div key={s.id} className="col-lg-4 col-md-6">
+                <div className="skill-card p-4 h-100 d-flex flex-column">
+
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="icon-wrapper mb-3">
+                      <span className={`icon-box ${s.iconClass}`}>
+                        {s.icon}
+                      </span>
+                    </div>
+
+                    <h5 className="mb-0 skill-title">{s.title}</h5>
+                  </div>
+
+                  <p className="text-muted flex-grow-1">{s.desc}</p>
+
+                  <div className="mt-3">
+                    <div className="mt-3">
+                      <Link
+                        to={s.path}
+                        className="btn btn-link btn-sm ms-2"
+                      >
+                        Learn more →
+                      </Link>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SocialIcon />
+      <Footer />
 
     </div>
   );
 };
+
 
 export default Skills;

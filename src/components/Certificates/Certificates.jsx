@@ -6,18 +6,49 @@ import "./certificates.css";
 
 import cert1 from "../../assets/main.webp";
 import cert2 from "../../assets/Certificate/C1.png";
-import cert3 from "../../assets/youMan2.png";
+import cert3 from "../../assets/Certificate/fb.png";
+import cert4 from "../../assets/Certificate/Gc1.png"
+import cert5 from "../../assets/Certificate/Ga.png"
+import cert6 from "../../assets/Certificate/Gai.png"
 
 const data = [
   {
+    title: "Google Ads Creative Certification",
+    company: "Google",
+    issue: "Mar 2026",
+    expire: "Mar 2027",
+    desc: "Certified by Google in crafting high-performing ad creatives that drive results across Google's advertising platforms.",
+    image: cert4,
+    link: "https://skillshop.credential.net/b929083a-cb13-402b-bd37-faa2e87a3a7f#acc.Ymnukf8P",
+  },
+  {
+    title: "Google Analytics Certification",
+    company: "Google",
+    issue: "Mar 2026",
+    expire: "Mar 2027",
+    desc: "Certified by Google in tracking, analyzing, and interpreting website data to make smarter marketing decisions.",
+    image: cert5,
+    link: "https://skillshop.credential.net/80382e34-d1f5-451e-8eff-bdce8eebe4b2#acc.SFzQgi38",
+  },
+  {
     title: "Microsoft Advertising Retail Certification",
-    company: "Microsoft Advertising",
+    company: "Microsoft ",
     issue: "Mar 2026",
     expire: "Mar 2027",
     desc: "Certified in Microsoft Advertising Retail campaigns and retail-focused ad strategies.",
     image: cert2,
     link: "https://example.com/microsoft-cert",
   },
+  {
+    title: "AI-Powered Performance Ads Certification",
+    company: "Google ",
+    issue: "Mar 2026",
+    expire: "Mar 2027",
+    desc: "Certified by Google in leveraging AI-driven tools and Smart Bidding strategies to maximize ad performance and campaign ROI.",
+    image: cert6,
+    link: "https://skillshop.credential.net/d93983f9-80f5-4619-820a-e6a21c33cb2c#acc.9h8d1cFu",
+  },
+
   {
     title: "YouTube SEO Mastery",
     company: "YouTube Academy",

@@ -21,7 +21,7 @@ const Hero = () => {
 
             <p className="text-dark fs-5">
               I help businesses grow through high-converting campaigns on 
-              <strong> Facebook & Instagram Ads, Google Ads, TikTok Ads, Shopify Marketing Ads, and YouTube Ads</strong>.
+              <strong> Facebook & Instagram Ads, Google Ads, TikTok Ads, Microsoft (Bing Ads), Shopify Marketing Ads, and YouTube Ads</strong>.
             </p>
 
             <p className="text-dark fs-5">
