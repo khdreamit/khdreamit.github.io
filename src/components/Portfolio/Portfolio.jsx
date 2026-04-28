@@ -144,6 +144,8 @@ import Am19 from '../../assets/Amazon book promotion/19.png'
 import Am20 from '../../assets/Amazon book promotion/20.jpg'
 
 // google Ads image 
+import Go00 from '../../assets/Google ads/00.png'
+import Go0 from '../../assets/Google ads/0.png'
 import Go1 from '../../assets/Google ads/1.jpg'
 import Go2 from '../../assets/Google ads/2.jpg'
 import Go3 from '../../assets/Google ads/3.png'
@@ -361,6 +363,8 @@ const Portfolio = () => {
     
     
     // Google Ads
+    { id: 1224, title: "Google Search Ads Campaign", category: "Google Ads", image: Go00, icon: "bi bi-google" },
+    { id: 1223, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0, icon: "bi bi-google" },
     { id: 122, title: "Google Search Ads Campaign", category: "Google Ads", image: Go1, icon: "bi bi-google" },
     { id: 123, title: "Google Search Ads Campaign", category: "Google Ads", image: Go2, icon: "bi bi-image" },
     { id: 124, title: "Google Search Ads Campaign", category: "Google Ads", image: Go3, icon: "bi bi-youtube" },

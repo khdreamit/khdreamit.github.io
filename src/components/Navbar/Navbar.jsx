@@ -90,7 +90,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="navbar navbar-expand-lg shadow-sm py-3 sticky-top background custom-navbar-padding">
+        <nav className="navbar navbar-expand-lg shadow-sm py-3 fixed-top background custom-navbar-padding">
             <div className="container-fluid"> 
 
                 <div className="navbar-brand me-auto">

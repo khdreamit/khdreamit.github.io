@@ -199,8 +199,9 @@
   font-weight: 550;
 }
 /* পুরো navbar বা body থেকে horizontal scroll বন্ধ করতে */
-body, html {
-    overflow-x: hidden;  /* horizontal scroll disable */
+body {
+    overflow-x: hidden;
+    padding-top: 76px; /* navbar height অনুযায়ী adjust করো */
 }
 
 /* Dropdown submenu overflow fix */

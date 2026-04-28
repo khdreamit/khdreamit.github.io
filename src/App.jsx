@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -26,7 +27,7 @@ import Certificates from "./components/Certificates/Certificates";
 function App() {
   return (
     <>
-    
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,8 +51,6 @@ function App() {
         <Route path="/shopify" element={<Shopify />} />
         <Route path="/certificates" element={<Certificates />} />
       </Routes>
-
-      
     </>
   );
 }
