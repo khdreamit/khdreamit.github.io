@@ -1,28 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./clientReview.css";
 import Img1 from '../../assets/face11.png'
 import Navbar from "../Navbar/Navbar";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
+import axios from 'axios';
 
-const allImages = [
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-  Img1,
-];
+const staticImages = [Img1];
 
 const ClientReview = () => {
-
   const [visibleImages, setVisibleImages] = useState(6);
   const [show, setShow] = useState(false);
   const [modalImg, setModalImg] = useState("");
+  const [apiImages, setApiImages] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/portfolio/category/Client Review')
+      .then(res => {
+        const imgs = res.data.map(img => `http://127.0.0.1:8000/${img.filepath}`);
+        setApiImages(imgs);
+      })
+      .catch(() => {});
+  }, []);
+
+  const allImages = [...staticImages, ...apiImages];
 
   const handleShow = (img) => {
     setModalImg(img);
@@ -31,24 +33,19 @@ const ClientReview = () => {
 
   return (
     <div>
-      <Navbar />  
+      <Navbar />
 
-      {/* ---------- Top Banner Section ---------- */}
       <div className="review-header">
-  <h1 className="text-white fw-bold ls">Client Reviews</h1>
+        <h1 className="text-white fw-bold ls">Client Reviews</h1>
+        <div className="breadcrumb">
+          <a href="/" className="breadcrumb-link">Home</a>
+          <span className="breadcrumb-separator">&lt;</span>
+          <span className="breadcrumb-current">Client Reviews</span>
+        </div>
+      </div>
 
-  <div className="breadcrumb">
-    <a href="/" className="breadcrumb-link">Home</a>
-    <span className="breadcrumb-separator">&lt;</span>
-    <span className="breadcrumb-current">Client Reviews</span>
-  </div>
-</div>
-
-
-      {/* ---------- Image Grid Section ---------- */}
       <div className="container-fluid px-5 py-5">
         <div className="row g-4">
-
           {allImages.slice(0, visibleImages).map((img, index) => (
             <div className="col-md-4" key={index}>
               <div className="review-box" onClick={() => handleShow(img)}>
@@ -56,14 +53,12 @@ const ClientReview = () => {
               </div>
             </div>
           ))}
-
         </div>
 
-        {/* ---------- See More Button ---------- */}
         {visibleImages < allImages.length && (
           <div className="text-center mt-4">
             <button
-              className="btn btn-primary px-4 "
+              className="btn btn-primary px-4"
               onClick={() => setVisibleImages(visibleImages + 6)}
             >
               See More
@@ -72,23 +67,17 @@ const ClientReview = () => {
         )}
       </div>
 
-      {/* ---------- Modal ---------- */}
       <Modal show={show} centered size="lg" onHide={() => setShow(false)}>
         <Modal.Body className="text-center p-0">
           <img src={modalImg} alt="" className="modal-img" />
         </Modal.Body>
-        <Button
-          
-          className="modal-close-btn"
-          onClick={() => setShow(false)}
-        >
+        <Button className="modal-close-btn" onClick={() => setShow(false)}>
           ×
         </Button>
       </Modal>
 
-
-        <SocialIcon />
-        <Footer />
+      <SocialIcon />
+      <Footer />
     </div>
   );
 };

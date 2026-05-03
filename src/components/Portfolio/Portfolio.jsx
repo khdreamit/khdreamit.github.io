@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import "../../App.css";
 import { FaEye  } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-
+import axios from 'axios';
 
 
 
@@ -432,82 +432,85 @@ const Portfolio = () => {
     { id: 184, title: "TikTok Ads Campaign", category: "TikTok Ads", image: t23, icon: "bi bi-sliders" },
   ];
 
+  // ✅ API থেকে ছবি load করার জন্য
+  const [apiImages, setApiImages] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/portfolio/all')
+      .then(res => {
+        const formatted = res.data.map(img => ({
+          id: `api-${img.id}`,
+          title: img.title || img.category,
+          category: img.category,
+          image: `http://127.0.0.1:8000/${img.filepath}`,
+          icon: "bi bi-image"
+        }));
+        setApiImages(formatted);
+      })
+      .catch(() => {});
+  }, []);
+
+  // ✅ Static + API ছবি একসাথে
+ const allItems = [...apiImages, ...portfolioItems];
+
   const [filteredItems, setFilteredItems] = useState([]);
   const [activeBtn, setActiveBtn] = useState("All");
   const location = useLocation();
-
-
-  // New states
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-  if (location.state?.category) {
-    const category = location.state.category;
-    setActiveBtn(category);
-    const filtered = portfolioItems.filter(
-      (item) => item.category === category
-    );
-    setFilteredItems(filtered);
-  } else {
-    const shuffled = [...portfolioItems].sort(() => 0.5 - Math.random());
-    setFilteredItems(shuffled.slice(0, 9));
-  }
-}, [location.state]);
-
+    if (location.state?.category) {
+      const category = location.state.category;
+      setActiveBtn(category);
+      const filtered = allItems.filter((item) => item.category === category);
+      setFilteredItems(filtered);
+    } else {
+      const shuffled = [...allItems].sort(() => 0.5 - Math.random());
+      setFilteredItems(shuffled.slice(0, 9));
+    }
+  }, [location.state, apiImages]);
 
   const handleFilter = (category) => {
     setActiveBtn(category);
     if (category === "All") {
-      const shuffled = [...portfolioItems].sort(() => 0.5 - Math.random());
+      const shuffled = [...allItems].sort(() => 0.5 - Math.random());
       setFilteredItems(shuffled.slice(0, 9));
     } else {
-      const filtered = portfolioItems.filter((item) => item.category === category);
+      const filtered = allItems.filter((item) => item.category === category);
       setFilteredItems(filtered);
     }
   };
 
-  // Modal control funcs
-  const openModal = (index) => {
-    setCurrentIndex(index);
-    setShowModal(true);
-  };
+  const openModal = (index) => { setCurrentIndex(index); setShowModal(true); };
   const closeModal = () => setShowModal(false);
   const prevImage = () => setCurrentIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
   const nextImage = () => setCurrentIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
 
-  // Keyboard controls
   useEffect(() => {
     if (!showModal) return;
-
     const handleKey = (e) => {
       if (e.key === "ArrowRight") nextImage();
       if (e.key === "ArrowLeft") prevImage();
       if (e.key === "Escape") closeModal();
     };
-
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [showModal]);
 
-
   return (
-    
     <div>
       <Navbar />
       <div className="portfolio-header">
         <h1 className="text-white fw-bold ls">PORTFOLIO</h1>
-
         <div className="breadcrumb">
           <a href="/" className="breadcrumb-link">Home</a>
-           <span className="breadcrumb-separator"> &lt; </span>
+          <span className="breadcrumb-separator"> &lt; </span>
           <span className="breadcrumb-current">Portfolio</span>
+        </div>
       </div>
-      </div>
-
 
       <div className="container-fluid px-3 px-sm-5 py-5">
-
         <div className="text-center">
           <h4>Portfolio</h4>
           <p className="w-75 mx-auto">
@@ -517,16 +520,13 @@ const Portfolio = () => {
 
         <div className="d-flex justify-content-center gap-3 my-4 flex-wrap">
           {portfolioBTN.map((btn) => (
-           <button
-                  key={btn.id}
-                  onClick={() => handleFilter(btn.title)}
-                  className={`btn px-4 py-2 portfolio-btn ${
-                    activeBtn === btn.title ? "btn-primary" : "btn-outline-primary"
-                  }`}
-                >
-                  {btn.title}
-          </button>
-
+            <button
+              key={btn.id}
+              onClick={() => handleFilter(btn.title)}
+              className={`btn px-4 py-2 portfolio-btn ${activeBtn === btn.title ? "btn-primary" : "btn-outline-primary"}`}
+            >
+              {btn.title}
+            </button>
           ))}
         </div>
 
@@ -557,30 +557,16 @@ const Portfolio = () => {
       <SocialIcon />
       <Footer />
 
-      {/* Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={filteredItems[currentIndex].image}
-              alt=""
-              className="modal-img"
-            />
-
-            <button className="nav-btn prev-btn" onClick={prevImage}>
-              &#10094;
-            </button>
-            <button className="nav-btn next-btn" onClick={nextImage}>
-              &#10095;
-            </button>
-
-            <span className="close-btn" onClick={closeModal}>
-              &times;
-            </span>
+            <img src={filteredItems[currentIndex].image} alt="" className="modal-img" />
+            <button className="nav-btn prev-btn" onClick={prevImage}>&#10094;</button>
+            <button className="nav-btn next-btn" onClick={nextImage}>&#10095;</button>
+            <span className="close-btn" onClick={closeModal}>&times;</span>
           </div>
         </div>
       )}
-
     </div>
   );
 };
