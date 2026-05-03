@@ -7,6 +7,10 @@ import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
 
+const API_BASE = window.location.hostname === 'localhost'
+  ? 'http://127.0.0.1:8000'
+  : 'https://khdreamit-github-io.onrender.com';
+
 const staticImages = [Img1, Img2];
 
 const ClientMeeting = () => {
@@ -16,9 +20,9 @@ const ClientMeeting = () => {
   const [apiImages, setApiImages] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/portfolio/category/client metting')
+    axios.get(`${API_BASE}/portfolio/category/client metting`)
       .then(res => {
-        const imgs = res.data.map(img => `http://127.0.0.1:8000/${img.filepath}`);
+        const imgs = res.data.map(img => `${API_BASE}/${img.filepath}`);
         setApiImages(imgs);
       })
       .catch(() => {});
@@ -34,7 +38,6 @@ const ClientMeeting = () => {
   return (
     <div>
       <Navbar />
-
       <div className="review-header">
         <h1 className="text-white fw-bold ls">Client Meeting</h1>
         <div className="breadcrumb">
@@ -43,7 +46,6 @@ const ClientMeeting = () => {
           <span className="breadcrumb-current">Client Meeting</span>
         </div>
       </div>
-
       <div className="container-fluid px-5 py-5">
         <div className="row g-4">
           {allImages.slice(0, visibleImages).map((img, index) => (
@@ -54,28 +56,21 @@ const ClientMeeting = () => {
             </div>
           ))}
         </div>
-
         {visibleImages < allImages.length && (
           <div className="text-center mt-4">
-            <button
-              className="btn btn-primary px-4"
-              onClick={() => setVisibleImages(visibleImages + 6)}
-            >
+            <button className="btn btn-primary px-4"
+              onClick={() => setVisibleImages(visibleImages + 6)}>
               See More
             </button>
           </div>
         )}
       </div>
-
       <Modal show={show} centered size="lg" onHide={() => setShow(false)}>
         <Modal.Body className="text-center p-0">
           <img src={modalImg} alt="" className="modal-img" />
         </Modal.Body>
-        <Button className="modal-close-btn" onClick={() => setShow(false)}>
-          ×
-        </Button>
+        <Button className="modal-close-btn" onClick={() => setShow(false)}>×</Button>
       </Modal>
-
       <SocialIcon />
       <Footer />
     </div>

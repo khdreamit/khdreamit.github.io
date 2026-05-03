@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = window.location.hostname === 'localhost'
+  ? 'http://127.0.0.1:8000'
+  : 'https://khdreamit-github-io.onrender.com';
 
 const getToken = () => localStorage.getItem('adminToken');
 
@@ -16,13 +18,11 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Auth
 export const loginAdmin = (username, password) =>
   api.post('/admin/login', { username, password });
 
 export const getDashboard = () => api.get('/admin/dashboard');
 
-// Portfolio
 export const getAllImages = () => api.get('/portfolio/all');
 export const uploadImage = (formData) =>
   api.post('/portfolio/upload', formData, {
@@ -30,13 +30,11 @@ export const uploadImage = (formData) =>
   });
 export const deleteImage = (id) => api.delete(`/portfolio/${id}`);
 
-// Leads
 export const getAllLeads = () => api.get('/leads/all');
 export const updateLeadStatus = (id, status) =>
   api.put(`/leads/${id}/status`, { status });
 export const deleteLead = (id) => api.delete(`/leads/${id}`);
 
-// Notifications
 export const getNotifications = () => api.get('/notifications/all');
 export const markAsRead = (id) => api.put(`/notifications/${id}/read`);
 export const markAllRead = () => api.put('/notifications/read-all');

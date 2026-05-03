@@ -433,16 +433,20 @@ const Portfolio = () => {
   ];
 
   // ✅ API থেকে ছবি load করার জন্য
+  const API_BASE = window.location.hostname === 'localhost'
+    ? 'http://127.0.0.1:8000'
+    : 'https://khdreamit-github-io.onrender.com';
+
   const [apiImages, setApiImages] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/portfolio/all')
+    axios.get(`${API_BASE}/portfolio/all`)
       .then(res => {
         const formatted = res.data.map(img => ({
           id: `api-${img.id}`,
           title: img.title || img.category,
           category: img.category,
-          image: `http://127.0.0.1:8000/${img.filepath}`,
+          image: `${API_BASE}/${img.filepath}`,
           icon: "bi bi-image"
         }));
         setApiImages(formatted);
