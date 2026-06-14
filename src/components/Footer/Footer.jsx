@@ -19,9 +19,10 @@ import { NavLink } from 'react-router-dom';
     ]
 
     const submenu = [
-        { path: "/youtube", label: "YouTube SEO" },
-        { path: "/facebook", label: "Facebook Ads" },
         { path: "/google", label: "Google Ads" },
+        { path: "/facebook", label: "Facebook Ads" },
+        
+        { path: "/youtube", label: "YouTube SEO" },
         { path: "/website", label: "Website SEO" },
         { path: "/amazon", label: "Amazon Book Promotion" },
         { path: "/socialMediaManage", label: "Social Media Management" },
@@ -95,7 +96,7 @@ import { NavLink } from 'react-router-dom';
                                     <FaWhatsappSquare /> +880 1947349917
                                 </li>
                                 <li className="mb-2 d-flex align-items-center gap-2">
-                                    <FaTelegram /> +880 1947349917
+                                    <FaTelegram /> @khdreamit
                                 </li>
                                 <li className="mb-2 d-flex align-items-center gap-2">
                                     <FaEnvelope /> khdreamit@gmail.com
@@ -109,7 +110,7 @@ import { NavLink } from 'react-router-dom';
 
                     {/* Copyright */}
                                 <footer className="text-center py-4">
-                © {new Date().toLocaleDateString("en-US")} Abdul Halim — Digital Marketing Expart.
+                © {new Date().toLocaleDateString("en-US")} Abdul Halim — Digital Marketing Expert.
                 </footer>
                 </div>
             </footer>

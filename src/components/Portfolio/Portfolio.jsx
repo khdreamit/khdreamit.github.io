@@ -144,6 +144,12 @@ import Am19 from '../../assets/Amazon book promotion/19.png'
 import Am20 from '../../assets/Amazon book promotion/20.jpg'
 
 // google Ads image 
+import Go46 from '../../assets/Google ads/g6.jpg'
+import Go45 from '../../assets/Google ads/g5.jpg'
+import Go44 from '../../assets/Google ads/g4.jpg'
+import Go43 from '../../assets/Google ads/g3.jpg'
+import Go42 from '../../assets/Google ads/g2.jpg'
+import Go0000 from '../../assets/Google ads/g2.jpg'
 import Go000 from '../../assets/Google ads/g1.jpg'
 import Go00 from '../../assets/Google ads/00.png'
 import Go0 from '../../assets/Google ads/0.png'
@@ -218,9 +224,9 @@ import t23 from '../../assets/tiktok ads/23.png'
 const Portfolio = () => {
   const portfolioBTN = [
     { id: 1, title: "All" },
-    { id: 2, title: "YouTube SEO & Promotion" },
-    { id: 3, title: "Facebook & Instagram Ads" },
     { id: 4, title: "Google Ads" },
+    { id: 3, title: "Facebook & Instagram Ads" },
+    { id: 2, title: "YouTube SEO & Promotion" },
     { id: 5, title: "TikTok Ads" },
     { id: 6, title: "Facebook Marketing" },
     { id: 7, title: "Social Media Management" },
@@ -364,6 +370,12 @@ const Portfolio = () => {
     
     
     // Google Ads
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go46, icon: "bi bi-google" },
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go45, icon: "bi bi-google" },
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go44, icon: "bi bi-google" },
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go43, icon: "bi bi-google" },
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go42, icon: "bi bi-google" },
+    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0000, icon: "bi bi-google" },
     { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go000, icon: "bi bi-google" },
     { id: 1224, title: "Google Search Ads Campaign", category: "Google Ads", image: Go00, icon: "bi bi-google" },
     { id: 1223, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0, icon: "bi bi-google" },

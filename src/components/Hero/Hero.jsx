@@ -31,8 +31,8 @@ const Hero = () => {
             
 
             <div className="mt-4 d-flex gap-3">
-            <NavLink to="/about" className="btn btn-dark px-4 py-2 btn-3d">
-              Get More
+            <NavLink to="/portfolio" className="btn btn-dark px-4 py-2 btn-3d">
+              See My Portfolio
             </NavLink>
 
             </div>

@@ -220,68 +220,7 @@ const items = [
 
 
 
- {/* facebook intro  */}
 
-<div className="herobg py-5">
-  <div className="container-fluid px-3 px-sm-5 ">
-    <div className="row align-items-center youtube-bg">
-
-      {/* Text Content */}
-      <div className="col-lg-6 mb-4 mb-lg-0" >
-        <h1 className="fw-bold">What is Facebook Ads?</h1>
-        <p className="lead">
-           Facebook Ads are paid ads on Facebook and Instagram that help businesses reach their target audience precisely. You can target users by age, location, interests, and behavior. These ads boost sales, leads, website traffic, brand awareness, and social media growth. Their main advantages are precise targeting, flexible budgeting, and accurate performance tracking, helping businesses reach the right people at the right time and maximize ROI.
-        </p>
-        <a
-          href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22"
-          className="btn mt-3 hero-btn"
-        >
-          Contact On WhatsApp
-        </a>
-      </div>
-
-      {/* Hero Image */}
-      <div className="col-lg-6 text-center">
-        <img src={YoutubeHero} alt="YouTube SEO Hero" className="img-fluid rounded shadow-lg" />
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-{/* why Facebook ads need */}
-
-<div className="py-5 feature-section">
-  <div className="container-fluid px-3 px-sm-5">
-    <div className="row align-items-center">
-
-      <div className="col-lg-5 text-center mb-4 mb-lg-0">
-        <img src={YouSeo} alt="YouTube SEO" className="img-fluid rounded shadow-lg feature-img" />
-      </div>
-
-      <div className="col-lg-7">
-        <h2 className="fw-bold mb-3">Why Facebook Ads Are Important?</h2>
-        <p className="text-muted">
-          Facebook Ads have become a powerful tool for businesses of all sizes. Here’s why they are essential for modern marketing:
-        </p>
-
-        <div className="benefit-box p-4 rounded shadow-sm">
-          <ul className="list-unstyled">
-            <li><span className="check-icon">✔</span> Reach a massive audience of billions on Facebook.</li>
-            <li><span className="check-icon">✔</span> Target people by age, location, interests, and behavior.</li>
-            <li><span className="check-icon">✔</span> Run ads on any budget and pay only for results.</li>
-            <li><span className="check-icon">✔</span> Track all campaign performance in real time.</li>
-            <li><span className="check-icon">✔</span> Increase brand visibility and awareness.</li>
-            <li><span className="check-icon">✔</span> Drive more traffic to your website or landing page.</li>
-            <li><span className="check-icon">✔</span> Convert users into leads and customers effectively.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 
