@@ -370,12 +370,12 @@ const Portfolio = () => {
     
     
     // Google Ads
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go46, icon: "bi bi-google" },
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go45, icon: "bi bi-google" },
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go44, icon: "bi bi-google" },
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go43, icon: "bi bi-google" },
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go42, icon: "bi bi-google" },
-    { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0000, icon: "bi bi-google" },
+    { id: 1231, title: "Google Search Ads Campaign", category: "Google Ads", image: Go46, icon: "bi bi-google" },
+    { id: 1230, title: "Google Search Ads Campaign", category: "Google Ads", image: Go45, icon: "bi bi-google" },
+    { id: 1229, title: "Google Search Ads Campaign", category: "Google Ads", image: Go44, icon: "bi bi-google" },
+    { id: 1228, title: "Google Search Ads Campaign", category: "Google Ads", image: Go43, icon: "bi bi-google" },
+    { id: 1227, title: "Google Search Ads Campaign", category: "Google Ads", image: Go42, icon: "bi bi-google" },
+    { id: 1226, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0000, icon: "bi bi-google" },
     { id: 1225, title: "Google Search Ads Campaign", category: "Google Ads", image: Go000, icon: "bi bi-google" },
     { id: 1224, title: "Google Search Ads Campaign", category: "Google Ads", image: Go00, icon: "bi bi-google" },
     { id: 1223, title: "Google Search Ads Campaign", category: "Google Ads", image: Go0, icon: "bi bi-google" },
