@@ -6,6 +6,7 @@ import "../../App.css";
 import { FaEye  } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
+import googleAdsCaseStudies from "./googleAdsCaseStudies";
 
 
 
@@ -193,6 +194,9 @@ import Go37 from '../../assets/Google ads/37.png'
 import Go38 from '../../assets/Google ads/38.png'
 import Go39 from '../../assets/Google ads/39.png'
 import Go40 from '../../assets/Google ads/40.png'
+
+
+
 
 // Tiktok Ads 
 import t1 from '../../assets/tiktok ads/1.png'
@@ -446,13 +450,13 @@ const Portfolio = () => {
     { id: 184, title: "TikTok Ads Campaign", category: "TikTok Ads", image: t23, icon: "bi bi-sliders" },
   ];
 
-  // ✅ API থেকে ছবি load করার জন্য
+   // ✅ API থেকে ছবি load করার জন্য
   const API_BASE = window.location.hostname === 'localhost'
     ? 'http://127.0.0.1:8000'
     : 'https://khdreamit-github-io.onrender.com';
-
+ 
   const [apiImages, setApiImages] = useState([]);
-
+ 
   useEffect(() => {
     axios.get(`${API_BASE}/portfolio/all`)
       .then(res => {
@@ -467,44 +471,92 @@ const Portfolio = () => {
       })
       .catch(() => {});
   }, []);
-
+ 
   // ✅ Static + API ছবি একসাথে
- const allItems = [...apiImages, ...portfolioItems];
+  const allItems = [...apiImages, ...portfolioItems];
+  // ============================================================
+  // ✅ পুরনো category গুলোর ছবি আগের মতোই "single" (আলাদা আলাদা) থাকবে।
+  // Google Ads-এর পুরনো individual ছবি এখান থেকে বাদ দেওয়া হলো,
+  // কারণ Google Ads এখন googleAdsCaseStudies.js থেকে case study হিসেবে আসবে।
+  // ============================================================
+ const singleItems = allItems.map((item) => ({
+  ...item,
+  type: "single",
+}));
+ 
+  // ✅ Google Ads-এর case study গুলোকে grouped card হিসেবে যোগ করা হলো
+  const caseStudyItems = googleAdsCaseStudies.map((cs) => ({
+  ...cs,
+  type: "caseStudy",
+  cover: cs.images[0],
+}));
 
+
+  // ✅ দুই ধরনের item একসাথে (mixed grid)
+  const displayItems = [...caseStudyItems, ...singleItems];
+ 
   const [filteredItems, setFilteredItems] = useState([]);
   const [activeBtn, setActiveBtn] = useState("All");
   const location = useLocation();
+ 
+  // পুরনো simple lightbox (single item-এর জন্য)
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+ 
+  // নতুন Case Study detail modal + তার ভিতরের gallery lightbox
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
+  const [showLightbox, setShowLightbox] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+ 
   useEffect(() => {
     if (location.state?.category) {
       const category = location.state.category;
       setActiveBtn(category);
-      const filtered = allItems.filter((item) => item.category === category);
+      const filtered = displayItems.filter((item) => item.category === category);
       setFilteredItems(filtered);
     } else {
-      const shuffled = [...allItems].sort(() => 0.5 - Math.random());
-      setFilteredItems(shuffled.slice(0, 9));
+      setFilteredItems(displayItems.slice(0, 9));
     }
   }, [location.state, apiImages]);
-
+ 
   const handleFilter = (category) => {
     setActiveBtn(category);
     if (category === "All") {
-      const shuffled = [...allItems].sort(() => 0.5 - Math.random());
-      setFilteredItems(shuffled.slice(0, 9));
+      if (category === "All") {
+  setFilteredItems(displayItems.slice(0, 9));
+}
     } else {
-      const filtered = allItems.filter((item) => item.category === category);
+      const filtered = displayItems.filter((item) => item.category === category);
       setFilteredItems(filtered);
     }
   };
-
-  const openModal = (index) => { setCurrentIndex(index); setShowModal(true); };
+ 
+  // ✅ item click করলে টাইপ অনুযায়ী আলাদা modal খুলবে
+  const handleItemClick = (item) => {
+    if (item.type === "caseStudy") {
+      setSelectedCaseStudy(item);
+    } else {
+      // শুধু "single" item গুলোর মধ্যে navigate করার জন্য index বের করা হলো
+      const singleOnly = filteredItems.filter((i) => i.type === "single");
+      const idx = singleOnly.findIndex((i) => i.id === item.id);
+      setCurrentIndex(idx);
+      setShowModal(true);
+    }
+  };
+ 
   const closeModal = () => setShowModal(false);
-  const prevImage = () => setCurrentIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
-  const nextImage = () => setCurrentIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
-
+ 
+  const getSingleList = () => filteredItems.filter((i) => i.type === "single");
+ 
+  const prevImage = () => {
+    const list = getSingleList();
+    setCurrentIndex((prev) => (prev === 0 ? list.length - 1 : prev - 1));
+  };
+  const nextImage = () => {
+    const list = getSingleList();
+    setCurrentIndex((prev) => (prev === list.length - 1 ? 0 : prev + 1));
+  };
+ 
   useEffect(() => {
     if (!showModal) return;
     const handleKey = (e) => {
@@ -514,8 +566,37 @@ const Portfolio = () => {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [showModal]);
-
+  }, [showModal, filteredItems]);
+ 
+  // ✅ Case study বন্ধ করা
+  const closeCaseStudy = () => setSelectedCaseStudy(null);
+ 
+  // ✅ Case study-র ভিতরের gallery lightbox
+  const openLightbox = (index) => {
+    setGalleryIndex(index);
+    setShowLightbox(true);
+  };
+  const closeLightbox = () => setShowLightbox(false);
+  const prevGalleryImage = () =>
+    setGalleryIndex((prev) =>
+      prev === 0 ? selectedCaseStudy.images.length - 1 : prev - 1
+    );
+  const nextGalleryImage = () =>
+    setGalleryIndex((prev) =>
+      prev === selectedCaseStudy.images.length - 1 ? 0 : prev + 1
+    );
+ 
+  useEffect(() => {
+    if (!showLightbox) return;
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") nextGalleryImage();
+      if (e.key === "ArrowLeft") prevGalleryImage();
+      if (e.key === "Escape") closeLightbox();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [showLightbox, galleryIndex]);
+ 
   return (
     <div>
       <Navbar />
@@ -527,7 +608,7 @@ const Portfolio = () => {
           <span className="breadcrumb-current">Portfolio</span>
         </div>
       </div>
-
+ 
       <div className="container-fluid px-3 px-sm-5 py-5">
         <div className="text-center">
           <h4>Portfolio</h4>
@@ -535,7 +616,7 @@ const Portfolio = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
-
+ 
         <div className="d-flex justify-content-center gap-3 my-4 flex-wrap">
           {portfolioBTN.map((btn) => (
             <button
@@ -547,19 +628,27 @@ const Portfolio = () => {
             </button>
           ))}
         </div>
-
+ 
         <div className="row row-cols-1 row-cols-md-3 g-4 custom-scroll p-2">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
+            filteredItems.map((item) => (
               <div key={item.id} className="col fade-anim">
-                <div className="position-relative overflow-hidden rounded portfolio-box">
-                  <img src={item.image} className="img-fluid w-100" alt="" />
+                <div
+                  className="position-relative overflow-hidden rounded portfolio-box"
+                  onClick={() => handleItemClick(item)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    src={item.type === "caseStudy" ? item.cover : item.image}
+                    className="img-fluid w-100"
+                    alt=""
+                  />
                   <div className="portfolio-overlay d-flex flex-column justify-content-center align-items-center">
-                    <h4 className="text-light">{item.title}</h4>
-                    <button
-                      className="btn btn-light d-flex gap-2 align-items-center rounded-circle"
-                      onClick={() => openModal(index)}
-                    >
+                    <h4 className="text-light text-center px-2">{item.title}</h4>
+                    {item.type === "caseStudy" && (
+                      <span className="text-light small">{item.images.length} images</span>
+                    )}
+                    <button className="btn btn-light d-flex gap-2 align-items-center rounded-circle mt-2">
                       <FaEye />
                     </button>
                   </div>
@@ -571,22 +660,173 @@ const Portfolio = () => {
           )}
         </div>
       </div>
-
+ 
       <SocialIcon />
       <Footer />
-
-      {showModal && (
+ 
+      {/* ✅ পুরনো Simple Lightbox — শুধু "single" item গুলোর জন্য */}
+      {showModal && getSingleList().length > 0 && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={filteredItems[currentIndex].image} alt="" className="modal-img" />
+            <img src={getSingleList()[currentIndex].image} alt="" className="modal-img" />
             <button className="nav-btn prev-btn" onClick={prevImage}>&#10094;</button>
             <button className="nav-btn next-btn" onClick={nextImage}>&#10095;</button>
             <span className="close-btn" onClick={closeModal}>&times;</span>
           </div>
         </div>
       )}
+ 
+     {/* ✅ Case Study Detail Modal */}
+{selectedCaseStudy && (
+  <div className="modal-overlay" onClick={closeCaseStudy}>
+    <div
+      className="case-study-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <span className="close-btn" onClick={closeCaseStudy}>
+        &times;
+      </span>
+
+      {/* ===== Title ===== */}
+      <h2 className="case-study-title">
+        {selectedCaseStudy.title}
+      </h2>
+
+      {/* ===== Main Layout ===== */}
+      <div className="case-study-content">
+
+        {/* Left Side */}
+        <div className="case-study-info">
+
+          {selectedCaseStudy.myRole && (
+            <>
+              <strong>My Role</strong>
+              <p>{selectedCaseStudy.myRole}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.description && (
+            <>
+              <strong>Project Description</strong>
+              <p>{selectedCaseStudy.description}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.goal && (
+            <>
+              <strong>Goal</strong>
+              <p>{selectedCaseStudy.goal}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.whatIDid && (
+            <>
+              <strong>What I Did</strong>
+              <p>{selectedCaseStudy.whatIDid}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.client && (
+            <>
+              <strong>Client</strong>
+              <p>{selectedCaseStudy.client}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.duration && (
+            <>
+              <strong>Duration</strong>
+              <p>{selectedCaseStudy.duration}</p>
+            </>
+          )}
+
+          {selectedCaseStudy.published && (
+            <>
+              <strong>Published</strong>
+              <p>{selectedCaseStudy.published}</p>
+            </>
+          )}
+
+          {/* Results */}
+          {selectedCaseStudy.results?.length > 0 && (
+            <>
+              <strong>Results</strong>
+
+              <div className="case-study-results">
+                {selectedCaseStudy.results.map((r, i) => {
+                  const isNegative = String(r.value).trim().startsWith("-");
+
+                  return (
+                    <div key={i} className="result-card">
+                      <h4
+                        className={isNegative ? "result-negative" : "result-positive"}
+                      >
+                        {r.value}
+                      </h4>
+
+                      <small>{r.label}</small>
+                    </div>
+                  );
+                })}
+                </div>
+            </>
+          )}
+
+          {/* Tools */}
+          {selectedCaseStudy.tools?.length > 0 && (
+            <>
+              <strong>Skills & Tools</strong>
+
+              <div className="d-flex flex-wrap gap-2 mt-2">
+                {selectedCaseStudy.tools.map((tool, i) => (
+                  <span key={i} className="badge bg-primary">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+
+        </div>
+
+        {/* Right Side */}
+        <div className="case-study-images">
+
+          <div className="case-study-gallery">
+            {selectedCaseStudy.images.map((img, index) => (
+              <div
+                key={index}
+                onClick={() => openLightbox(index)}
+              >
+                <img
+                  src={img}
+                  alt=""
+                  className="gallery-thumb"
+                />
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+)}
+ 
+      {/* ✅ Case study-র ভিতরের Fullscreen Lightbox */}
+      {showLightbox && selectedCaseStudy && (
+        <div className="modal-overlay" onClick={closeLightbox} style={{ zIndex: 1060 }}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedCaseStudy.images[galleryIndex]} alt="" className="modal-img" />
+            <button className="nav-btn prev-btn" onClick={prevGalleryImage}>&#10094;</button>
+            <button className="nav-btn next-btn" onClick={nextGalleryImage}>&#10095;</button>
+            <span className="close-btn" onClick={closeLightbox}>&times;</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
+ 
 export default Portfolio;
