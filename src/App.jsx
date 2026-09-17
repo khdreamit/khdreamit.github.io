@@ -34,6 +34,8 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/youtube" element={<Youtube />} />
         <Route path="/website" element={<Website />} />
+        
+ 
         <Route path="/about" element={<About />} />
         <Route path="/facebook" element={<Facebook />} />
         <Route path="/google" element={<Google />} />

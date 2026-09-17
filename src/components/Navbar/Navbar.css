@@ -1,64 +1,64 @@
 .activeColor{
   background-color: #c19232;
 }
-
+ 
 .background{
   background-color: #f5b535;
 }
-
+ 
 .hero-bg{
   background-color: #fde3b0;
 }
 .hero-section {
   padding: 50px 0;
 }
-
+ 
 .hero-img-style {
   max-height: 550px;
 }
 .hero-text {
-  margin-top: -30px; /* প্রয়োজন অনুযায়ী adjust করো */
+  margin-top: -30px; /* প্রয়োজন অনুযায়ী adjust করো */
 }
-
-
-
+ 
+ 
+ 
 .dropdown-menu .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.08);  
   color: #000;  
   transition: 0.2s ease-in-out;
 }
-
+ 
 /* Smooth UI */
 .dropdown-menu {
   margin-top: -2px;
   border-radius: 8px;
   animation: fadeIn 0.2s ease-in-out;
 }
-
+ 
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(5px);}
   to {opacity: 1; transform: translateY(0);}
 }
-
-
+ 
+ 
 .custom-navbar-padding {
     padding-left: 0.5rem !important; 
     padding-right: 0.5rem !important; 
 }
-
-
+ 
+ 
 .offcanvas-active-color {
     background-color: #b38731; 
     border-radius: 8px;
     padding: 0.5rem; 
 }
-
+ 
 .hover-offcanvas-color:hover {
     color: #c19232 !important;
 }
-
-
-
+ 
+ 
+ 
 .custom-offcanvas {
     right: 0;
     top: 0;
@@ -68,27 +68,27 @@
     transition: transform .3s ease-in-out; 
     border: none;
 }
-
+ 
 .custom-offcanvas.show {
     transform: translateX(0); 
 }
-
+ 
 .close-btn{
   background-color: #f5b535;
   border: none;
   top: 20px;
   right: 20px;
 }
-
+ 
 @media (min-width: 992px) {
     .custom-nav-link-padding {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
 }
-
-
-
+ 
+ 
+ 
 @media (min-width: 992px) {
     .custom-offcanvas {
         visibility: hidden;
@@ -100,23 +100,23 @@
     }
     
 }
-
-
+ 
+ 
 @media (max-width: 991.98px) {
     #navbarNavLg {
         display: none !important; 
     }
 }
 /* ====== 2nd Level Dropdown (Website SEO submenu) ====== */
-
+ 
 .dropdown-submenu {
   position: relative;
 }
-
+ 
 .dropdown-submenu > .dropdown-item {
   cursor: pointer;
 }
-
+ 
 /* Submenu hidden by default */
 .dropdown-submenu .sub-menu {
   position: absolute;
@@ -130,34 +130,34 @@
   padding: 8px 0;
   z-index: 9999;
 }
-
+ 
 /* Hover করলে submenu দেখাবে */
 .dropdown-submenu:hover .sub-menu {
   display: block;
 }
-
+ 
 /* Submenu item hover effect */
 .sub-menu .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.08);
   color: #000;
 }
-
+ 
 /* ========================= */
 /* SERVICE MAIN DROPDOWN */
 /* ========================= */
-
+ 
 .navbar-nav > .dropdown:hover > .dropdown-menu {
   display: block;
 }
-
+ 
 /* ========================= */
 /* WEBSITE SEO SUBMENU ONLY */
 /* ========================= */
-
+ 
 .dropdown-submenu {
   position: relative;
 }
-
+ 
 .dropdown-submenu > .sub-menu {
   position: absolute;
   top: 0;
@@ -170,30 +170,30 @@
   padding: 8px 0;
   z-index: 9999;
 }
-
+ 
 .dropdown-submenu:hover > .sub-menu {
   display: block;
 }
-
+ 
 /* ========================= */
 /* MAKE ALL DROPDOWN TEXT BOLD */
 /* ========================= */
-
+ 
 /* Service / main dropdown button */
 .navbar .nav-link {
   font-weight: 550;
 }
-
+ 
 /* First level dropdown items (Facebook Ads, Google Ads etc) */
 .dropdown-menu .dropdown-item {
   font-weight: 550;
 }
-
+ 
 /* Website SEO button */
 .dropdown-submenu > .dropdown-item {
   font-weight: 550;
 }
-
+ 
 /* Website SEO submenu items (Audit Plan etc) */
 .sub-menu .dropdown-item {
   font-weight: 550;
@@ -203,10 +203,10 @@ body {
     overflow-x: hidden;
     padding-top: 76px; /* navbar height অনুযায়ী adjust করো */
 }
-
+ 
 /* Dropdown submenu overflow fix */
 .dropdown-submenu .sub-menu {
-    left: auto;      /* left 100% না দিয়ে auto */
+    left: auto;      /* left 100% না দিয়ে auto */
     right: -215px;     /* একটু adjust করে parent এর পাশে রাখবে */
     white-space: nowrap; /* text wrap না হোক */
     max-width: 220px;    /* submenu এর max width নির্ধারণ */
@@ -214,12 +214,12 @@ body {
 /* ========================= */
 /* TOP NAV HOVER ANIMATION */
 /* ========================= */
-
+ 
 .navbar-nav > .nav-item > .nav-link {
   position: relative;
   transition: transform 0.25s ease, color 0.25s ease;
 }
-
+ 
 /* hover করলে লেখা একটু উপরে উঠবে */
 .navbar-nav > .nav-item > .nav-link:hover {
   transform: translateY(-4px);
@@ -231,12 +231,12 @@ body {
 /* ========================= */
 /* ICON FLOAT ON HOVER */
 /* ========================= */
-
+ 
 .navbar-nav > .nav-item > .nav-link {
   position: relative;
   overflow: visible;
 }
-
+ 
 /* icon default hidden */
 .navbar-nav > .nav-item > .nav-link::before {
   content: "📞"; /* default icon */
@@ -250,7 +250,7 @@ body {
   color: #000000;
   transition: all 0.25s ease;
 }
-
+ 
 /* hover করলে icon ভেসে উঠবে */
 .navbar-nav > .nav-item > .nav-link:hover::before {
   opacity: 1;
@@ -259,23 +259,23 @@ body {
 .navbar-nav > .nav-item:nth-child(1) > .nav-link::before {
   content: "🏠"; /* Home */
 }
-
+ 
 .navbar-nav > .nav-item:nth-child(2) > .nav-link::before {
   content: "💼"; /* Portfolio */
 }
-
+ 
 .navbar-nav > .nav-item:nth-child(3) > .nav-link::before {
   content: "🛠"; /* My Skills */
 }
-
+ 
 .navbar-nav > .nav-item:nth-child(4) > .nav-link::before {
   content: "⚙️"; /* Service */
 }
-
+ 
 .navbar-nav > .nav-item:nth-child(5) > .nav-link::before {
   content: "👤"; /* About */
 }
-
+ 
 .navbar-nav > .nav-item:nth-child(6) > .nav-link::before {
   content: "ℹ️"; /* Contact */
 }
@@ -287,7 +287,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
 }
-
+ 
 /* Right side icon */
 .dropdown-icon-right {
   font-size: 14px;
@@ -296,17 +296,17 @@ body {
   transition: all 0.3s ease;
   color: #000000;
 }
-
+ 
 /* Text animation */
 .dropdown-text {
   transition: transform 0.3s ease;
 }
-
+ 
 /* Hover animation */
 .dropdown-animate:hover {
   transform: translateY(-4px); /* পুরো item উপরে উঠবে */
 }
-
+ 
 /* Hover করলে icon দেখা যাবে */
 .dropdown-animate:hover .dropdown-icon-right {
   opacity: 1;
@@ -318,13 +318,13 @@ body {
   font-size: 16px;
   transition: transform 0.25s ease, color 0.25s ease;
 }
-
+ 
 /* Hover animation */
 .dropdown-item:hover .dropdown-icon-right svg {
   transform: scale(1.2);
 }
-
-
+ 
+ 
 /* Hover effect - 3D pop */
 .dropdown-menu .dropdown-item:hover {
     transform: translateY(-4px) scale(1.03);
@@ -333,7 +333,7 @@ body {
     background: linear-gradient(145deg, #ff5e00, #ffffff); 
     color: #000;
 }
-
+ 
 /* Active/Clicked item */
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active {
@@ -342,9 +342,9 @@ body {
     box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2),
                 inset -3px -3px 6px rgba(0, 0, 0, 0.4);
 }
-
-
-
+ 
+ 
+ 
 /* Hover sub-menu */
 .dropdown-submenu .sub-menu .dropdown-item:hover {
     transform: translateY(-4px) scale(1.03);
@@ -352,7 +352,7 @@ body {
                 -6px -6px 12px rgba(0, 0, 0, 0.6);
     background: linear-gradient(145deg, #ff5e00, #ffffff);
 }
-
+ 
 /* Active sub-menu */
 .dropdown-submenu .sub-menu .dropdown-item.active,
 .dropdown-submenu .sub-menu .dropdown-item:active {
@@ -361,26 +361,26 @@ body {
     box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.18),
                 inset -3px -3px 6px rgba(0, 0, 0, 0.4);
 }
-
+ 
 /* Right side icon 3D pop */
 .dropdown-animate:hover .dropdown-icon-right svg {
     transform: scale(1.25) rotateY(12deg);
     color: #000;
 }
-
+ 
 /* Text shadow 3D effect */
 .dropdown-animate:hover .dropdown-text {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15),
                  -1px -1px 2px rgba(255, 255, 255, 0.7);
 }
 /* ================== Underline / Bottom Border ================== */
-
+ 
 /* Main dropdown items (Facebook, Google etc) */
 .dropdown-menu .dropdown-item {
     position: relative;  /* line টাকে item এর নিচে fix করতে */
     padding-bottom: 6px; /* line দেখানোর জন্য একটু space */
 }
-
+ 
 /* thin underline */
 .dropdown-menu .dropdown-item::after {
     content: "";
@@ -393,13 +393,13 @@ body {
     opacity: 0.7; /* হালকা কালো */
     border-radius: 1px; /* একটু smooth look */
 }
-
+ 
 /* Submenu items (On-page SEO etc) */
 .dropdown-submenu .sub-menu .dropdown-item {
     position: relative;
     padding-bottom: 6px;
 }
-
+ 
 .dropdown-submenu .sub-menu .dropdown-item::after {
     content: "";
     position: absolute;
@@ -416,4 +416,173 @@ body {
     background-color: #000000; /* gold / highlight color */
     height: 3px;  /* একটু মোটা */
     transition: all 0.3s ease-in-out;
+}
+ 
+/* ================= MEGA MENU (Services) ================= */
+.mega-dropdown-parent {
+  position: relative;
+}
+ 
+.mega-dropdown-parent > .nav-link {
+  cursor: pointer;
+}
+ 
+.mega-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 680px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 20px 10px;
+  z-index: 9999;
+}
+ 
+/* Ekhon hover na, click korle .show class add hoy (JSX theke),
+   tokhon menu open hobe — mouse sorale bondho hobe na */
+.mega-dropdown-menu.show {
+  display: block;
+  animation: megaFadeIn 0.2s ease-in-out;
+}
+ 
+/* এই keyframe-এ শুরু থেকে শেষ পর্যন্ত translateX(-50%) সবসময় থাকে,
+   শুধু translateY বদলায় — তাই centering কখনো হারায় না, "জাম্প" করবে না */
+@keyframes megaFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+ 
+.mega-dropdown-row {
+  display: flex;
+  gap: 10px;
+}
+ 
+.mega-dropdown-col {
+  flex: 1;
+  padding: 0 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+ 
+.mega-dropdown-col:last-child {
+  border-right: none;
+}
+ 
+.mega-col-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  color: #6b4e13;
+}
+ 
+.mega-col-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+.mega-col-list .dropdown-item {
+  position: relative;
+  padding: 6px 8px;
+  padding-bottom: 8px;
+  border-radius: 6px;
+}
+ 
+/* thin underline, ঠিক Client/About dropdown item-এর মতো */
+.mega-col-list .dropdown-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: 2px;
+  background-color: #000;
+  opacity: 0.7;
+  border-radius: 1px;
+}
+ 
+/* Hover korle 3D pop + orange-white gradient */
+.mega-col-list .dropdown-item:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.18),
+              -6px -6px 12px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(145deg, #ff5e00, #ffffff);
+  color: #000;
+}
+ 
+.mega-col-list .dropdown-item:hover::after {
+  background-color: #000000;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+ 
+/* Click/active obosthai black-blue gradient */
+.mega-col-list .dropdown-item.active,
+.mega-col-list .dropdown-item:active {
+  background: linear-gradient(145deg, #040404, #1900ff);
+  color: #ffffff;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+              inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+}
+ 
+/* Mobile stacked version inside offcanvas */
+.mobile-mega-col {
+  padding: 6px 10px 6px 20px;
+}
+ 
+.mobile-mega-title {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 8px 0 4px;
+  color: #6b4e13;
+  text-transform: uppercase;
+}
+ 
+.mobile-mega-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 6px;
+}
+ 
+/* Desktop-এর mega menu mobile screen-এ hide, oikhane stacked version ব্যবহার হচ্ছে */
+@media (max-width: 991.98px) {
+  .mega-dropdown-menu {
+    display: none !important;
+  }
+}
+ 
+
+
+/* Main Navbar text should always stay black */
+.navbar .navbar-nav > .nav-item > .nav-link {
+    color: #000 !important;
+}
+
+/* Active main navbar item */
+.navbar .navbar-nav > .nav-item > .nav-link.active {
+    color: #000 !important;
+}
+/* =========================
+   MEGA MENU CLICKED ITEM
+   Only the clicked item stays active
+========================= */
+
+.mega-col-list .dropdown-item.mega-item-active {
+    background: linear-gradient(145deg, #000000, #1900ff);
+    color: #fff !important;
+
+    box-shadow:
+        inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+        inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.mega-col-list .dropdown-item.mega-item-active .dropdown-text {
+    color: #000000 !important;
+}
+
+.mega-col-list .dropdown-item.mega-item-active .dropdown-icon-right {
+    color: #000000 !important;
 }

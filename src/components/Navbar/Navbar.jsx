@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
@@ -7,8 +7,6 @@ import {
   FaFacebookF,
   FaGoogle,
   FaShopify,
-  FaYoutube,
-  FaGlobe,
   FaAmazon,
   FaShareAlt
 } from "react-icons/fa";
@@ -19,80 +17,105 @@ import {
   FaLink,
   FaMapMarkerAlt
 } from "react-icons/fa";
-
-
-
+ 
 const Navbar = () => {
-    
+ 
     const [showOffcanvas, setShowOffcanvas] = useState(false);
-    
+ 
     const closeOffcanvas = () => {
         setShowOffcanvas(false);
     };
-   
+ 
     const handleTogglerClick = () => {
         setShowOffcanvas(!showOffcanvas);
     };
-
-    
+ 
+    // ---------- Services mega-menu: click দিয়ে open/close ----------
+    const [servicesOpen, setServicesOpen] = useState(false);
+    const megaRef = useRef(null);
+ 
+    const toggleServicesMenu = () => {
+        setServicesOpen((prev) => !prev);
+    };
+ 
+    const closeServicesMenu = () => {
+        setServicesOpen(false);
+    };
+ 
+    // মেনুর বাইরে click করলে বন্ধ হয়ে যাবে
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (megaRef.current && !megaRef.current.contains(e.target)) {
+                setServicesOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+ 
+    // ================= NAV STRUCTURE =================
+    // "Services" ekhon mega-menu — 3 ta column ek shathe show hobe:
+    // Marketing Services | Website SEO | Website Development
     const links = [
         { path: "/", label: "Home" },
         { path: "/portfolio", label: "Portfolio" },
-        { path: "/skills", label: "My Skills" },
-       
+        { path: "/skills", label: " Our Skills" },
+ 
         {
-  label: "Service",
-  submenu: [
-    { path: "/facebook", label: "Facebook Ads" },
-    { path: "/google", label: "Google Ads" },
-    { path: "/shopify", label: "Shopify Marketing" },
-    { path: "/youtube", label: "YouTube SEO" },
-
-    {
-      label: "Website SEO",
-      submenu: [
-        { path: "/auditplan", label: "Audit Plan" },
-        { path: "/onpage", label: "On-Page SEO" },
-        { path: "/technical", label: "Technical SEO" },
-        { path: "/offpage", label: "Off-Page SEO" },
-        { path: "/local", label: "Local SEO" },
-      ]
-    },
-
-    { path: "/amazon", label: "Amazon Book Promotion" },
-    { path: "/socialMediaManage", label: "Social Media Management" },
-  ]
-},
-
- {
-        label: "Client",
-        submenu: [
-            { path: "/meeting", label: "Client Meeting" },
-            { path: "/review", label: "Client Review" }
-        ]
+            label: "Services",
+            mega: true,
+            columns: [
+                {
+                    title: "Marketing Services",
+                    items: [
+                        { path: "/facebook", label: "Facebook Ads", icon: FaFacebookF },
+                        { path: "/google", label: "Google Ads", icon: FaGoogle },
+                        { path: "/shopify", label: "Shopify Marketing", icon: FaShopify },
+                        { path: "/amazon", label: "Amazon Book Promotion", icon: FaAmazon },
+                        { path: "/socialMediaManage", label: "Social Media Management", icon: FaShareAlt },
+                    ],
+                },
+                {
+                    title: "Website SEO",
+                    items: [
+                        { path: "/auditplan", label: "SEO Audit Plan", icon: FaClipboardCheck },
+                        { path: "/technical", label: "Technical SEO", icon: FaCogs },
+                        { path: "/offpage", label: "Off-Page SEO", icon: FaLink },
+                        { path: "/onpage", label: "On-Page SEO", icon: FaFileCode },
+                        { path: "/local", label: "Local SEO", icon: FaMapMarkerAlt },
+                    ],
+                },
+               
+            ],
         },
-
-
+ 
         {
-  label: "About",
-  submenu: [
-    { path: "/about", label: "About Me" },
-    { path: "/certificates", label: "Certificates" }
-  ]
-},
+            label: "Client",
+            submenu: [
+                { path: "/meeting", label: "Client Meeting" },
+                { path: "/review", label: "Client Review" },
+            ],
+        },
+ 
+        {
+            label: "About",
+            submenu: [
+                { path: "/about", label: "About Me" },
+                { path: "/certificates", label: "Certificates" },
+            ],
+        },
+ 
         { path: "/contact", label: "Contact" },
     ];
-
+ 
     const baseStyle = "px-3 py-2 rounded";
     const activeStyle = "activeColor text-white";
     const hoverStyle = "hover-activeColor";
-    
-
-
+ 
     return (
         <nav className="navbar navbar-expand-lg shadow-sm py-3 fixed-top background custom-navbar-padding">
-            <div className="container-fluid"> 
-
+            <div className="container-fluid">
+ 
                 <div className="navbar-brand me-auto">
                     <img
                         src={Logo}
@@ -100,92 +123,94 @@ const Navbar = () => {
                         style={{ height: "50px", objectFit: "contain" }}
                     />
                 </div>
-
+ 
                 {/* Toggler Button for Small Screens */}
                 <button
-                    className="navbar-toggler border-0" 
+                    className="navbar-toggler border-0"
                     type="button"
                     onClick={handleTogglerClick}
                     aria-controls="offcanvasNavbar"
                     aria-expanded={showOffcanvas}
                     aria-label="Toggle navigation"
                 >
-                    
                     {showOffcanvas ? <FaTimes className="text-dark fs-4" /> : <FaBars className="text-dark fs-4" />}
                 </button>
-
-                
+ 
+                {/* ================= DESKTOP MENU ================= */}
                 <div className="collapse navbar-collapse" id="navbarNavLg">
                     <ul className="navbar-nav mx-auto gap-2">
                         {links.map((link, index) =>
-                            link.submenu ? (
+                            link.mega ? (
+                                // ---------- MEGA MENU (Services) — click দিয়ে open/close ----------
+                                <li
+                                    key={index}
+                                    className="nav-item dropdown mega-dropdown-parent"
+                                    ref={megaRef}
+                                >
+                                    <span
+                                        className="nav-link fw-bold dropdown-toggle custom-nav-link-padding"
+                                        onClick={toggleServicesMenu}
+                                        role="button"
+                                    >
+                                        {link.label}
+                                    </span>
+ 
+                                    <div className={`mega-dropdown-menu hero-bg ${servicesOpen ? "show" : ""}`}>
+                                        <div className="mega-dropdown-row">
+                                            {link.columns.map((col, ci) => (
+                                                <div className="mega-dropdown-col" key={ci}>
+                                                    <h6 className="mega-col-title">{col.title}</h6>
+                                                    <ul className="mega-col-list">
+                                                        {col.items.map((item, ii) => {
+                                                            const Icon = item.icon;
+                                                            return (
+                                                                <li key={ii}>
+                                                                    <NavLink
+                                                                        className="dropdown-item dropdown-animate"
+                                                                        to={item.path}
+                                                                        onClick={closeServicesMenu}
+                                                                    >
+                                                                        <span className="dropdown-text">{item.label}</span>
+                                                                        {Icon && (
+                                                                            <span className="dropdown-icon-right">
+                                                                                <Icon />
+                                                                            </span>
+                                                                        )}
+                                                                    </NavLink>
+                                                                </li>
+                                                            );
+                                                        })}
+                                                    </ul>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </li>
+                            ) : link.submenu ? (
+                                // ---------- NORMAL DROPDOWN (Client / About) ----------
                                 <li key={index} className="nav-item dropdown hover-dropdown">
                                     <span className="nav-link fw-bold dropdown-toggle custom-nav-link-padding">
                                         {link.label}
                                     </span>
                                     <ul className="dropdown-menu hero-bg">
-                                        {link.submenu.map((sub, i) =>
-                sub.submenu ? (
-                    <li key={i} className="dropdown-submenu">
-                    <NavLink
-                to="/website"  // যেই page তুমি দিতে চাও
-                className="dropdown-item fw-bold d-flex justify-content-between align-items-center"
-                >
-                Website SEO
-                <span>▸</span>
-                </NavLink>
-
-
-      <ul className="dropdown-menu sub-menu">
-        {sub.submenu.map((child, j) => (
-  <li key={j}>
-    <NavLink className="dropdown-item dropdown-animate" to={child.path}>
-      <span className="dropdown-text">{child.label}</span>
-
-      <span className="dropdown-icon-right">
-        {child.label === "Audit Plan" && <FaClipboardCheck />}
-        {child.label === "On-Page SEO" && <FaFileCode />}
-        {child.label === "Technical SEO" && <FaCogs />}
-        {child.label === "Off-Page SEO" && <FaLink />}
-        {child.label === "Local SEO" && <FaMapMarkerAlt />}
-      </span>
-
-    </NavLink>
-  </li>
-))}
-
-      </ul>
-    </li>
-  ) : (
-    <li key={i}>
-      <NavLink className="dropdown-item dropdown-animate" to={sub.path}>
-            <span className="dropdown-text">{sub.label}</span>
-
-            <span className="dropdown-icon-right">
-                {sub.label === "Facebook Ads" && <FaFacebookF />}
-                {sub.label === "Google Ads" && <FaGoogle />}
-                {sub.label === "Shopify Marketing" && <FaShopify />}
-                {sub.label === "YouTube SEO" && <FaYoutube />}
-                {sub.label === "Amazon Book Promotion" && <FaAmazon />}
-                {sub.label === "Social Media Management" && <FaShareAlt />}
-            </span>
-        </NavLink>
-
-
-    </li>
-  )
-)}
-
+                                        {link.submenu.map((sub, i) => (
+                                            <li key={i}>
+                                                <NavLink className="dropdown-item dropdown-animate" to={sub.path}>
+                                                    <span className="dropdown-text">{sub.label}</span>
+                                                </NavLink>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </li>
                             ) : (
+                                // ---------- SIMPLE LINK ----------
                                 <li className="nav-item" key={link.path}>
                                     <NavLink
                                         to={link.path}
                                         className={({ isActive }) =>
                                             `${baseStyle} nav-link fw-medium ${
                                                 isActive ? activeStyle : hoverStyle
-                                            } fw-bold custom-nav-link-padding` // Added custom padding class
+                                            } fw-bold custom-nav-link-padding`
                                         }
                                     >
                                         {link.label}
@@ -194,7 +219,7 @@ const Navbar = () => {
                             )
                         )}
                     </ul>
-
+ 
                     {/* Social Media Icons for Large Screens */}
                     <div className="d-flex gap-3 fs-5">
                         <a href="https://www.facebook.com/AdulHalim.net/" className="text-dark hover-color"><FaFacebook /></a>
@@ -202,14 +227,14 @@ const Navbar = () => {
                         <a href="https://www.linkedin.com/in/khdreamit/" className="text-dark hover-color"><FaLinkedin /></a>
                     </div>
                 </div>
-
-                {/* Offcanvas Menu for Small Screens */}
-                <div 
+ 
+                {/* ================= OFFCANVAS MENU (Mobile) ================= */}
+                <div
                     className={`offcanvas offcanvas-end custom-offcanvas ${showOffcanvas ? 'show' : ''}`}
                     tabIndex="-1"
                     id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel"
-                    data-bs-scroll="true" 
+                    data-bs-scroll="true"
                 >
                     <div className="offcanvas-header border-bottom background">
                         <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
@@ -225,14 +250,35 @@ const Navbar = () => {
                             onClick={closeOffcanvas}
                             aria-label="Close"
                         >
-                            <FaTimes className="text-dark fs-5" /> 
+                            <FaTimes className="text-dark fs-5" />
                         </button>
                     </div>
-
+ 
                     <div className="offcanvas-body hero-bg">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 gap-2">
                             {links.map((link, index) =>
-                                link.submenu ? (
+                                link.mega ? (
+                                    // ---------- MOBILE MEGA MENU (stacked columns) ----------
+                                    <li key={index} className="nav-item">
+                                        <span className="nav-link fw-bold d-block" data-bs-toggle="dropdown">
+                                            {link.label}
+                                        </span>
+                                        {link.columns.map((col, ci) => (
+                                            <div key={ci} className="mobile-mega-col">
+                                                <p className="mobile-mega-title">{col.title}</p>
+                                                <ul className="mobile-mega-list">
+                                                    {col.items.map((item, ii) => (
+                                                        <li key={ii}>
+                                                            <NavLink className="dropdown-item" to={item.path} onClick={closeOffcanvas}>
+                                                                {item.label}
+                                                            </NavLink>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </li>
+                                ) : link.submenu ? (
                                     <li key={index} className="nav-item dropdown">
                                         <span className="nav-link fw-bold dropdown-toggle d-block" data-bs-toggle="dropdown">
                                             {link.label}
@@ -254,7 +300,7 @@ const Navbar = () => {
                                             className={({ isActive }) =>
                                                 `nav-link fw-bold ${isActive ? 'offcanvas-active-color text-white' : 'hover-offcanvas-color'}`
                                             }
-                                            onClick={closeOffcanvas} 
+                                            onClick={closeOffcanvas}
                                         >
                                             {link.label}
                                         </NavLink>
@@ -262,7 +308,7 @@ const Navbar = () => {
                                 )
                             )}
                         </ul>
-
+ 
                         {/* Social Media Icons for Offcanvas */}
                         <div className="d-flex gap-3 fs-5 mt-4 border-top pt-3">
                             <a href="https://www.facebook.com/AdulHalim.net/" className="text-dark hover-color"><FaFacebook /></a>
@@ -271,13 +317,13 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                {/* Overlay for Offcanvas to close when clicked outside */}
+ 
                 {showOffcanvas && <div className="offcanvas-backdrop fade show" onClick={closeOffcanvas}></div>}
-
+ 
             </div>
         </nav>
-        
     );
 };
-
+ 
 export default Navbar;
+ 
