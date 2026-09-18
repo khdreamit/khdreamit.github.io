@@ -11,7 +11,7 @@ const SocialIcon = () => {
             <div className="row py-5 g-3 text-center">
 
             <div className="col-12 col-sm-6 col-md-4 col-lg">
-                <a href="https://www.facebook.com/AdulHalim.net/"
+                <a href="https://www.facebook.com/khdreamit1/"
                 className="d-block text-white text-decoration-none rounded py-2 px-3 facebook">
                 <FaFacebook /> Facebook
                 </a>
