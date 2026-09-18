@@ -15,9 +15,16 @@ import {
   FaFileCode,
   FaCogs,
   FaLink,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaPalette,
+  FaLaptopCode,
+  FaServer,
+  FaLayerGroup,
+  FaBriefcase,
+  FaBullseye,
+  FaStore
 } from "react-icons/fa";
- 
+
 const Navbar = () => {
  
     const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -62,32 +69,69 @@ const Navbar = () => {
         { path: "/skills", label: " Our Skills" },
  
         {
-            label: "Services",
-            mega: true,
-            columns: [
-                {
-                    title: "Marketing Services",
-                    items: [
-                        { path: "/facebook", label: "Facebook Ads", icon: FaFacebookF },
-                        { path: "/google", label: "Google Ads", icon: FaGoogle },
-                        { path: "/shopify", label: "Shopify Marketing", icon: FaShopify },
-                        { path: "/amazon", label: "Amazon Book Promotion", icon: FaAmazon },
-                        { path: "/socialMediaManage", label: "Social Media Management", icon: FaShareAlt },
-                    ],
-                },
-                {
-                    title: "Website SEO",
-                    items: [
-                        { path: "/auditplan", label: "SEO Audit Plan", icon: FaClipboardCheck },
-                        { path: "/technical", label: "Technical SEO", icon: FaCogs },
-                        { path: "/offpage", label: "Off-Page SEO", icon: FaLink },
-                        { path: "/onpage", label: "On-Page SEO", icon: FaFileCode },
-                        { path: "/local", label: "Local SEO", icon: FaMapMarkerAlt },
-                    ],
-                },
-               
+    label: "Services",
+    mega: true,
+    columns: [
+        {
+            title: "Marketing Services",
+            items: [
+                { path: "/facebook", label: "Facebook Ads", icon: FaFacebookF },
+                { path: "/google", label: "Google Ads", icon: FaGoogle },
+                { path: "/shopify", label: "Shopify Marketing", icon: FaShopify },
+                { path: "/amazon", label: "Amazon Book Promotion", icon: FaAmazon },
+                { path: "/socialMediaManage", label: "Social Media Management", icon: FaShareAlt },
             ],
         },
+
+        {
+            title: "Website SEO",
+            items: [
+                { path: "/auditplan", label: "SEO Audit Plan", icon: FaClipboardCheck },
+                { path: "/technical", label: "Technical SEO", icon: FaCogs },
+                { path: "/offpage", label: "Off-Page SEO", icon: FaLink },
+                { path: "/onpage", label: "On-Page SEO", icon: FaFileCode },
+                { path: "/local", label: "Local SEO", icon: FaMapMarkerAlt },
+            ],
+        },
+
+        {
+            title: "Website Development",
+            items: [
+                {
+                    path: "/website-redesign",
+                    label: "Website Redesign",
+                    icon: FaPalette
+                },
+                {
+                    path: "/frontend-development",
+                    label: "Frontend Development",
+                    icon: FaLaptopCode
+                },
+                {
+                    path: "/backend-development",
+                    label: "Backend Development",
+                    icon: FaServer
+                },
+                {
+                    path: "/full-stack-development",
+                    label: "Full-Stack Development",
+                    icon: FaLayerGroup
+                },
+               
+                {
+                    path: "/landing-page",
+                    label: "Landing Page",
+                    icon: FaBullseye
+                },
+                {
+                    path: "/ecommerce-website",
+                    label: "Web Projects",
+                    icon: FaStore
+                },
+            ],
+        },
+    ],
+},
  
         {
             label: "Client",
