@@ -184,7 +184,7 @@
 
   font-size:
     clamp(
-      48px,
+      40px,
       7vw,
       88px
     );

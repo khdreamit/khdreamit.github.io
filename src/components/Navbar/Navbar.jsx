@@ -75,8 +75,9 @@ const Navbar = () => {
         {
             title: "Marketing Services",
             items: [
+                 { path: "/google", label: "Google Ads", icon: FaGoogle },
                 { path: "/facebook", label: "Facebook Ads", icon: FaFacebookF },
-                { path: "/google", label: "Google Ads", icon: FaGoogle },
+               
                 { path: "/shopify", label: "Shopify Marketing", icon: FaShopify },
                 { path: "/amazon", label: "Amazon Book Promotion", icon: FaAmazon },
                 { path: "/socialMediaManage", label: "Social Media Management", icon: FaShareAlt },
@@ -86,21 +87,35 @@ const Navbar = () => {
         {
             title: "Website SEO",
             items: [
+                { path: "/website", label: "Website SEO", icon: FaClipboardCheck },
+                  { path: "/local", label: "Local SEO", icon: FaMapMarkerAlt },
                 { path: "/auditplan", label: "SEO Audit Plan", icon: FaClipboardCheck },
+                { path: "/onpage", label: "On-Page SEO", icon: FaFileCode },
                 { path: "/technical", label: "Technical SEO", icon: FaCogs },
                 { path: "/offpage", label: "Off-Page SEO", icon: FaLink },
-                { path: "/onpage", label: "On-Page SEO", icon: FaFileCode },
-                { path: "/local", label: "Local SEO", icon: FaMapMarkerAlt },
+                
+              
             ],
         },
 
         {
             title: "Website Development",
             items: [
+                 {
+                    path: "/landing-page",
+                    label: "Landing Page",
+                    icon: FaBullseye
+                },
                 {
                     path: "/website-redesign",
                     label: "Website Redesign",
                     icon: FaPalette
+                },
+
+                  {
+                    path: "/ecommerce-website",
+                    label: "Recent Projects",
+                    icon: FaStore
                 },
                 {
                     path: "/frontend-development",
@@ -118,16 +133,8 @@ const Navbar = () => {
                     icon: FaLayerGroup
                 },
                
-                {
-                    path: "/landing-page",
-                    label: "Landing Page",
-                    icon: FaBullseye
-                },
-                {
-                    path: "/ecommerce-website",
-                    label: "Web Projects",
-                    icon: FaStore
-                },
+               
+              
             ],
         },
     ],

@@ -130,12 +130,12 @@ const EcommerceWebsite = () => {
       id: 5,
       category: "Car Detailing",
       style: "05",
-      title: "Auto Shine Studio",
+      title: "Tint&Shine",
       description:
         "Premium car detailing website showcasing detailing packages, gallery and booking information.",
       technologies: ["React", "CSS", "JavaScript"],
-      demo: "#",
-      github: "#",
+      demo: "https://abhalim20318-cmyk.github.io/tint-shine-landing-page-3-/",
+      github: "https://abhalim20318-cmyk.github.io/tint-shine-landing-page-3-/",
       label: "Detailing Studio",
 
       previewTitle: "Make Your Car Shine.",
@@ -148,12 +148,12 @@ const EcommerceWebsite = () => {
       id: 6,
       category: "Car Detailing",
       style: "06",
-      title: "Detail Garage",
+      title: "AUTO DETAILING BUSHI",
       description:
         "Modern automotive detailing website with service cards, vehicle care sections and contact CTA.",
       technologies: ["HTML", "CSS", "Bootstrap"],
-      demo: "#",
-      github: "#",
+      demo: "https://abhalimnh-oss.github.io/auto-detailing-bushi-website/",
+      github: "https://abhalimnh-oss.github.io/auto-detailing-bushi-website/",
       label: "Car Detailing",
 
       previewTitle: "Your Car. Our Detail.",
@@ -170,12 +170,12 @@ const EcommerceWebsite = () => {
       id: 7,
       category: "Restaurant",
       style: "07",
-      title: "Emberwood Restaurant",
+      title: "Café Verde",
       description:
         "Elegant restaurant website featuring menu presentation, gallery, banquet information and booking.",
       technologies: ["React", "Bootstrap", "CSS"],
-      demo: "#",
-      github: "#",
+      demo: "https://khdreamit1.github.io/cafe-website-1-/",
+      github: "https://khdreamit1.github.io/cafe-website-1-/",
       label: "Restaurant",
 
       previewTitle: "Taste Something Special.",
@@ -188,12 +188,12 @@ const EcommerceWebsite = () => {
       id: 8,
       category: "Restaurant",
       style: "08",
-      title: "Urban Table",
+      title: "Emberwood Restaurant",
       description:
         "Modern restaurant website designed around food presentation, reservations and business information.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      demo: "#",
-      github: "#",
+      demo: "https://khdreamit1.github.io/emberwood-restaurant-website/",
+      github: "https://khdreamit1.github.io/emberwood-restaurant-website/",
       label: "Restaurant Website",
 
       previewTitle: "Good Food. Great Moments.",
