@@ -201,6 +201,23 @@ const EcommerceWebsite = () => {
       previewText: "Reserve your table and enjoy the evening",
       previewButton: "Reserve Table",
     },
+    {
+  id: 8.2,
+  category: "Restaurant",
+  style: "8.2",
+  title: "Bangladesh Pakistani Indian Food",
+  description:
+    "4-page responsive restaurant website with a searchable, filterable 42-item menu, contact form validation and Google Maps directions.",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  demo: "https://khdreamit1.github.io/bangladesh-pakistani-indian-food-restaurant-1-/",
+  github: "https://khdreamit1.github.io/bangladesh-pakistani-indian-food-restaurant-1-/",
+  label: "Restaurant Website",
+
+  previewTitle: "Authentic South Asian Flavors",
+  previewSubtitle: "Al Olaya, Riyadh",
+  previewText: "Bangladesh, Pakistani and Indian food. Dine-in, drive-through and no-contact delivery",
+  previewButton: "View Menu",
+},
 
     // =====================================================
     // E-COMMERCE
