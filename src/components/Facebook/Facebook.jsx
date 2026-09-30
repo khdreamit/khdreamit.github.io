@@ -1,491 +1,800 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-import SocialIcon from '../SocialIcon/SocialIcon';
-import Footer from '../Footer/Footer';
-import { FaPix  } from "react-icons/fa6";
-import YoutubeHero from '../../assets/q.jpg'
-import YouSeo from '../../assets/large.jpg'
-import '../Youtube/youtube.css'
-import "aos/dist/aos.css";
-import YouMan from '../../assets/youMan2.png'
-// import ServiceImg from '../../assets/Youtube.jpg'
+import React, { useEffect, useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import SocialIcon from "../SocialIcon/SocialIcon";
+import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
-import {FaCheck, FaTimes, FaSearch, FaHockeyPuck, FaTags, FaImage , FaChartBar , FaPeopleArrows , FaPuzzlePiece, FaCheckCircle, FaChevronDown} from "react-icons/fa";;
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaSearch,
+  FaBullseye,
+  FaCog,
+  FaPenNib,
+  FaChartLine,
+  FaUsers,
+  FaRetweet,
+  FaCode,
+  FaCheckCircle,
+  FaChevronDown,
+  FaCheck,
+  FaArrowRight,
+  FaFileAlt,
+  FaLightbulb,
+} from "react-icons/fa";
 
-
-
+import "./facebook.css";
 
 const Facebook = () => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-const services = [
-  {
-    title: "Facebook Ad Strategy Development",
-    icon: <FaSearch />,
-    items: [
-      "I create a custom ad strategy tailored to your business goals, budget, and target audience. Every campaign starts with a solid plan to maximize conversions and ROI. With the right strategy, your ads reach the right people at the right time.",
-    ],
-  },
-  {
-    title: "Target Audience Research & Segmentation",
-    icon: <FaHockeyPuck />,
-    items: [
-      "I conduct in-depth audience research to identify who is most likely to engage with your product or service. Using demographics, location, interests, and behavior, I segment your audience to ensure your ads are shown only to the people who matter most.",
-    ],
-  },
-  {
-    title: "Campaign Setup & Management",
-    icon: <FaTags  />,
-    items: [
-      "I handle full campaign setup, including campaign objectives, budget allocation, bidding strategies, and ad placements. Continuous monitoring and optimization ensure your campaigns perform at their best and deliver measurable results.",
-    ],
-  },
-  {
-    title: "Ad Copywriting",
-    icon: <FaImage />,
-    items: [
-      "I write professional and persuasive ad copy that highlights your product or service’s key benefits. Compelling copy engages users and encourages them to take action on your ads.",
-    ],
-  },
-  {
-    title: "Lead Generation Campaigns",
-    icon: <FaChartBar />,
-    items: [
-      "I create campaigns specifically designed to collect high-quality leads. Optimized forms, CTAs, and landing pages help generate prospects who are genuinely interested in your business.",
-    ],
-  },
-  {
-    title: "Conversion & Sales Campaigns",
-    icon: <FaPeopleArrows  />,
-    items: [
-      "I run conversion-focused campaigns aimed at increasing sales. From audience targeting to creative optimization, every aspect of the campaign is designed to drive measurable revenue growth",
-    ],
-  },
-  {
-    title: " Retargeting / Remarketing Ads",
-    icon: <FaPuzzlePiece />,
-    items: [
-      "I retarget users who have already interacted with your website or social media profiles. Remarketing increases conversion rates by reminding interested users about your products or services.",
-    ],
-  },
+  const services = [
+    {
+      title: "Facebook Ad Strategy",
+      icon: <FaSearch />,
+      text: "A custom Meta Ads strategy based on your business goal, budget, audience, and campaign objective.",
+    },
+    {
+      title: "Audience Research",
+      icon: <FaUsers />,
+      text: "Research and segmentation using demographics, interests, location, behavior, and customer intent.",
+    },
+    {
+      title: "Campaign Setup & Management",
+      icon: <FaCog />,
+      text: "Complete campaign setup, budget allocation, placements, monitoring, and ongoing optimization.",
+    },
+    {
+      title: "Ad Copywriting",
+      icon: <FaPenNib />,
+      text: "Clear and persuasive ad copy designed to communicate your offer and encourage users to take action.",
+    },
+    {
+      title: "Lead Generation",
+      icon: <FaChartLine />,
+      text: "Lead-focused campaigns designed to attract relevant prospects and improve lead quality.",
+    },
+    {
+      title: "Conversion & Sales",
+      icon: <FaBullseye />,
+      text: "Conversion-focused campaigns built around your customer journey, offer, audience, and tracking setup.",
+    },
+    {
+      title: "Retargeting Ads",
+      icon: <FaRetweet />,
+      text: "Reconnect with people who already interacted with your website, page, products, or previous ads.",
+    },
+    {
+      title: "Meta Pixel & Tracking",
+      icon: <FaCode />,
+      text: "Pixel and event tracking setup to help measure important actions and improve campaign decisions.",
+    },
+  ];
 
-  {
-    title: "Facebook Pixel Setup & Tracking",
-    icon: <FaPix />,
-    items: [
-      "I install and configure Facebook Pixel on your website to track user behavior. Pixel tracking allows you to measure ad effectiveness, monitor conversions, and optimize campaigns based on real data."
-    ],
-  },
-  {
-    title: "Tiktok Ad Strategy Development",
-    icon: <FaSearch />,
-    items: [
-      "I create a custom TikTok ad strategy tailored to your business goals, budget, and audience. Every campaign starts with a smart plan to boost views, engagement, and conversions. With the right approach, your TikTok ads reach the right people at the right time"
-    ],
-  },
-]; 
-
-
-
-const items = [
-  {
-    title: "Campaign Overview",
-    desc: "A summary of all active and completed campaigns, including their objectives such as Traffic, Leads, Sales, or Engagement."
-  },
-  {
-    title: "Budget & Spending Analysis",
-    desc: "A breakdown of the total budget, actual spend, and daily spending patterns to ensure full transparency."
-  },
-  {
-    title: "Reach & Impressions",
-    desc: "Detailed data showing how many people saw the ads and how many times they were displayed."
-  },
-  {
-    title: "Click & Engagement Metrics",
-    desc: "Key performance indicators such as Total Clicks, CTR, and CPC to analyze ad engagement."
-  },
-  {
-    title: "Lead & Sales Performance",
-    desc: "Conversion metrics including total leads, cost per lead, purchases, conversions, and ROAS."
-  },
-  {
-    title: "Audience Performance Insights",
-    desc: "Insights on best-performing age groups, gender, location, and winning audience segments."
-  },
-  {
-    title: "Creative Performance Review",
-    desc: "Evaluation of top-performing images, videos, headlines, captions, and engagement scores."
-  },
-  {
-    title: "Device Performance",
-    desc: "Comparison of results between mobile and desktop to detect high-performing platforms."
-  },
-  {
-    title: "Placement Performance",
-    desc: "Performance across Facebook Feed, Instagram Feed, Reels, Stories, and other placements."
-  },
-  {
-    title: "Conversion Tracking & Pixel Insights",
-    desc: "Data including landing page activity, Add to Cart, Checkout, Purchases, and pixel event tracking."
-  },
-  {
-    title: "Key Insights & Next-Step Recommendations",
-    desc: "A concise summary of what worked, areas to improve, and strategic recommendations."
-  }
-];
-
-
-
-
+  const items = [
+    {
+      title: "Campaign Overview",
+      desc: "A summary of active and completed campaigns and their objectives.",
+    },
+    {
+      title: "Budget & Spending Analysis",
+      desc: "A clear view of budget, actual spend, and spending patterns.",
+    },
+    {
+      title: "Reach & Impressions",
+      desc: "Data showing how many people saw the ads and how often.",
+    },
+    {
+      title: "Click & Engagement Metrics",
+      desc: "Important metrics such as clicks, CTR, CPC, and engagement.",
+    },
+    {
+      title: "Lead & Sales Performance",
+      desc: "Tracking of leads, conversions, purchases, cost per result, and ROAS when available.",
+    },
+    {
+      title: "Audience Performance",
+      desc: "Insights into age, gender, location, interests, and audience segments.",
+    },
+    {
+      title: "Creative Performance",
+      desc: "Review of images, videos, headlines, captions, and creative performance.",
+    },
+    {
+      title: "Device Performance",
+      desc: "Comparison of campaign performance across mobile and desktop.",
+    },
+    {
+      title: "Placement Performance",
+      desc: "Performance across Facebook Feed, Instagram Feed, Reels, Stories, and other placements.",
+    },
+    {
+      title: "Conversion Tracking",
+      desc: "Review of available website events and conversion tracking data.",
+    },
+    {
+      title: "Next-Step Recommendations",
+      desc: "A practical summary of what to improve, test, optimize, or scale next.",
+    },
+  ];
 
   const faqData = [
     {
       q: "Do I need to give access to my Facebook Page?",
-      a: "Yes. To run and manage your ads, I require Partner Access to your Facebook Page. You can grant only the necessary permissions (Advertiser/Analyst), ensuring your page remains completely secure and fully under your control."
+      a: "Yes. To manage your advertising, the required Meta Business/Page and Ads Manager permissions are needed. You remain in control of your account and access.",
     },
     {
       q: "What results can I expect from Facebook Ads?",
-      a: "Facebook Ads can generate leads, sales, website traffic, and brand awareness. Results depend on strategy, audience targeting, creatives, and budget."
+      a: "Depending on your business and campaign objective, Meta Ads can support lead generation, sales, website traffic, engagement, or brand awareness. Results depend on the offer, audience, creative, tracking, and budget.",
     },
     {
-      q: "Do you provide monthly performance reports?",
-      a: "Yes. Every client receives a detailed monthly report covering reach, clicks, leads, sales, ROAS, and all key performance metrics."
+      q: "Do you provide performance reports?",
+      a: "Yes. Performance can be reviewed through key campaign metrics such as reach, clicks, leads, conversions, cost per result, and ROAS when applicable.",
     },
     {
       q: "Do you guarantee specific results?",
-      a: "I don’t offer guaranteed numbers, but I follow a data-driven approach focused on delivering strong, measurable performance with continuous optimization."
+      a: "No specific numbers are guaranteed. Campaigns are monitored and optimized using available performance data.",
     },
     {
       q: "How long does it take to see results?",
-      a: "Initial results typically appear within 7–14 days. For conversion-focused campaigns, it may take 2–4 weeks to fully optimize and scale."
-    }
+      a: "The timeline varies by campaign objective, budget, audience, offer, and tracking setup. Early data can help identify what needs to be tested and optimized.",
+    },
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (i) => {
-    setOpenIndex(openIndex === i ? null : i);
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start'
-            });
-        }
-    };
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
 
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fb-reveal");
 
-    return (
-    <div>
-        <Navbar />
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fb-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
 
-        {/* facebook hero  */}
+    elements.forEach((element) => observer.observe(element));
 
-<div className="facebook-hero d-flex align-items-center text-center">
-  <div className="container">
-    <h1 className="fw-bold text-white mb-3">
-      Facebook & Instagram Ads service - Grow Your Business
-    </h1>
-    <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
-      Targeted campaigns, optimized strategies & measurable growth — I help businesses reach the right audience at the right time
-    </p>
+    return () => observer.disconnect();
+  }, []);
 
-    <div className="mt-4 d-flex justify-content-center gap-3">
-      <Link
-  to="/portfolio"
-  state={{ category: "Facebook & Instagram Ads" }}
-  className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
->
-  View My Portfolio
-</Link>
+  return (
+    <div className="facebook-page">
+      <Navbar />
 
-      <a href="#" onClick={(e) => {
-       e.preventDefault();
-        scrollToSection('seePrice');
-        }} 
-        className="btn btn-outline-light fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
-      >
-        See Packages
-      </a>
-    </div>
-  </div>
-</div>
+      {/* ================= HERO ================= */}
+      <section className="facebook-hero">
+        <div className="facebook-hero-bg fb-orb-one"></div>
+        <div className="facebook-hero-bg fb-orb-two"></div>
 
+        <div className="container">
+          <div className="row align-items-center g-5">
 
+            <div className="col-lg-7">
+              <div className="fb-hero-content">
 
+                <div className="fb-platform-badge">
+                  <span className="fb-icon">
+                    <FaFacebookF />
+                  </span>
 
+                  <span className="ig-icon">
+                    <FaInstagram />
+                  </span>
 
+                  <span>Meta Ads Service</span>
+                </div>
 
+                <h1 className="fb-hero-title">
+                  Facebook & Instagram
+                  <span> Ads</span>
+                </h1>
 
+                <p className="fb-hero-text">
+                  Target the right people, generate quality leads, and turn
+                  attention into measurable business results with strategic
+                  Meta advertising.
+                </p>
 
+                <div className="fb-hero-actions">
+                  <Link
+                    to="/portfolio"
+                    state={{
+                      category: "Facebook & Instagram Ads",
+                    }}
+                    className="fb-primary-btn"
+                  >
+                    View My Portfolio
+                    <FaArrowRight />
+                  </Link>
 
+                  <button
+                    onClick={() => scrollToSection("seePrice")}
+                    className="fb-secondary-btn"
+                  >
+                    See Packages
+                  </button>
+                </div>
 
+                <div className="fb-trust-line">
+                  <span>
+                    <FaCheckCircle /> Facebook Ads
+                  </span>
 
-{/* service  */}
+                  <span>
+                    <FaCheckCircle /> Instagram Ads
+                  </span>
 
-<section className="py-5 service">
-  <div className="container-fluid px-3 px-sm-5">
+                  <span>
+                    <FaCheckCircle /> Data-Driven Optimization
+                  </span>
+                </div>
 
-    {/* Service Container */}
-    <div className="serviceCont mb-5">
-      <h1 className="mb-3">Facebook Ads Services to Grow Your Business</h1>
-      <p className="text-muted fs-5">
-        From strategy and targeting to creative design and conversion optimization, I help businesses reach the right audience, generate leads, and maximize ROI with high-performing Facebook ad campaigns
-      </p>
-    </div>
-
-    {/* ---- FIRST 6 BOXES  ---- */}
-    <div className="row g-5">
-      {services.map((service, idx) => (
-        <div key={idx} className="col-lg-4 col-md-6">
-          <div className="service-card card text-center border-0 pt-5 position-relative h-100">
-
-            <div className="icon-circle position-absolute top-0 start-50 translate-middle shadow-sm">
-              {service.icon}
+              </div>
             </div>
 
-            <div className="card-body">
-              <h4 className="card-title mb-3 fw-bold">{service.title}</h4>
+            {/* HERO VISUAL */}
+            <div className="col-lg-5">
+              <div className="fb-dashboard-wrap">
 
-                {service.items.map((item, i) => (
-                  <div className=" text-start mb-2 d-flex align-items-center" key={i}>                           
-                    {item}
+                <div className="fb-dashboard-card">
+
+                  <div className="fb-dashboard-top">
+                    <div>
+                      <small>CAMPAIGN PLATFORM</small>
+                      <h4>Meta Ads</h4>
+                    </div>
+
+                    <div className="fb-dashboard-icons">
+                      <span>
+                        <FaFacebookF />
+                      </span>
+                      <span>
+                        <FaInstagram />
+                      </span>
+                    </div>
                   </div>
-                ))}
-              
 
+                  <div className="fb-dashboard-line"></div>
+
+                  <div className="fb-dashboard-label">
+                    <span>Campaign Performance</span>
+                    <FaChartLine />
+                  </div>
+
+                  <div className="fb-chart">
+                    <span style={{ height: "35%" }}></span>
+                    <span style={{ height: "48%" }}></span>
+                    <span style={{ height: "42%" }}></span>
+                    <span style={{ height: "65%" }}></span>
+                    <span style={{ height: "58%" }}></span>
+                    <span style={{ height: "78%" }}></span>
+                    <span style={{ height: "90%" }}></span>
+                  </div>
+
+                  <div className="fb-metric-grid">
+
+                    <div className="fb-metric">
+                      <small>REACH</small>
+                      <strong>Audience</strong>
+                    </div>
+
+                    <div className="fb-metric">
+                      <small>CLICKS</small>
+                      <strong>Traffic</strong>
+                    </div>
+
+                    <div className="fb-metric">
+                      <small>LEADS</small>
+                      <strong>Prospects</strong>
+                    </div>
+
+                    <div className="fb-metric">
+                      <small>SALES</small>
+                      <strong>Conversions</strong>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div className="fb-floating-card fb-float-one">
+                  <FaBullseye />
+                  <div>
+                    <small>Targeting</small>
+                    <strong>Right Audience</strong>
+                  </div>
+                </div>
+
+                <div className="fb-floating-card fb-float-two">
+                  <FaChartLine />
+                  <div>
+                    <small>Optimization</small>
+                    <strong>Continuous</strong>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
           </div>
         </div>
-      ))}
-    </div>
-
-    {/* ---- LAST ROW (1 BOX + IMAGE) ---- */}
+      </section>
 
 
-  </div>
-</section>
+      {/* ================= SERVICES ================= */}
+      <section className="fb-services-section">
+        <div className="container">
 
+          <div className="fb-section-heading fb-reveal">
+            <span className="fb-section-label">
+              WHAT I CAN DO
+            </span>
 
+            <h2>
+              Facebook & Instagram Ads
+              <span> Services</span>
+            </h2>
 
+            <p>
+              From strategy and targeting to campaign management,
+              optimization, retargeting, and tracking.
+            </p>
+          </div>
 
-{/* Deliverables  */}
+          <div className="row g-4">
 
-<section className="py-5 deliverable-wow">
-  <div className="container-fluid px-3 px-sm-5">
-
-    {/* Title */}
-    <div className="text-center mb-5">
-      <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
-      <div className="underline mx-auto"></div>
-
-      <p className="wow-subtitle text-muted mt-3 fs-5">
-        Every Facebook & Instagram Ads project includes a clear, data-driven performance report.
-      </p>
-    </div>
-
-    {/* Box */}
-    <div className="row justify-content-center">
-      <div className="col-12">
-        <div className="wow-box p-2 p-md-5">
-
-          <h4 className='fw-bold pb-4'>My deliverables include:</h4>
-
-          <div className="row">
-            {items.map((item, i) => (
-              <div key={i} className="col-md-6 mb-4">
-                <div className="wow-item d-flex">
-                  <div className="icon-wrap me-3 p-1 p-sm-2 ">
-                    <FaCheckCircle className="wow-icon" />
+            {services.map((service, index) => (
+              <div
+                className="col-lg-3 col-md-6"
+                key={index}
+              >
+                <div
+                  className="fb-service-card fb-reveal"
+                  style={{
+                    transitionDelay: `${index * 70}ms`,
+                  }}
+                >
+                  <div className="fb-service-icon">
+                    {service.icon}
                   </div>
+
+                  <span className="fb-service-number">
+                    0{index + 1}
+                  </span>
+
+                  <h3>{service.title}</h3>
+
+                  <p>{service.text}</p>
+
+                  <div className="fb-card-arrow">
+                    <FaArrowRight />
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* ================= DELIVERABLES ================= */}
+      <section className="fb-deliverables-section">
+
+        <div className="container">
+
+          <div className="fb-section-heading center fb-reveal">
+
+            <span className="fb-section-label">
+              REPORTING & INSIGHTS
+            </span>
+
+            <h2>
+              What You Will
+              <span> Get</span>
+            </h2>
+
+            <p>
+              A clear overview of campaign performance and practical
+              recommendations for the next steps.
+            </p>
+
+          </div>
+
+
+          <div className="fb-deliverables-box fb-reveal">
+
+            <div className="fb-deliverables-header">
+
+              <div className="fb-deliverable-main-icon">
+                <FaFileAlt />
+              </div>
+
+              <div>
+                <h3>My Deliverables Include</h3>
+                <p>
+                  Key campaign data, insights, and optimization opportunities.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="row g-0">
+
+              {items.map((item, index) => (
+                <div
+                  className="col-lg-6"
+                  key={index}
+                >
+                  <div className="fb-deliverable-item">
+
+                    <div className="fb-check-icon">
+                      <FaCheckCircle />
+                    </div>
+
+                    <div>
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* ================= PRICING ================= */}
+      <section
+        className="fb-pricing-section"
+        id="seePrice"
+      >
+
+        <div className="container">
+
+          <div className="fb-section-heading center fb-reveal">
+
+            <span className="fb-section-label">
+              SIMPLE PRICING
+            </span>
+
+            <h2>
+              Facebook Ads
+              <span> Pricing</span>
+            </h2>
+
+            <p>
+              Choose a monthly plan based on your campaign requirements.
+            </p>
+
+          </div>
+
+
+          <div className="row g-4 justify-content-center">
+
+            {/* BASIC */}
+            <div className="col-lg-4 col-md-6">
+
+              <div className="fb-price-card fb-reveal">
+
+                <div className="fb-plan-name">
+                  Basic
+                </div>
+
+                <div className="fb-price">
+                  <span className="fb-old-price">$250</span>
+                  <strong>$199</strong>
+                  <small>/Month</small>
+                </div>
+
+                <p className="fb-price-description">
+                  A simple starting package for focused campaigns.
+                </p>
+
+                <div className="fb-price-divider"></div>
+
+                <ul>
+                  <li><FaCheck /> Facebook & Instagram Ads</li>
+                  <li><FaCheck /> 1 Campaign</li>
+                  <li><FaCheck /> 1–2 Ad Creatives</li>
+                  <li><FaCheck /> Basic Audience Targeting</li>
+                  <li><FaCheck /> Weekly Performance Update</li>
+                  <li><FaCheck /> WhatsApp / Email Support</li>
+                </ul>
+
+                <a
+                  href="https://api.whatsapp.com/send?phone=8801947349917&text=Hello%20Abdul%2C%20I%27m%20interested%20in%20your%20Facebook%20Ads%20Basic%20package."
+                  className="fb-price-btn"
+                >
+                  Order on WhatsApp
+                  <FaArrowRight />
+                </a>
+
+              </div>
+
+            </div>
+
+
+            {/* STANDARD */}
+            <div className="col-lg-4 col-md-6">
+
+              <div className="fb-price-card featured fb-reveal">
+
+                <div className="fb-popular">
+                  Popular
+                </div>
+
+                <div className="fb-plan-name">
+                  Standard
+                </div>
+
+                <div className="fb-price">
+                  <span className="fb-old-price">$399</span>
+                  <strong>$299</strong>
+                  <small>/Month</small>
+                </div>
+
+                <p className="fb-price-description">
+                  For businesses ready to manage multiple campaigns.
+                </p>
+
+                <div className="fb-price-divider"></div>
+
+                <ul>
+                  <li><FaCheck /> Everything in Basic</li>
+                  <li><FaCheck /> Up to 3 Campaigns</li>
+                  <li><FaCheck /> 3–5 Ad Creatives</li>
+                  <li><FaCheck /> Smart Audience Targeting</li>
+                  <li><FaCheck /> Pixel Setup if Needed</li>
+                  <li><FaCheck /> Weekly Optimization</li>
+                </ul>
+
+                <a
+                  href="https://api.whatsapp.com/send?phone=8801947349917&text=Hello%20Abdul%2C%20I%27m%20interested%20in%20your%20Facebook%20Ads%20Standard%20package."
+                  className="fb-price-btn"
+                >
+                  Order on WhatsApp
+                  <FaArrowRight />
+                </a>
+
+              </div>
+
+            </div>
+
+
+            {/* PREMIUM */}
+            <div className="col-lg-4 col-md-6">
+
+              <div className="fb-price-card fb-reveal">
+
+                <div className="fb-plan-name">
+                  Premium
+                </div>
+
+                <div className="fb-price">
+                  <span className="fb-old-price">$600</span>
+                  <strong>$399</strong>
+                  <small>/Month</small>
+                </div>
+
+                <p className="fb-price-description">
+                  For businesses needing deeper campaign management.
+                </p>
+
+                <div className="fb-price-divider"></div>
+
+                <ul>
+                  <li><FaCheck /> Everything in Standard</li>
+                  <li><FaCheck /> Unlimited Campaigns</li>
+                  <li><FaCheck /> Advanced Targeting</li>
+                  <li><FaCheck /> Retargeting Campaigns</li>
+                  <li><FaCheck /> Daily Optimization</li>
+                  <li><FaCheck /> Priority Support</li>
+                </ul>
+
+                <a
+                  href="https://api.whatsapp.com/send?phone=8801947349917&text=Hello%20Abdul%2C%20I%27m%20interested%20in%20your%20Facebook%20Ads%20Premium%20package."
+                  className="fb-price-btn"
+                >
+                  Order on WhatsApp
+                  <FaArrowRight />
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* ================= FAQ ================= */}
+      <section className="fb-faq-section">
+
+        <div className="container">
+
+          <div className="fb-section-heading center fb-reveal">
+
+            <span className="fb-section-label">
+              HAVE QUESTIONS?
+            </span>
+
+            <h2>
+              Frequently Asked
+              <span> Questions</span>
+            </h2>
+
+            <p>
+              Some common questions about Facebook and Instagram Ads management.
+            </p>
+
+          </div>
+
+
+          <div className="fb-faq-list">
+
+            {faqData.map((item, index) => (
+
+              <div
+                className={`fb-faq-item ${
+                  openIndex === index ? "active" : ""
+                } fb-reveal`}
+                key={index}
+                onClick={() => toggleFAQ(index)}
+              >
+
+                <div className="fb-faq-question">
 
                   <div>
-                    <h5 className="fw-bold mb-1 item-title">{item.title}</h5>
-                    <p className="text-muted mb-0 item-desc">{item.desc}</p>
+                    <span className="fb-faq-number">
+                      0{index + 1}
+                    </span>
+
+                    {item.q}
                   </div>
+
+                  <FaChevronDown />
+
                 </div>
+
+                <div className="fb-faq-answer">
+                  <p>{item.a}</p>
+                </div>
+
               </div>
-            ))}
-          </div>
 
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-   
-            
-
-
-
-    {/* pricing plan  */}
-    <div className='bacgkround' id='seePrice'>
-    <div className="container-fluid px-3 px-sm-5 py-5">
-      <div>
-        <h2 className="text-center fw-bold mb-2">Facebook Ads Pricing Plans</h2>
-       <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>
-      </div>
-
-      <div className="row g-4 justify-content-center">
-
-        {/* Basic */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-left">
-            <div className="plan-title">Basic</div>
-
-            <h2 className="price">
-              <span className="old-price">$250</span> $199 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Facebook & Instagram Ads</li>
-              <li><FaCheck /> 1 Campaign</li>
-              <li><FaCheck /> 1–2 Ad Creatives</li>
-              <li><FaCheck /> Basic Audience Targeting</li>
-              <li><FaCheck /> Weekly Performance Update</li>
-              <li><FaCheck /> Friendly Support (WhatsApp / Email)</li>
-              <h6 className='tiktok'>
-                 Add TikTok Ads for + $99
-              </h6>
-              
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Standard - Featured */}
-        <div className="col-md-4">
-          <div className="pricing-box featured text-center p-4 position-relative" data-aos="zoom-in">
-            {/* <span className="best-badge">Best Value</span> */}
-            <div className="plan-title featured-title">Standard</div>
-
-            <h2 className="price">
-              <span className="old-price">$399</span> $299 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Everything in Basic</li>
-              <li><FaCheck /> Up to 3 Campaigns</li>
-              <li><FaCheck /> 3–5 High-Quality Creatives</li>
-              <li><FaCheck /> Smart Audience Targeting</li>
-              <li><FaCheck /> Pixel Setup (If Needed)</li>
-              <li><FaCheck /> Weekly Optimization</li>
-              <h6 className='tiktok'>
-                 Add TikTok Ads for + $199
-              </h6>
-              
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn featured-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Premium */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-right">
-            <div className="plan-title">Premium</div>
-
-            <h2 className="price">
-              <span className="old-price">$600</span> $399 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Everything in Standard</li>
-              <li><FaCheck /> Unlimited Campaigns</li>
-              <li><FaCheck /> Advanced Targeting & Retargeting</li>
-              <li><FaCheck /> Daily Optimization</li>
-              <li><FaCheck /> Priority Support</li>
-              <li><FaCheck /> Strategy Consultation & Planning</li>
-              <h6 className='tiktok'>
-                 Add TikTok Ads for + $299
-              </h6>
-              
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    </div>
-{/* FAQ  */}
-
-   <section className="py-5 faq-section">
-      <div className="container-fluid px-3 px-sm-5">
-
-        <h1 className="text-center mb-6 faq-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
-
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-
-            {faqData.map((item, i) => (
-              <div
-                key={i}
-                className="faq-item p-3 p-md-4 mb-3 rounded shadow-sm"
-                onClick={() => toggleFAQ(i)}
-              >
-                <div className="d-flex justify-content-between align-items-center">
-                  <h5 className="faq-question m-0">{item.q}</h5>
-
-                  <FaChevronDown
-                    className={`faq-icon ${openIndex === i ? "rotate" : ""}`}
-                  />
-                </div>
-
-                <div
-                  className={`faq-answer mt-3 ${openIndex === i ? "open" : ""}`}
-                >
-                  {item.a}
-                </div>
-              </div>
             ))}
 
           </div>
+
         </div>
 
-      </div>
-    </section>
+      </section>
 
-<section className="herobg py-5">
-  <div className="container px-3 px-sm-5 text-center">
-    <h2 className="fw-bold mb-4">Why Choose Me</h2>
-    <p className="mb-5">
-      With years of experience in Facebook & Instagram Ads, I combine creative strategy, AI-powered targeting, and data-driven optimization to deliver measurable growth for your business.
-    </p>
-    <div className="row g-4 justify-content-center">
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">Proven Results</h5>
-          <p>Track record of high-converting campaigns and happy clients.</p>
+
+      {/* ================= WHY ME ================= */}
+      <section className="fb-why-section">
+
+        <div className="container">
+
+          <div className="fb-why-content fb-reveal">
+
+            <span className="fb-section-label">
+              MY APPROACH
+            </span>
+
+            <h2>
+              A Clear & Data-Driven
+              <span> Ads Process</span>
+            </h2>
+
+            <p>
+              I focus on the complete campaign journey — from understanding
+              your goal and audience to campaign setup, creative testing,
+              optimization, tracking, and reporting.
+            </p>
+
+          </div>
+
+
+          <div className="row g-4 mt-2">
+
+            <div className="col-lg-4">
+              <div className="fb-why-card fb-reveal">
+
+                <div className="fb-why-icon">
+                  <FaBullseye />
+                </div>
+
+                <h3>Goal Focused</h3>
+
+                <p>
+                  Campaign structure starts with your actual business
+                  objective and desired customer action.
+                </p>
+
+              </div>
+            </div>
+
+
+            <div className="col-lg-4">
+              <div className="fb-why-card fb-reveal">
+
+                <div className="fb-why-icon">
+                  <FaChartLine />
+                </div>
+
+                <h3>Data Driven</h3>
+
+                <p>
+                  Campaign decisions are based on available performance
+                  data, testing, and ongoing optimization.
+                </p>
+
+              </div>
+            </div>
+
+
+            <div className="col-lg-4">
+              <div className="fb-why-card fb-reveal">
+
+                <div className="fb-why-icon">
+                  <FaLightbulb />
+                </div>
+
+                <h3>Continuous Improvement</h3>
+
+                <p>
+                  Campaign performance is reviewed regularly to identify
+                  opportunities for improvement and testing.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
         </div>
-      </div>
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">AI-Assisted Ads</h5>
-          <p>Advanced AI tools for smarter targeting and maximum ROI.</p>
-        </div>
-      </div>
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">End-to-End Support</h5>
-          <p>From strategy to execution and reporting, I handle everything.</p>
-        </div>
-      </div>
+
+      </section>
+
+
+      <SocialIcon />
+      <Footer />
+
     </div>
-  </div>
-</section>
-    <SocialIcon />
-    <Footer />
-    </div>
-    );
+  );
 };
 
 export default Facebook;

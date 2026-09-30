@@ -8,7 +8,8 @@ import {
   FaGoogle,
   FaShopify,
   FaAmazon,
-  FaShareAlt
+  FaShareAlt,
+  FaYoutube
 } from "react-icons/fa";
 import {
   FaClipboardCheck,
@@ -77,7 +78,8 @@ const Navbar = () => {
             items: [
                  { path: "/google", label: "Google Ads", icon: FaGoogle },
                 { path: "/facebook", label: "Facebook Ads", icon: FaFacebookF },
-               
+               { path: "/youtube", label: "YouTube SEO", icon: FaYoutube },
+
                 { path: "/shopify", label: "Shopify Marketing", icon: FaShopify },
                 { path: "/amazon", label: "Amazon Book Promotion", icon: FaAmazon },
                 { path: "/socialMediaManage", label: "Social Media Management", icon: FaShareAlt },

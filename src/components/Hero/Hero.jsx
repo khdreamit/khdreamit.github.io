@@ -283,9 +283,9 @@ const Hero = () => {
           HERO SECTION
           ===================================================== */}
 
-      <section className="hero-section">
+      <section className="hero-section d-flex align-items-center text-center">
 
-        <div className="container py-5">
+        <div className="container">
 
           <div className="hero-content text-center">
 

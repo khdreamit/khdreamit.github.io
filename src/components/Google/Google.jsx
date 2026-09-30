@@ -1,593 +1,1214 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-import SocialIcon from '../SocialIcon/SocialIcon';
-import Footer from '../Footer/Footer';
-import { FaCheck, FaTag, FaTimes } from "react-icons/fa";
-import YoutubeHero from '../../assets/ggg.jpg'
-import YouSeo from '../../assets/google.png'
-import '../Youtube/youtube.css'
-import "aos/dist/aos.css";
+import React, { useEffect, useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import SocialIcon from "../SocialIcon/SocialIcon";
+import Footer from "../Footer/Footer";
+
+import {
+  FaCheck,
+  FaSearch,
+  FaChartLine,
+  FaBullseye,
+  FaPenNib,
+  FaShoppingCart,
+  FaChartPie,
+  FaClock,
+  FaGoogle,
+  FaArrowRight,
+  FaChevronDown,
+  FaLayerGroup,
+  FaRocket,
+  FaChartBar,
+  FaLaptop,
+  FaFileAlt,
+  FaCog,
+} from "react-icons/fa";
+
 import { Link } from "react-router-dom";
-import { FaSearch, FaChartLine, FaTags, FaPenNib,FaShoppingCart, FaImage, FaChartPie, FaClock,  FaBullseye, FaCheckCircle, FaChevronDown} from "react-icons/fa";;
 
-
+import "./google.css";
+import "aos/dist/aos.css";
 
 
 const Google = () => {
 
-const services = [
-  {
-    title: "Google Ads Account Setup & Smart Audit",
-    icon: <FaTags />,
-    items: [
-      "Professional Google Ads account setup",
-      "Billing & payment configuration",
-      "Goal & conversion setup",
-      "Complete account audit (if you already have one)",
-      "Clear 30-day action roadmap",
-    ],
-  },
-  {
-    title: "High-Performance Campaign Creation",
-    icon: <FaChartLine  />,
-    items: [
-      "Search Ads (high-intent customers)",
-      "Display Ads (awareness + reach)",
-      "YouTube Ads (fast visibility)",
-      "Performance Max (AI-driven multi-channel growth)",
-      "Local Service Ads",
-      "Shopping Ads (for e-commerce stores)",
-    ],
-  },
-  {
-    title: " Deep Keyword Research & Competitor Analysis",
-    icon: <FaSearch />,
-    items: [
-      "High-intent keywords",
-      "Negative keywords (to stop waste)",
-      "Competitor keyword insights",
-      "Clean keyword groups & campaign structure",
-    ],
-  },
-  {
-    title: "Conversion-Focused Ad Copywriting",
-    icon: <FaPenNib />,
-    items: [
-      "Engaging headlines",
-      "Clear value-driven descriptions",
-      "Multiple ad variations for A/B testing",
-      "Smart keyword placement",
-    ],
-  },
-  {
-    title: "Professional Display Creatives",
-    icon: <FaImage />,
-    items: [
-      "Modern, clean display banners",
-      "Brand-consistent visuals",
-      "YouTube ad creative direction",
-      "Mobile-first layouts",
-    ],
-  },
-  {
-    title: " Conversion Tracking & Analytics Setup",
-    icon: <FaChartPie />,
-    items: [
-      "Google Tag Manager (GTM)",
-      "Google Analytics 4 (GA4)",
-      "Form, call, purchase tracking",
-      "Enhanced conversions",
-      "UTM tracking for clean data",
-    ],
-  },
-  {
-    title: "Daily & Weekly Optimization",
-    icon: <FaClock />,
-    items: [
-      "Smart bid adjustments",
-      "Keyword cleanup",
-      "Quality score improvement",
-      "Device & location targeting",
-      "Ad copy & creative A/B testing",
-      "Budget shifting to best performers",
-    ],
-  },
-  {
-    title: "Remarketing & Smart Audience Targeting",
-    icon: <FaBullseye />,
-    items: [
-      "Website visitor remarketing",
-      "Add-to-cart retargeting",
-      "YouTube viewer retargeting",
-      "Custom audience targeting",
-      "In-market & affinity audiences",
-    ],
-  },
-  {
-    title: " E-Commerce Google Ads (Specialized)",
-    icon: <FaShoppingCart />,
-    items: [
-      "Merchant Center setup",
-      "Product feed optimization",
-      "Shopping Ads",
-      "Performance Max for e-commerce",
-      "Product-level bid cont",
-      "ROAS-focused scaling",
-    ],
-  },
-]; 
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
 
 
+  /* =========================================================
+     SERVICES
+  ========================================================= */
 
-const items = [
-  {
-    title: "Full Campaign Report",
-    desc: " A clear summary of campaigns, ad groups, keywords, targeting, audience strategy, bidding, performance, and optimizations."
-  },
-  {
-    title: "Performance Metrics Summary",
-    desc: "You’ll get final stats—impressions, clicks, CTR, CPC, conversions, cost per conversion, ROAS, top and worst-performing keywords—to see your ads’ exact impact."
-  },
-  {
-    title: "Ad Copy & Creative Files",
-    desc: "You’ll get all ad headlines, descriptions, display banners (PNG/JPG), A/B test variations, and video/YouTube guidance if applicable."
-  },
-  {
-    title: "Keyword Research File",
-    desc: "A complete keyword sheet with target keywords, search volume, competition, CPC estimates, negative keywords, and grouping structure"
-  },
-  {
-    title: "Tracking & Analytics Documentation",
-    desc: "You’ll receive tracking proof, including all events, GA4 screenshots, GTM tags/triggers, conversion validation, and UTM guide for 100% accurate data."
-  },
-  {
-    title: "Account Structure Blueprint",
-    desc: "A visual or written layout of campaigns, ad groups, keywords, ad assets, and audiences for easy understanding and future use."
-  },
-  {
-    title: "Optimization Summary (What Improvements Were Made)",
-    desc: "A summary of all optimizations, including keyword cleanup, bid/budget adjustments, ad testing, quality score improvements, negative keywords, and audience refinements."
-  },
-  {
-    title: "Final Recommendation Report",
-    desc: "A short strategy document with next steps, budget tips, new opportunities, 30-day plan, and funnel or landing page improvement ideas."
-  },
-  {
-    title: "Video Walkthrough (Optional)",
-    desc: "If needed, you’ll get a 5–10 minute screen-recorded video explaining the campaign, performance, data insights, and next steps"
-  },
+  const services = [
+    {
+      icon: <FaCog />,
+      title: "Account Setup & Audit",
+      text: "Set up a clean Google Ads account or audit your existing campaigns to identify structural and tracking issues.",
+      items: [
+        "Account & campaign structure",
+        "Conversion goals",
+        "Billing configuration",
+        "Account audit",
+      ],
+    },
 
-];
+    {
+      icon: <FaSearch />,
+      title: "Keyword Research",
+      text: "Find relevant search terms based on user intent, competition and your business goals.",
+      items: [
+        "High-intent keywords",
+        "Negative keywords",
+        "Search intent research",
+        "Keyword grouping",
+      ],
+    },
+
+    {
+      icon: <FaPenNib />,
+      title: "Ad Copywriting",
+      text: "Create clear and relevant ad messaging designed to match search intent and business offers.",
+      items: [
+        "Responsive search ads",
+        "Multiple headlines",
+        "Descriptions",
+        "A/B testing variations",
+      ],
+    },
+
+    {
+      icon: <FaBullseye />,
+      title: "Campaign Targeting",
+      text: "Configure targeting based on location, audience, devices, schedules and campaign objectives.",
+      items: [
+        "Location targeting",
+        "Audience targeting",
+        "Device targeting",
+        "Ad scheduling",
+      ],
+    },
+
+    {
+      icon: <FaChartPie />,
+      title: "Tracking & Analytics",
+      text: "Set up the measurement system needed to understand clicks, leads, purchases and other actions.",
+      items: [
+        "GA4",
+        "Google Tag Manager",
+        "Conversion tracking",
+        "UTM tracking",
+      ],
+    },
+
+    {
+      icon: <FaChartLine />,
+      title: "Optimization & Scaling",
+      text: "Review campaign data and make ongoing adjustments based on performance and available conversion data.",
+      items: [
+        "Bid adjustments",
+        "Search term cleanup",
+        "Budget optimization",
+        "Ad testing",
+      ],
+    },
+
+    {
+      icon: <FaShoppingCart />,
+      title: "Shopping & E-commerce",
+      text: "Build and optimize Google Ads campaigns for businesses selling products online.",
+      items: [
+        "Merchant Center",
+        "Product feeds",
+        "Shopping campaigns",
+        "Performance Max",
+      ],
+    },
+
+    {
+      icon: <FaLaptop />,
+      title: "Display & YouTube Ads",
+      text: "Reach potential customers beyond Google Search through visual and video advertising campaigns.",
+      items: [
+        "Display campaigns",
+        "YouTube campaigns",
+        "Remarketing",
+        "Audience targeting",
+      ],
+    },
+
+    {
+      icon: <FaRocket />,
+      title: "Remarketing",
+      text: "Reconnect with people who have previously interacted with your website, products or content.",
+      items: [
+        "Website visitors",
+        "Product viewers",
+        "Cart abandoners",
+        "Custom audiences",
+      ],
+    },
+  ];
 
 
+  /* =========================================================
+     PROCESS
+  ========================================================= */
+
+  const process = [
+    {
+      number: "01",
+      icon: <FaSearch />,
+      title: "Research",
+      text: "Understand your business, market, competitors, customers and search intent.",
+    },
+    {
+      number: "02",
+      icon: <FaLayerGroup />,
+      title: "Strategy",
+      text: "Build the campaign structure, targeting, keywords, budget and conversion strategy.",
+    },
+    {
+      number: "03",
+      icon: <FaRocket />,
+      title: "Launch",
+      text: "Create ads, configure targeting and tracking, then launch the campaigns.",
+    },
+    {
+      number: "04",
+      icon: <FaChartBar />,
+      title: "Optimize",
+      text: "Review available performance data and continuously improve campaigns.",
+    },
+  ];
+
+
+  /* =========================================================
+     DELIVERABLES
+  ========================================================= */
+
+  const deliverables = [
+    "Campaign structure",
+    "Keyword research",
+    "Negative keyword list",
+    "Ad copy",
+    "Audience targeting",
+    "Conversion tracking",
+    "Performance reports",
+    "Optimization recommendations",
+  ];
+
+
+  /* =========================================================
+     FAQ
+  ========================================================= */
 
   const faqData = [
     {
-      q: "When will I start seeing results from Google Ads?",
-      a: "Most clients notice early results within 3–7 days after the ads go live. For fully optimized performance, it usually takes 2–4 weeks as the system learns and improves."
+      q: "Do I need an existing Google Ads account?",
+      a: "No. I can work with a new account or audit and optimize an existing Google Ads account.",
     },
+
     {
-      q: "Do you handle the ad budget for me?",
-      a: "The ad budget is paid directly to Google from your own account. I only charge a service/management fee — giving you full transparency and control at all times."
+      q: "Is the advertising budget included?",
+      a: "No. Your advertising budget is paid directly to Google from your own account. My pricing covers the service and management work.",
     },
+
     {
-      q: "Will I have access to my Google Ads account?",
-      a: "Absolutely, yes. You will always have 100% access and ownership of your account. I believe in complete transparency."
+      q: "Can I keep access to my Google Ads account?",
+      a: "Yes. The account remains yours and you keep access and ownership.",
     },
+
     {
-      q: "Can you work with my existing Google Ads account?",
-      a: "Of course! I can optimize what you already have or rebuild your campaigns from scratch — whichever brings you better performance."
+      q: "Do you guarantee a specific number of leads or sales?",
+      a: "No. Advertising performance depends on factors such as the market, offer, competition, landing page, budget and available conversion data.",
     },
+
     {
-      q: "Do you guarantee results?",
-      a: "No marketer can promise guaranteed results — but I guarantee: Smart strategy, Honest work, Data-driven decisions, Continuous optimization, Steady performance improvement"
-    }
+      q: "Can you manage an existing campaign?",
+      a: "Yes. Existing campaigns can be audited, reorganized and optimized based on the current account structure and performance data.",
+    },
+
+    {
+      q: "How often do you optimize campaigns?",
+      a: "Optimization frequency depends on the campaign, budget and amount of available data. The focus is on making informed changes rather than changing things without enough data.",
+    },
   ];
+
+
+  /* =========================================================
+     FAQ STATE
+  ========================================================= */
 
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (i) => {
-    setOpenIndex(openIndex === i ? null : i);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start'
-            });
-        }
-    };
 
-    return (
-    <div>
-        <Navbar />
+  /* =========================================================
+     SCROLL TO PRICING
+  ========================================================= */
 
-        {/* Google hero  */}
+  const scrollToPricing = () => {
+    const element = document.getElementById("google-pricing");
 
-<div className="google-hero d-flex align-items-center text-center">
-  <div className="container">
-    <h1 className="fw-bold text-white mb-3">
-      Grow Your Business with Expert Google Ads Management
-    </h1>
-    <p className="text-white-80 fw-bold mx-auto" style={{ maxWidth: "600px" }}>
-      Drive targeted traffic, increase conversions, and maximize your ROI with tailored Google Ads campaigns designed for your business.
-    </p>
-
-    <div className="mt-4 d-flex justify-content-center gap-3">
-       <Link
-        to="/portfolio"
-        state={{ category: "Google Ads" }}
-        className="btn btn-warning fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
-      >
-        View My Portfolio
-      </Link>
-      <a href="#" onClick={(e) => {
-       e.preventDefault();
-        scrollToSection('seePrice');
-        }} 
-        className="btn btn-outline-light fw-semibold px-2 px-sm-4 py-2 rounded-pill shadow"
-      >
-        See Packages
-      </a>
-    </div>
-  </div>
-</div>
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
 
-{/* Googler intro  */}
+  return (
+    <div className="google-page">
 
-{/* <div className="py-5 yourIntro">
-  <div className="container-fluid px-5">
-    <div className="row align-items-center">
-
-      
-      <div className="col-lg-6 mb-4 mb-lg-0 text-center youImg">
-        <img src={YouMan} alt="Profile" className="img-fluid rounded-3 shadow" style={{ maxWidth: "70%" }}/>
-      </div>
-
-      
-      <div className="col-lg-6">
-        <h4 className="text-secondary fw-semibold mb-2">Hello, I'm</h4>
-        <h1 className="fw-bold display-4">MD. ABDUL HALIM</h1>
-        
-        <p className="mt-3 text-dark fs-5">
-           I am specialize in creating high-performing Google Ads campaigns that drive real results. From keyword research and ad copywriting to campaign setup and optimization, every strategy is tailored to increase visibility, attract quality leads, and maximize ROI. Whether you’re a small business or a growing brand, i ensure your ads reach the right audience at the right time.
-        </p>
-
-        <div className="mt-4 d-flex gap-3">
-          <a href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22" 
-             className="btn btn-dark px-4 py-2">
-            Contact With Me
-          </a>
-          
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> */}
+      <Navbar />
 
 
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
+      <section className="google-hero">
 
-    {/* Google intro  */}
+        {/* Animated background */}
+        <div className="hero-orb hero-orb-one"></div>
+        <div className="hero-orb hero-orb-two"></div>
+        <div className="hero-grid"></div>
 
-<div className="herobg py-5">
-  <div className="container-fluid px-3 px-sm-5">
-    <div className="row align-items-center youtube-bg">
+        <div className="container">
 
-      {/* Text Content */}
-      <div className="col-lg-6 mb-4 mb-lg-0" >
-        <h1 className="fw-bold">What is Google Ads?</h1>
-        <p className="lead">
-           Google Ads is an online advertising platform by Google that helps businesses reach potential customers when they search for products or services. It works on a pay-per-click (PPC) model, so advertisers only pay when someone clicks the ad. With targeted options like keywords and location, Google Ads helps drive traffic, leads, and sales effectively.
-        </p>
-        <a
-          href="https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22"
-          className="btn mt-3 hero-btn"
-        >
-          Contact On WhatsApp
-        </a>
-      </div>
+          <div className="hero-content">
 
-      {/* Hero Image */}
-      <div className="col-lg-6 text-center">
-        <img src={YoutubeHero} alt="YouTube SEO Hero" className="img-fluid rounded shadow-lg" />
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-{/* why google ads need */}
-
-<div className="py-5 feature-section">
-  <div className="container-fluid px-3 px-sm-5">
-    <div className="row align-items-center">
-
-      <div className="col-lg-5 text-center mb-4 mb-lg-0">
-        <img src={YouSeo} alt="YouTube SEO" className="img-fluid rounded shadow-lg feature-img" />
-      </div>
-
-      <div className="col-lg-7">
-        <h2 className="fw-bold mb-3">Why Google Ads is Important?</h2>
-        <p className="text-muted">
-          Google Ads helps businesses reach the right audience at the right time, driving traffic, leads, and sales. It offers fast, measurable results with full budget control, ROI tracking, and highly targeted campaigns to increase visibility and revenue.
-        </p>
-
-        <div className="benefit-box p-4 rounded shadow-sm">
-          <ul className="list-unstyled">
-            <li><span className="check-icon">✔</span> Higher search rankings on YouTube & Google</li>
-            <li><span className="check-icon">✔</span> More organic views without paid ads</li>
-            <li><span className="check-icon">✔</span> Better audience retention & watch-time</li>
-            <li><span className="check-icon">✔</span> Faster subscriber & community growth</li>
-            <li><span className="check-icon">✔</span> Higher click-through rate via optimized metadata</li>
-            <li><span className="check-icon">✔</span> Evergreen long-term ranking & traffic</li>
-            <li><span className="check-icon">✔</span> Better monetization & sponsorship deals</li>
-            <li><span className="check-icon">✔</span> Increased credibility & niche authority</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-
-
-{/* service  */}
-
-<section className="py-5 service">
-  <div className="container-fluid px-3 px-sm-5">
-
-    {/* Service Container */}
-    <div className="serviceCont mb-5">
-      <h1 className="mb-3">Google Ads Services</h1>
-      <p className="text-muted fs-5">
-        Smart Strategy. Clean Execution. Real, Measurable Growth.
-      </p>
-    </div>
-
-  
-    <div className="row g-5">
-      {services.map((service, idx) => (
-        <div key={idx} className="col-lg-4 col-md-6">
-          <div className="service-card card text-center border-0 pt-5 position-relative h-100">
-
-            <div className="icon-circle position-absolute top-0 start-50 translate-middle shadow-sm">
-              {service.icon}
+            <div className="hero-google-icon">
+              <FaGoogle />
             </div>
 
-            <div className="card-body">
-              <h4 className="card-title mb-3 fw-bold">{service.title}</h4>
 
-              <ul className="list-unstyled text-start">
-                {service.items.map((item, i) => (
-                  <li key={i} className="mb-2 d-flex align-items-center">
-                    <FaCheck className="text-secondary me-2 fs-5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
+            <div className="hero-small-text">
+              GOOGLE ADS MANAGEMENT
             </div>
 
-          </div>
-        </div>
-      ))}
-    </div>
+
+            <h1 className="hero-title">
+
+              Turn Google Searches Into
+
+              <span className="hero-highlight">
+                Qualified Customers
+              </span>
+
+            </h1>
 
 
-  </div>
-</section>
+            <p className="hero-description">
+
+              Build, manage and optimize Google Ads campaigns with
+              structured targeting, conversion tracking and ongoing
+              performance optimization.
+
+            </p>
 
 
+            <div className="hero-buttons">
 
-
-{/* Deliverables  */}
-
-<section className="py-5 deliverable-wow">
-  <div className="container-fluid px-3 px-sm-5">
-
-    {/* Title */}
-    <div className="text-center mb-5">
-      <h1 className="fw-bold wow-title">What You Will Get (Deliverables)</h1>
-      <div className="underline mx-auto"></div>
-
-      <p className="wow-subtitle text-muted mt-3 fs-5">
-        You’ll get a complete package of reports, documents, and assets showing all work done and results achieved.      </p>
-    </div>
-
-    {/* Box */}
-    <div className="row justify-content-center">
-      <div className="col-12">
-        <div className="wow-box p-2 p-md-5">
-
-          <h4 className='fw-bold pb-4'>My deliverables include:</h4>
-
-          <div className="row">
-            {items.map((item, i) => (
-              <div key={i} className="col-md-6 mb-4">
-                <div className="wow-item d-flex">
-                  <div className="icon-wrap me-3">
-                    <FaCheckCircle className="wow-icon" />
-                  </div>
-
-                  <div>
-                    <h5 className="fw-bold mb-1 item-title">{item.title}</h5>
-                    <p className="text-muted mb-0 item-desc">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>    
-            
-
-    {/* pricing plan  */}
-    <div className='bacgkround' id='seePrice'>
-    <div className="container-fluid px-3 px-sm-5 py-5">
-      <div>
-        <h2 className="text-center fw-bold mb-2">Google Ads Pricing Plans</h2>
-       <p className="text-center text-muted mb-5">Choose a plan that fits your growth goal</p>
-      </div>
-
-      <div className="row g-4 justify-content-center">
-
-        {/* Basic */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-left">
-            <div className="plan-title">Basic</div>
-
-            <h2 className="price">
-              <span className="old-price">$249</span> $99 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> 1 Campaign Setup</li>
-              <li><FaCheck /> Keyword Research </li>
-              <li><FaCheck /> Ad Copywriting (2 Ads)</li>
-              <li><FaCheck /> Basic Performance Reporting</li>
-              <li><FaCheck /> Audience Targeting Setup</li>
-              <li><FaCheck /> Budget Management</li>
-              
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Standard - Featured */}
-        <div className="col-md-4">
-          <div className="pricing-box featured text-center p-4 position-relative" data-aos="zoom-in">
-            {/* <span className="best-badge">Best Value</span> */}
-            <div className="plan-title featured-title">Standard</div>
-
-            <h2 className="price">
-              <span className="old-price">$349</span> $199 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Everything in Basic</li>
-              <li><FaCheck /> Up to 3 Campaigns Setup</li>
-              <li><FaCheck /> Ad Copywriting (5 Ads)</li>
-              <li><FaCheck /> Conversion Tracking Setup</li>
-              <li><FaCheck /> Bi-Weekly Performance Reports</li>
-              <li><FaCheck /> Basic Optimization & Testing</li>
-              
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn featured-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-        {/* Premium */}
-        <div className="col-md-4">
-          <div className="pricing-box text-center p-4 position-relative" data-aos="fade-right">
-            <div className="plan-title">Premium</div>
-
-            <h2 className="price">
-              <span className="old-price">$499</span> $299 <span>/Month</span>
-            </h2>
-
-            <ul className="features list-unstyled text-start mt-3">
-              <li><FaCheck /> Everything in Standard</li>
-              <li><FaCheck /> Unlimited Campaign Setup</li>
-              <li><FaCheck /> Ad Copywriting (10+ Ads)</li>
-              <li><FaCheck /> Conversion & ROI Tracking</li>
-              <li><FaCheck /> Weekly Performance Reports</li>
-              <li><FaCheck /> Advanced Optimization & Remarketing</li>
-            </ul>
-
-            <a href='https://api.whatsapp.com/send?phone=8801947349917&text=%22Hey%2C%20Welcome%20to%20my%20whatsapp%20account%22' className="pricing-btn mt-4 btn">Order Now On WhatsApp</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    </div>
-
-{/* FAQ  */}
-
-   <section className="py-5 faq-section">
-      <div className="container-fluid px-3 px-sm-5">
-
-        <h1 className="text-center mb-5 faq-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
-
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-
-            {faqData.map((item, i) => (
-              <div
-                key={i}
-                className="faq-item p-3 p-md-4 mb-3 rounded shadow-sm"
-                onClick={() => toggleFAQ(i)}
+              <Link
+                to="/portfolio"
+                state={{ category: "Google Ads" }}
+                className="google-primary-btn"
               >
-                <div className="d-flex justify-content-between align-items-center">
-                  <h5 className="faq-question m-0">{item.q}</h5>
+                View My Work
+                <FaArrowRight />
+              </Link>
 
-                  <FaChevronDown
-                    className={`faq-icon ${openIndex === i ? "rotate" : ""}`}
-                  />
+
+              <button
+                className="google-secondary-btn"
+                onClick={scrollToPricing}
+              >
+                See Packages
+              </button>
+
+            </div>
+
+
+            <div className="hero-trust">
+
+              <span>
+                <FaCheck />
+                Conversion Tracking
+              </span>
+
+              <span>
+                <FaCheck />
+                Data-Driven Optimization
+              </span>
+
+              <span>
+                <FaCheck />
+                Transparent Reporting
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
+      <section className="google-intro-section">
+
+        <div className="container">
+
+          <div className="intro-grid">
+
+            <div className="intro-content reveal reveal-left">
+
+              <div className="section-label">
+                <span></span>
+                GOOGLE ADS
+              </div>
+
+              <h2>
+                Reach People When
+                <span> They're Searching</span>
+              </h2>
+
+              <p>
+                Google Ads allows businesses to appear in front of
+                people who are actively searching for products or
+                services they need.
+              </p>
+
+              <p>
+                My approach focuses on clean campaign structure,
+                relevant keywords, accurate tracking and continuous
+                optimization based on available data.
+              </p>
+
+
+              <div className="intro-points">
+
+                <div>
+                  <FaCheck />
+                  <span>Search-intent focused campaigns</span>
                 </div>
+
+                <div>
+                  <FaCheck />
+                  <span>Clear conversion tracking</span>
+                </div>
+
+                <div>
+                  <FaCheck />
+                  <span>Structured optimization</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div className="intro-visual reveal reveal-right">
+
+              <div className="google-dashboard-card">
+
+                <div className="dashboard-top">
+
+                  <div className="dashboard-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <span className="dashboard-title">
+                    Campaign Overview
+                  </span>
+
+                </div>
+
+
+                <div className="dashboard-content">
+
+                  <div className="metric-card">
+
+                    <small>Clicks</small>
+
+                    <strong>2,486</strong>
+
+                    <span className="metric-up">
+                      +24.8%
+                    </span>
+
+                  </div>
+
+
+                  <div className="metric-card">
+
+                    <small>CTR</small>
+
+                    <strong>6.82%</strong>
+
+                    <span className="metric-up">
+                      +12.4%
+                    </span>
+
+                  </div>
+
+
+                  <div className="metric-card">
+
+                    <small>Conversions</small>
+
+                    <strong>186</strong>
+
+                    <span className="metric-up">
+                      +18.6%
+                    </span>
+
+                  </div>
+
+
+                  <div className="fake-chart">
+
+                    <div className="chart-line"></div>
+
+                    <div className="chart-point point-one"></div>
+                    <div className="chart-point point-two"></div>
+                    <div className="chart-point point-three"></div>
+                    <div className="chart-point point-four"></div>
+                    <div className="chart-point point-five"></div>
+
+                  </div>
+
+
+                  <div className="campaign-status">
+
+                    <span className="status-dot"></span>
+
+                    Campaign Optimization Active
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="google-services-section">
+
+        <div className="container">
+
+          <div className="section-heading reveal">
+
+            <div className="section-label center">
+              <span></span>
+              WHAT I DO
+              <span></span>
+            </div>
+
+            <h2>
+              Google Ads
+              <span> Services</span>
+            </h2>
+
+            <p>
+              Everything needed to build, manage and improve
+              your Google Ads campaigns.
+            </p>
+
+          </div>
+
+
+          <div className="services-grid">
+
+            {services.map((service, index) => (
+
+              <div
+                className="service-card reveal"
+                key={index}
+                style={{
+                  "--delay": `${index * 0.07}s`,
+                }}
+              >
+
+                <div className="service-icon">
+                  {service.icon}
+                </div>
+
+
+                <div className="service-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+
+                <h3>
+                  {service.title}
+                </h3>
+
+
+                <p>
+                  {service.text}
+                </p>
+
+
+                <ul>
+
+                  {service.items.map((item, itemIndex) => (
+
+                    <li key={itemIndex}>
+
+                      <FaCheck />
+
+                      <span>
+                        {item}
+                      </span>
+
+                    </li>
+
+                  ))}
+
+                </ul>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
+
+      <section className="google-process-section">
+
+        <div className="container">
+
+          <div className="section-heading reveal">
+
+            <div className="section-label center">
+              <span></span>
+              MY PROCESS
+              <span></span>
+            </div>
+
+            <h2>
+              From Research
+              <span> To Optimization</span>
+            </h2>
+
+            <p>
+              A simple process designed to keep campaigns
+              structured and measurable.
+            </p>
+
+          </div>
+
+
+          <div className="process-grid">
+
+            {process.map((item, index) => (
+
+              <div
+                className="process-card reveal"
+                key={index}
+                style={{
+                  "--delay": `${index * 0.12}s`,
+                }}
+              >
+
+                <div className="process-number">
+                  {item.number}
+                </div>
+
+
+                <div className="process-icon">
+                  {item.icon}
+                </div>
+
+
+                <h3>
+                  {item.title}
+                </h3>
+
+
+                <p>
+                  {item.text}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          DELIVERABLES
+      ===================================================== */}
+
+      <section className="google-deliverables-section">
+
+        <div className="container">
+
+          <div className="deliverables-wrapper reveal">
+
+            <div className="deliverables-content">
+
+              <div className="section-label">
+                <span></span>
+                DELIVERABLES
+              </div>
+
+              <h2>
+                What You'll
+                <span> Receive</span>
+              </h2>
+
+              <p>
+                Clear campaign work, documentation and reporting
+                so you can understand what was done and what the
+                available data shows.
+              </p>
+
+
+              <Link
+                to="/contact"
+                className="deliverables-btn"
+              >
+                Discuss Your Campaign
+                <FaArrowRight />
+              </Link>
+
+            </div>
+
+
+            <div className="deliverables-list">
+
+              {deliverables.map((item, index) => (
 
                 <div
-                  className={`faq-answer mt-3 ${openIndex === i ? "open" : ""}`}
+                  className="deliverable-item"
+                  key={index}
                 >
-                  {item.a}
+
+                  <div className="deliverable-check">
+                    <FaCheck />
+                  </div>
+
+                  <span>
+                    {item}
+                  </span>
+
                 </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          PRICING
+      ===================================================== */}
+
+      <section
+        className="google-pricing-section"
+        id="google-pricing"
+      >
+
+        <div className="container">
+
+          <div className="section-heading reveal">
+
+            <div className="section-label center">
+              <span></span>
+              PRICING
+              <span></span>
+            </div>
+
+            <h2>
+              Simple Google Ads
+              <span> Packages</span>
+            </h2>
+
+            <p>
+              Choose a starting package based on the size and
+              needs of your campaign.
+            </p>
+
+          </div>
+
+
+          <div className="pricing-grid">
+
+
+            {/* BASIC */}
+
+            <div className="pricing-card reveal">
+
+              <div className="pricing-label">
+                BASIC
               </div>
+
+
+              <h3>
+                Starter
+              </h3>
+
+
+              <div className="pricing-price">
+
+                <span className="old-price">
+                  $249
+                </span>
+
+                $99
+
+                <small>
+                  /month
+                </small>
+
+              </div>
+
+
+              <p className="pricing-description">
+                For businesses starting with a focused
+                Google Ads campaign.
+              </p>
+
+
+              <ul>
+
+                <li>
+                  <FaCheck />
+                  1 Campaign Setup
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Keyword Research
+                </li>
+
+                <li>
+                  <FaCheck />
+                  2 Ad Variations
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Audience Targeting
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Basic Reporting
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Budget Management
+                </li>
+
+              </ul>
+
+
+              <a
+                href="https://api.whatsapp.com/send?phone=8801947349917&text=Hi%20Abdul%2C%20I%27m%20interested%20in%20your%20Google%20Ads%20Starter%20package."
+                target="_blank"
+                rel="noreferrer"
+                className="pricing-button"
+              >
+                Get Started
+                <FaArrowRight />
+              </a>
+
+            </div>
+
+
+
+            {/* STANDARD */}
+
+            <div className="pricing-card featured-pricing reveal">
+
+              <div className="popular-badge">
+                MOST POPULAR
+              </div>
+
+
+              <div className="pricing-label">
+                STANDARD
+              </div>
+
+
+              <h3>
+                Growth
+              </h3>
+
+
+              <div className="pricing-price">
+
+                <span className="old-price">
+                  $349
+                </span>
+
+                $199
+
+                <small>
+                  /month
+                </small>
+
+              </div>
+
+
+              <p className="pricing-description">
+                For businesses that need multiple campaigns
+                and ongoing optimization.
+              </p>
+
+
+              <ul>
+
+                <li>
+                  <FaCheck />
+                  Everything in Starter
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Up to 3 Campaigns
+                </li>
+
+                <li>
+                  <FaCheck />
+                  5 Ad Variations
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Conversion Tracking
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Bi-Weekly Reporting
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Optimization & Testing
+                </li>
+
+              </ul>
+
+
+              <a
+                href="https://api.whatsapp.com/send?phone=8801947349917&text=Hi%20Abdul%2C%20I%27m%20interested%20in%20your%20Google%20Ads%20Growth%20package."
+                target="_blank"
+                rel="noreferrer"
+                className="pricing-button featured-button"
+              >
+                Get Started
+                <FaArrowRight />
+              </a>
+
+            </div>
+
+
+
+            {/* PREMIUM */}
+
+            <div className="pricing-card reveal">
+
+              <div className="pricing-label">
+                PREMIUM
+              </div>
+
+
+              <h3>
+                Scale
+              </h3>
+
+
+              <div className="pricing-price">
+
+                <span className="old-price">
+                  $499
+                </span>
+
+                $299
+
+                <small>
+                  /month
+                </small>
+
+              </div>
+
+
+              <p className="pricing-description">
+                For businesses managing larger campaigns
+                and multiple advertising goals.
+              </p>
+
+
+              <ul>
+
+                <li>
+                  <FaCheck />
+                  Everything in Growth
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Multiple Campaigns
+                </li>
+
+                <li>
+                  <FaCheck />
+                  10+ Ad Variations
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Advanced Tracking
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Weekly Reporting
+                </li>
+
+                <li>
+                  <FaCheck />
+                  Remarketing & Optimization
+                </li>
+
+              </ul>
+
+
+              <a
+                href="https://api.whatsapp.com/send?phone=8801947349917&text=Hi%20Abdul%2C%20I%27m%20interested%20in%20your%20Google%20Ads%20Scale%20package."
+                target="_blank"
+                rel="noreferrer"
+                className="pricing-button"
+              >
+                Get Started
+                <FaArrowRight />
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <p className="pricing-note reveal">
+            * Advertising spend is separate and paid directly to Google.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      {/* =====================================================
+          FAQ
+      ===================================================== */}
+
+      <section className="google-faq-section">
+
+        <div className="container">
+
+          <div className="section-heading reveal">
+
+            <div className="section-label center">
+              <span></span>
+              FAQ
+              <span></span>
+            </div>
+
+            <h2>
+              Frequently Asked
+              <span> Questions</span>
+            </h2>
+
+          </div>
+
+
+          <div className="faq-container">
+
+            {faqData.map((item, index) => (
+
+              <div
+                className={`google-faq-item reveal ${
+                  openIndex === index ? "faq-open" : ""
+                }`}
+                key={index}
+                style={{
+                  "--delay": `${index * 0.06}s`,
+                }}
+                onClick={() => toggleFAQ(index)}
+              >
+
+                <div className="faq-question">
+
+                  <span>
+                    {item.q}
+                  </span>
+
+                  <FaChevronDown />
+
+                </div>
+
+
+                <div className="faq-answer">
+
+                  <p>
+                    {item.a}
+                  </p>
+
+                </div>
+
+              </div>
+
             ))}
 
           </div>
+
         </div>
 
-      </div>
-    </section>
+      </section>
 
-<section className="herobg py-5">
-  <div className="container px-3 px-sm-5 text-center">
-    <h2 className="fw-bold mb-4">Why Choose Me</h2>
-    <p className="mb-5">
-      With extensive experience in Google Ads, I combine precise targeting, AI-assisted bidding strategies, and data-driven optimization to deliver measurable results and maximize ROI for your business.
-    </p>
-    <div className="row g-4 justify-content-center">
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">High ROI Campaigns</h5>
-          <p>Proven track record of running cost-effective Google Ads campaigns with high returns.</p>
+
+
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+
+      <section className="google-final-cta">
+
+        <div className="cta-orb cta-orb-one"></div>
+        <div className="cta-orb cta-orb-two"></div>
+
+        <div className="container">
+
+          <div className="cta-content reveal">
+
+            <div className="cta-icon">
+              <FaGoogle />
+            </div>
+
+            <h2>
+              Ready to Build a
+              <span> Better Google Ads Campaign?</span>
+            </h2>
+
+            <p>
+              Let's discuss your business, goals and current
+              advertising setup and see what can be improved.
+            </p>
+
+
+            <div className="cta-buttons">
+
+              <Link
+                to="/contact"
+                className="cta-primary"
+              >
+                Start a Conversation
+                <FaArrowRight />
+              </Link>
+
+
+              <a
+                href="https://api.whatsapp.com/send?phone=8801947349917&text=Hi%20Abdul%2C%20I%27d%20like%20to%20discuss%20Google%20Ads%20for%20my%20business."
+                target="_blank"
+                rel="noreferrer"
+                className="cta-secondary"
+              >
+                Contact on WhatsApp
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
-      </div>
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">AI-Powered Bidding</h5>
-          <p>Smart AI bidding strategies that optimize budget and maximize conversions.</p>
-        </div>
-      </div>
-      <div className="col-md-3 d-flex">
-        <div className="benefit-box p-4 flex-fill text-center">
-          <h5 className="fw-bold mb-3">End-to-End Support</h5>
-          <p>From campaign setup, keyword research, ad creation to reporting – I manage everything.</p>
-        </div>
-      </div>
+
+      </section>
+
+
+
+      <SocialIcon />
+
+      <Footer />
+
     </div>
-  </div>
-</section>
-
-    <SocialIcon />
-    <Footer />
-    </div>
-    );
+  );
 };
+
 
 export default Google;
