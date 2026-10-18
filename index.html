@@ -1,28 +1,32 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
-    
-    
     <meta charset="UTF-8" />
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="ozw2s7TCr08LRqX6iMU4I0P1ciwCd9RCtb3LYMWas8g" />
+
     <link rel="icon" type="image/svg+xml" href="/url4.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>khdreamit</title>
+
+    <title>KH Dream IT</title>
   </head>
+
   <body>
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
 
-
     <script>
-  (function () {
-    var redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    if (redirect && redirect !== location.pathname) {
-      history.replaceState(null, null, redirect);
-    }
-  })();
-</script>
-
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.pathname) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </body>
 </html>
+```
