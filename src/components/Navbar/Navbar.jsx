@@ -275,7 +275,7 @@ const Navbar = () => {
  
                     {/* Social Media Icons for Large Screens */}
                     <div className="d-flex gap-3 fs-5">
-                        <a href="https://www.facebook.com/AdulHalim.net/" className="text-dark hover-color"><FaFacebook /></a>
+                        <a href="https://www.facebook.com/khdreamit1/" className="text-dark hover-color"><FaFacebook /></a>
                         <a href="https://www.instagram.com/khdreamit/" className="text-dark hover-color"><FaInstagramSquare /></a>
                         <a href="https://www.linkedin.com/in/khdreamit/" className="text-dark hover-color"><FaLinkedin /></a>
                     </div>
@@ -364,7 +364,7 @@ const Navbar = () => {
  
                         {/* Social Media Icons for Offcanvas */}
                         <div className="d-flex gap-3 fs-5 mt-4 border-top pt-3">
-                            <a href="https://www.facebook.com/AdulHalim.net/" className="text-dark hover-color"><FaFacebook /></a>
+                            <a href="https://www.facebook.com/khdreamit1/" className="text-dark hover-color"><FaFacebook /></a>
                             <a href="https://www.instagram.com/khdreamit/" className="text-dark hover-color"><FaInstagramSquare /></a>
                             <a href="https://www.linkedin.com/in/khdreamit/" className="text-dark hover-color"><FaLinkedin /></a>
                         </div>
