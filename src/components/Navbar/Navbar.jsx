@@ -9,7 +9,9 @@ import {
   FaShopify,
   FaAmazon,
   FaShareAlt,
-  FaYoutube
+  FaYoutube,
+  FaPinterest,
+  FaTiktok,
 } from "react-icons/fa";
 import {
   FaClipboardCheck,
@@ -277,7 +279,13 @@ const Navbar = () => {
                     <div className="d-flex gap-3 fs-5">
                         <a href="https://www.facebook.com/khdreamit1/" className="text-dark hover-color"><FaFacebook /></a>
                         <a href="https://www.instagram.com/khdreamit/" className="text-dark hover-color"><FaInstagramSquare /></a>
-                        <a href="https://www.linkedin.com/in/khdreamit/" className="text-dark hover-color"><FaLinkedin /></a>
+                        <a href="https://www.youtube.com/@khdreamit" className="text-dark hover-color"><FaYoutube /></a>
+                        <a href="https://www.linkedin.com/company/khdreamit1/" className="text-dark hover-color"><FaLinkedin /></a>
+                        <a href="https://www.tiktok.com/@khdreamit" className="text-dark hover-color"><FaTiktok /></a>
+                        <a href="https://www.pinterest.com/khdreamit/" className="text-dark hover-color"><FaPinterest /></a>
+                        
+                        
+                        
                     </div>
                 </div>
  
