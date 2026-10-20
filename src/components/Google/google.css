@@ -298,19 +298,20 @@
   animation: textFade 1s ease 0.2s both;
 }
 
-
 /* Hero title */
 
 .hero-title {
   margin: 0;
 
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(1.8rem, 3.2vw, 3.5rem);
 
-  line-height: 1.04;
+  line-height: 1.2;
 
   font-weight: 800;
 
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
+
+  white-space: nowrap;
 
   animation:
     titleReveal 1s
@@ -335,7 +336,6 @@
       scale(1);
   }
 }
-
 
 /* animated highlight */
 
