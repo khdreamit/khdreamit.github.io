@@ -1,35 +1,116 @@
+
 <!doctype html>
 <html lang="en">
   <head>
-    
-    
     <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="ozw2s7TCr08LRqX6iMU4I0P1ciwCd9RCtb3LYMWas8g" />
-    <meta name="google-site-verification" content="_auJQuFvfOWWo-mnrSqyVluKXt8bjFPGSLy0DFtxyoE" />
-    <meta name="p:domain_verify" content="d258ba0f89eae998185bf0d4b3abafa6"/>
-    <link rel="icon" type="image/svg+xml" href="/a.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>khdreamit</title>
-                
-    
-    
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXGEQ33NK9"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
 
-              gtag('config', 'G-SXGEQ33NK9');
-            </script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
+    <!-- Google Search Console Verification -->
+    <meta
+      name="google-site-verification"
+      content="ozw2s7TCr08LRqX6iMU4I0P1ciwCd9RCtb3LYMWas8g"
+    />
 
-          <script type="application/ld+json">
+    <meta
+      name="google-site-verification"
+      content="_auJQuFvfOWWo-mnrSqyVluKXt8bjFPGSLy0DFtxyoE"
+    />
+
+    <!-- Pinterest Verification -->
+    <meta
+      name="p:domain_verify"
+      content="d258ba0f89eae998185bf0d4b3abafa6"
+    />
+
+    <!-- Website Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/a.png"
+    />
+
+    <!-- SEO Title -->
+    <title>
+      KH Dream IT
+    </title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="khdreamIT helps businesses grow online with Google Ads, Meta Ads, and professional website development services."
+    />
+
+    <meta name="author" content="khdreamIT" />
+
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:site_name"
+      content="khdreamIT"
+    />
+
+    <meta
+      property="og:title"
+      content="khdreamIT | Digital Marketing & Web Development"
+    />
+
+    <meta
+      property="og:description"
+      content="Explore Google Ads, Meta Ads, digital marketing, and website development services from khdreamIT."
+    />
+
+    <meta
+      property="og:url"
+      content="https://khdreamit.github.io/"
+    />
+
+    <meta
+      property="og:image"
+      content="https://khdreamit.github.io/a.png"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SXGEQ33NK9"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-SXGEQ33NK9");
+    </script>
+
+    <!-- Organization and Website Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "KH Dream IT",
+            "@id": "https://khdreamit.github.io/#organization",
+            "name": "khdreamIT",
             "url": "https://khdreamit.github.io/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://khdreamit.github.io/a.png"
+            },
             "sameAs": [
               "https://www.facebook.com/khdreamit1/",
               "https://www.instagram.com/khdreamit/",
@@ -39,31 +120,49 @@
               "https://www.pinterest.com/khdreamit/",
               "https://www.youtube.com/@khdreamit",
               "https://www.facebook.com/abhalimnh/",
-              "https://www.tiktok.com/@khdreamit",
+              "https://www.tiktok.com/@khdreamit"
             ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://khdreamit.github.io/#website",
+            "name": "khdreamIT",
+            "alternateName": "KH Dream IT",
+            "url": "https://khdreamit.github.io/",
+            "publisher": {
+              "@id": "https://khdreamit.github.io/#organization"
+            }
           }
-          </script>
-            
-  
-  
-  
+        ]
+      }
+    </script>
     <script type="module" crossorigin src="/assets/index-6VzjhqwM.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Dv_URGVx.css">
   </head>
+
   <body>
     <div id="root"></div>
-
 
+    <!-- React Application -->
 
+    <!-- Existing SPA Redirect Support -->
     <script>
-  (function () {
-    var redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    if (redirect && redirect !== location.pathname) {
-      history.replaceState(null, null, redirect);
-    }
-  })();
-</script>
+      (function () {
+        try {
+          var redirect = sessionStorage.redirect;
 
+          delete sessionStorage.redirect;
+
+          if (
+            redirect &&
+            redirect !== location.pathname
+          ) {
+            history.replaceState(null, null, redirect);
+          }
+        } catch (error) {
+          // Continue loading if sessionStorage is unavailable.
+        }
+      })();
+    </script>
   </body>
 </html>
