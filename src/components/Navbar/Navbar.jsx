@@ -171,13 +171,15 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg shadow-sm py-3 fixed-top background custom-navbar-padding">
             <div className="container-fluid">
  
-                <div className="navbar-brand me-auto">
-                    <img
-                        src={Logo}
-                        alt="Logo"
-                        style={{ height: "50px", objectFit: "contain" }}
-                    />
-                </div>
+                
+<div className="navbar-brand me-auto">
+    <img
+        src={Logo}
+        alt="Logo"
+        className="navbar-logo"
+    />
+</div>
+
  
                 {/* Toggler Button for Small Screens */}
                 <button

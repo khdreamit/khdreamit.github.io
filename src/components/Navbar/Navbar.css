@@ -587,3 +587,19 @@ body {
     color: #000000 !important;
 }
 
+
+/* ==============================
+   LOGO SIZE CONTROL
+   Only logo will zoom
+============================== */
+
+.navbar-logo {
+    height: 50px;             /* Logo-এর মূল height */
+    width: auto;
+    object-fit: contain;
+
+    transform: scale(1.3);    /* Logo zoom control */
+    transform-origin: left center;
+}
+
+
