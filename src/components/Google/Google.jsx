@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SEO from '../SEO/SEO';
 import Navbar from "../Navbar/Navbar";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
@@ -287,6 +288,11 @@ const Google = () => {
 
   return (
     <div className="google-page">
+      <SEO
+  title="Google Ads Management Services | khdreamIT"
+  description="Grow your business with Google Ads campaign setup, keyword targeting, ad optimization, and campaign management services from khdreamIT."
+/>
+
 
       <Navbar />
 

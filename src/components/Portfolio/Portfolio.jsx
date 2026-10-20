@@ -7,6 +7,7 @@ import { FaEye  } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
 import googleAdsCaseStudies from "./googleAdsCaseStudies";
+import SEO from '../SEO/SEO';
 
 
 
@@ -599,6 +600,10 @@ const Portfolio = () => {
  
   return (
     <div>
+      <SEO
+    title="Our Portfolio | Website Development & Digital Marketing | khdreamIT"
+    description="Explore khdreamIT's portfolio of website development and digital marketing projects. Discover our work in Google Ads, Meta Ads, and web development."
+/>
       <Navbar />
       <div className="portfolio-header">
         <h1 className="text-white fw-bold ls">PORTFOLIO</h1>
@@ -757,6 +762,8 @@ const Portfolio = () => {
                   const isNegative = String(r.value).trim().startsWith("-");
 
                   return (
+
+                    
                     <div key={i} className="result-card">
                       <h4
                         className={isNegative ? "result-negative" : "result-positive"}

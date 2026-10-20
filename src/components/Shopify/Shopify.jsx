@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../SEO/SEO';
 import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
@@ -208,6 +209,11 @@ const items = [
 
     return (
     <div>
+      <SEO
+  title="Shopify Marketing Services | khdreamIT"
+  description="Grow your Shopify store with digital marketing, Google Ads, Meta Ads, and e-commerce marketing services from khdreamIT."
+/>
+
         <Navbar />
 
         {/* Google hero  */}

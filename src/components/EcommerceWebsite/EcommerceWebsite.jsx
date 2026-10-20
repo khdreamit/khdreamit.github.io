@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import SEO from '../SEO/SEO';
 import {
   FaExternalLinkAlt,
   FaGithub,
@@ -604,6 +605,10 @@ const EcommerceWebsite = () => {
       <section className="portfolio-hero">
 
         <div className="container">
+          <SEO
+  title="Our Recent Projects | Live Website Demos | khdreamIT"
+  description="Explore recent website development projects by khdreamIT and view live website demos showcasing our design and development work."
+/>
 
           <div className="portfolio-hero-content text-center">
 

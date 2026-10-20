@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../SEO/SEO';
 import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
@@ -187,6 +188,11 @@ const services = [
 
     return (
     <div>
+  <SEO
+  title="YouTube SEO Services | Channel Optimization | khdreamit"
+  description="Improve your YouTube channel with video SEO, keyword research, title and description optimization, and channel optimization services from khdreamIT."
+/>
+
         <Navbar />
 
         {/* youtube hero  */}

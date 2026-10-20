@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import "./certificates.css";
+import SEO from '../SEO/SEO';
 
 import cert1 from "../../assets/main.webp";
 import cert2 from "../../assets/Certificate/C1.png";
@@ -72,6 +73,10 @@ const data = [
 const Certificates = () => {
   return (
     <div>
+      <SEO
+  title="Certificates & Certifications | khdreamIT"
+  description="Explore digital marketing, advertising, and web development certificates earned by khdreamIT."
+/>
       <Navbar />
 
       {/* HERO */}

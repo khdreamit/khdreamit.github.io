@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import YouSeo from '../../assets/on page 11.jpg'
 import YoutubeHero from '../../assets/on page 11.jpeg'
+import SEO from '../SEO/SEO';
 
 
 const services = [
@@ -127,6 +128,10 @@ const OnPageSeo = () => {
     return (
       
       <div>
+        <SEO
+  title="On-Page SEO Services | khdreamIT"
+  description="Improve your website rankings with on-page SEO services, including title tags, meta descriptions, heading optimization, internal linking, and content optimization from khdreamIT."
+/>
         <Navbar />
         <div className="onpage-header">
             <h1 className="text-white fw-bold ls">On-page SEO</h1>

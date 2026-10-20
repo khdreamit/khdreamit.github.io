@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../SEO/SEO';
 import {
   FaLaptopCode,
   FaMobileAlt,
@@ -377,6 +378,10 @@ const FrontendDevelopment = () => {
 
               return (
                 <div className="col-md-6 col-lg-4" key={index}>
+                  <SEO
+  title="Frontend Development Services | khdreamIT"
+  description="Get responsive, modern, and user-friendly websites with professional frontend development services from khdreamIT using React, JavaScript, HTML, and CSS."
+/>
                   <div className="fd-service-card">
 
                     <div className="fd-service-icon">

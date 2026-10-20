@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SEO from '../SEO/SEO';
 import "./skills.css";
 
 import {
@@ -340,6 +341,11 @@ const Skills = () => {
 
   return (
     <div className="skills-page">
+      <SEO
+  title="Our Skills | Digital Marketing & Web Development | khdreamIT"
+  description="Explore khdreamIT's skills in digital marketing, Google Ads, Meta Ads, and website development to help businesses grow online."
+/>
+      
 
       {/* NAVBAR */}
       <Navbar />

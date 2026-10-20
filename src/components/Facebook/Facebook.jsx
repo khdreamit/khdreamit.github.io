@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import SEO from '../SEO/SEO';
 import Navbar from "../Navbar/Navbar";
 import SocialIcon from "../SocialIcon/SocialIcon";
+
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
@@ -180,6 +182,12 @@ const Facebook = () => {
 
   return (
     <div className="facebook-page">
+      <SEO
+  title="Facebook Ads Management Services | khdreamIT"
+  description="Grow your business with Facebook Ads campaign setup, audience targeting, ad optimization, and Meta advertising services from khdreamIT."
+/>
+
+
       <Navbar />
 
       {/* ================= HERO ================= */}

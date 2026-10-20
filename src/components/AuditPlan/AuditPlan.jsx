@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../SEO/SEO';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import YouSeo from '../../assets/website audit plan.webp'
@@ -56,6 +57,11 @@ const errors = [
 const AuditPlan = () => {
     return (
         <div>
+          <SEO
+  title="SEO Audit Plans & Pricing | khdreamIT"
+  description="Explore SEO audit plans from khdreamIT to identify website SEO issues, technical problems, on-page optimization opportunities, and areas for improvement."
+/>
+
             <Navbar />
              <div className="portfolio-header">
               <h1 className="text-white fw-bold ls">Website Audit Plan</h1>

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import YoutubeHero from '../../assets/1.webp'
+import SEO from '../SEO/SEO';
 
 
 const services = [
@@ -131,6 +132,10 @@ const services = [
 const TechnicalSeo = () => {
     return (
         <div>
+          <SEO
+  title="Technical SEO Services | khdreamIT"
+  description="Improve website crawling, indexing, site speed, mobile usability, and technical performance with technical SEO services from khdreamIT."
+/>
             <Navbar />
              <div className="Tecnical-header">
               <h1 className="text-white fw-bold ls">Technical SEO</h1>

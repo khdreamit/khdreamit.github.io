@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../SEO/SEO';
 import {
   FaPalette,
   FaMobileAlt,
@@ -326,6 +327,11 @@ const WebsiteRedesign = () => {
 
               return (
                 <div className="col-md-6 col-lg-4" key={index}>
+
+                  <SEO
+  title="Website Redesign Services | khdreamIT"
+  description="Transform your website with professional website redesign services from khdreamIT. Improve design, user experience, mobile responsiveness, and website performance."
+/>
                   <div className="wr-feature-card">
 
                     <div className="wr-feature-icon">

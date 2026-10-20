@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SEO from '../SEO/SEO';
 import {
   FaArrowRight,
   FaBullseye,
@@ -122,6 +123,10 @@ const workingSteps = [
 const About = () => {
   return (
     <div className="about-page">
+      <SEO
+  title="About KH Dream IT | Digital Marketing & Web Development"
+  description="Learn about khdreamIT, our digital marketing expertise, Google Ads services, and website development solutions for businesses."
+/>
 
       {/* =====================================================
           HERO

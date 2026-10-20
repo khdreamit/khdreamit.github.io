@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SEO from '../SEO/SEO';
 import { Modal, Button } from "react-bootstrap";
 import Img1 from '../../assets/face11.png'
 import Img2 from '../../assets/client metting/c1.png'
@@ -37,6 +38,10 @@ const ClientMeeting = () => {
 
   return (
     <div>
+      <SEO
+  title="Book a Client Meeting | khdreamIT"
+  description="Schedule a meeting with khdreamIT to discuss your digital marketing goals, Google Ads campaigns, and website development needs."
+/>
       <Navbar />
       <div className="review-header">
         <h1 className="text-white fw-bold ls">Client Meeting</h1>

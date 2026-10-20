@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
 import axios from 'axios';
+import SEO from '../SEO/SEO';
 
 const API_BASE = window.location.hostname === 'localhost'
   ? 'http://127.0.0.1:8000'
@@ -37,6 +38,10 @@ const ClientReview = () => {
 
   return (
     <div>
+      <SEO
+  title="Client Reviews & Testimonials | khdreamIT"
+  description="Read client reviews and testimonials about khdreamIT's digital marketing and website development services."
+/>
       <Navbar />
       <div className="review-header">
         <h1 className="text-white fw-bold ls">Client Reviews</h1>

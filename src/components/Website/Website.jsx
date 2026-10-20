@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import SEO from '../SEO/SEO';
 import { Link } from "react-router-dom";
 import "./website.css";
 
@@ -368,6 +369,10 @@ function Website() {
 
   return (
     <>
+    <SEO
+  title="Website SEO Services | khdreamIT"
+  description="Improve your website's search visibility with SEO audits, on-page SEO, technical SEO, and website optimization services from khdreamIT."
+/>
       <Navbar />
 
       {/* ============================================

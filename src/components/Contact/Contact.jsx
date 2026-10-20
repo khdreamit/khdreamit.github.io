@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import SEO from '../SEO/SEO';
 
 import {
   FaArrowRight,
@@ -291,6 +292,10 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <SEO
+  title="Contact KH Dream IT | Get in Touch"
+  description="Contact khdreamIT to discuss Google Ads, Meta Ads, digital marketing, and website development services for your business."
+/>
 
       {/* =====================================================
           HERO

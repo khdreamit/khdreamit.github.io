@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../SEO/SEO';
 import {
   FaServer,
   FaDatabase,
@@ -402,6 +403,10 @@ const BackendDevelopment = () => {
 
               return (
                 <div className="col-md-6 col-lg-4" key={index}>
+                  <SEO
+  title="Backend Development Services | khdreamIT"
+  description="Build secure, scalable, and reliable web applications with professional backend development services from khdreamIT."
+/>
 
                   <div className="bd-service-card">
 

@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../SEO/SEO';
 import {
   FaLayerGroup,
   FaLaptopCode,
@@ -262,6 +263,10 @@ const FullStackDevelopment = () => {
 
       <section className="fs-hero">
         <div className="container">
+          <SEO
+  title="Full Stack Development Services | khdreamIT"
+  description="Get complete full stack web development services from khdreamIT, including modern frontend interfaces, reliable backend systems, and custom web applications."
+/>
 
           <div className="row align-items-center gy-5">
 

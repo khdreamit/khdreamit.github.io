@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import SEO from '../SEO/SEO';
 import Navbar from "../Navbar/Navbar";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import Footer from "../Footer/Footer";
@@ -173,6 +174,11 @@ const SocialMediaManage = () => {
 
   return (
     <div>
+
+      <SEO
+  title="Social Media Management Services | khdreamIT"
+  description="Build your brand with social media management, content planning, audience engagement, and social media marketing services from khdreamIT."
+/>
       <Navbar />
 
       {/* Social Media Management Hero Section */}

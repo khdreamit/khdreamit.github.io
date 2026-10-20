@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from '../SEO/SEO';
 import {
   FaBullseye,
   FaLaptopCode,
@@ -896,6 +897,11 @@ const LandingPage = () => {
                   className="col-md-6 col-lg-4"
                   key={index}
                 >
+
+                  <SEO
+  title="Landing Page Design & Development Services | khdreamIT"
+  description="Get professional landing page design and development services from khdreamIT to showcase your business, generate leads, and improve conversions."
+/>
 
                   <div className="lp-benefit-card">
 

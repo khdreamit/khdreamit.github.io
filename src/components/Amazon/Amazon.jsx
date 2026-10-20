@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../SEO/SEO';
 import Navbar from '../Navbar/Navbar';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
@@ -209,6 +210,10 @@ const items = [
 
     return (
     <div>
+      <SEO
+  title="Amazon Book Promotion Services | khdreamIT"
+  description="Promote your books on Amazon with book marketing, audience targeting, and digital advertising services from khdreamIT."
+/>
         <Navbar />
 
 {/* youtube hero  */}

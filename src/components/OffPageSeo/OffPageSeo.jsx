@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import YoutubeHero from '../../assets/off page seo.jpg'
+import SEO from '../SEO/SEO';
 
 
 const services = [
@@ -148,6 +149,11 @@ const results = [
 const OffPageSeo = () => {
     return (
         <div>
+
+          <SEO
+  title="Off-Page SEO Services | khdreamIT"
+  description="Improve your website authority with off-page SEO services, quality backlink strategies, link building, and online brand visibility from khdreamIT."
+/>
             <Navbar />
         <div className="offpage-header">
             <h1 className="text-white fw-bold ls">On-page SEO</h1>

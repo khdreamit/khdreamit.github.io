@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../SEO/SEO';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import YoutubeHero from '../../assets/local.webp'
@@ -139,6 +140,11 @@ const benifits = [
 const LocalSeo = () => {
     return (
         <div>
+
+          <SEO
+  title="Local SEO Services | khdreamIT"
+  description="Help local customers find your business with local SEO, Google Business Profile optimization, local keyword targeting, and local search optimization services from khdreamIT."
+/>
             <Navbar />
             <div className="offpage-header">
                   <h1 className="text-white fw-bold ls">On-page SEO</h1>
